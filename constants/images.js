@@ -15,3 +15,7 @@ const owanbe_white = require("../assets/images/owanbe-white.png");
 const party_dancer = require("../assets/images/party-dancer.png");
 const party = require("../assets/images/party.png");
 const south_west = require("../assets/images/SouthWest.png");
+const tag_partner1 = require("../assets/images/tag-partner1.png");
+const tag_partner2 = require("../assets/images/tag-partner2.png");
+const tag_partner3 = require("../assets/images/tag-partner3.png");
+const tag_partner4 = require("../assets/images/tag-partner4.png");
