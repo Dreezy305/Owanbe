@@ -13,3 +13,5 @@ const owanbe_black = require("../assets/images/owanbe-black.png");
 const owanbe_red = require("../assets/images/owanbe-red.png");
 const owanbe_white = require("../assets/images/owanbe-white.png");
 const party_dancer = require("../assets/images/party-dancer.png");
+const party = require("../assets/images/party.png");
+const south_west = require("../assets/images/SouthWest.png");
