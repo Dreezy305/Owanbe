@@ -19,3 +19,7 @@ const tag_partner1 = require("../assets/images/tag-partner1.png");
 const tag_partner2 = require("../assets/images/tag-partner2.png");
 const tag_partner3 = require("../assets/images/tag-partner3.png");
 const tag_partner4 = require("../assets/images/tag-partner4.png");
+const trad_wedding = require("../assets/images/trad-wedding.png");
+const white_wedding = require("../assets/images/white-wedding.png");
+
+export default {};
