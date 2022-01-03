@@ -22,4 +22,34 @@ const tag_partner4 = require("../assets/images/tag-partner4.png");
 const trad_wedding = require("../assets/images/trad-wedding.png");
 const white_wedding = require("../assets/images/white-wedding.png");
 
-export default {};
+export default {
+  avatar,
+  avatar2,
+  bride,
+  discover,
+
+  explore,
+  explorer1,
+  invitation,
+  lagos_owambe,
+
+  north_central,
+  north_east,
+  north_west,
+
+  owanbe_black,
+  owanbe_red,
+  owanbe_white,
+
+  party_dancer,
+  party,
+  south_west,
+
+  tag_partner1,
+  tag_partner2,
+  tag_partner3,
+  tag_partner4,
+
+  trad_wedding,
+  white_wedding,
+};
