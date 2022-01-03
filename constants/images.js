@@ -9,3 +9,5 @@ const lagos_owambe = require("../assets/images/lagos-owambe.png");
 const north_central = require("../assets/images/NorthCentral.png");
 const north_east = require("../assets/images/NorthEast.png");
 const north_west = require("../assets/images/NorthWest.png");
+const owanbe_black = require("../assets/images/owanbe-black.png");
+const owanbe_red = require("../assets/images/owanbe-red.png");
