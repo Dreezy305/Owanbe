@@ -3,6 +3,7 @@ import { Dimensions } from "react-native";
 export const COLORS = {
   red: "#E20000",
   purple: "#19235B",
+  white: "#fff",
 };
 
 export const FONTS = {
@@ -16,9 +17,9 @@ export const FONTS = {
   Avenir_Roman: require("../assets/fonts/Avenir-Font/avenir_ff/AvenirLTStd-Roman.otf"),
 };
 
-export const fontStyles = ["normal", "italic"];
+export const FontStyles = { normal: "normal", italic: "italic" };
 
-export const fontWeights = {
+export const FontWeights = {
   fwNormal: "normal",
   fwBold: "bold",
   fw100: "100",
@@ -32,7 +33,7 @@ export const fontWeights = {
   fw900: "900",
 };
 
-export const textAlignments = {
+export const TextAlignments = {
   text_auto: "auto",
   text_left: "left",
   text_right: "right",
@@ -40,27 +41,28 @@ export const textAlignments = {
   text_justify: "justify",
 };
 
-export const textDecorationLines = {
+export const TextDecorationLines = {
   none: "none",
   underline: "underline",
   line_through: "line-through",
   underline_linethrough: "underline line-through",
 };
 
-export const textDecorationStyles = {
+export const TextDecorationStyles = {
   solid: "solid",
   double: "double",
   dotted: "dotted",
   dashed: "dashed",
 };
 
-export const textTransformations = {
+export const TextTransformations = {
   none: "none",
   uppercase: "uppercase",
   lowercase: "lowercase",
   capitalize: "capitalize",
 };
-export const textAlignmentsVertical = {
+
+export const TextAlignmentsVertical = {
   auto: "auto",
   top: "top",
   bottom: "bottom",
