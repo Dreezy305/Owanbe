@@ -1,4 +1,5 @@
 const arrow_forward = require("../assets/icons/arrow-forward.png");
+const arrow_forwardLight = require("../assets/icons/arrow-forwardLight.png");
 const arrow_back = require("../assets/icons/arrow-back.png");
 const bell = require("../assets/icons/bell.svg");
 const camera = require("../assets/icons/Camera.svg");
@@ -20,6 +21,7 @@ const twitter = require("../assets/icons/Twitter.svg");
 
 export default {
   arrow_forward,
+  arrow_forwardLight,
   arrow_back,
   bell,
   camera,

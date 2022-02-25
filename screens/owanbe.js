@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
 import { TextAlignments } from "../constants/color_theme_styles";
-import { images } from "../constants";
+import { images, icons } from "../constants";
 
 // contains the splash screen
 
