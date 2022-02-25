@@ -13,5 +13,11 @@ export default function App() {
     return null;
   }
 
-  return <NavigationContainer></NavigationContainer>;
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={Owanbe} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
 }

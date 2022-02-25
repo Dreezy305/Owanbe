@@ -4,6 +4,12 @@ import { TextAlignments } from "../constants/color_theme_styles";
 import { images } from "../constants";
 
 export default function Owanbe() {
+  const imgArray = [
+    images.owanbe_white,
+    images.owanbe_black,
+    images.owanbe_red,
+  ];
+
   return (
     <View style={styles.container}>
       <Image
