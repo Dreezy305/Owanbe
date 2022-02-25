@@ -4,6 +4,7 @@ import {
   StyleSheet,
   Image,
   ImageBackground,
+  Animated,
   TouchableOpacity,
 } from "react-native";
 import React, { useState } from "react";
@@ -15,9 +16,8 @@ import {
 } from "../constants/color_theme_styles";
 import AppIntroSlider from "react-native-app-intro-slider";
 
-export default function onBoarding({ navigation }) {
-  const [count, setCount] = useState(0);
-  // const [toggleText, setToggleText] = useState(0);
+export default function onBoarding() {
+  const [showApp, setShowApp] = useState(false);
 
   const slides = [
     {
@@ -43,50 +43,81 @@ export default function onBoarding({ navigation }) {
     },
   ];
 
-  const switchBG = () => {
-    if (count < slides.length - 1) {
-      setCount(count + 1);
-    } else if (count == slides.length - 1) {
-      setCount(slides.length - 1);
-    }
+  const renderAnimation = () => {
+    return (
+      <Animated.ScrollView
+        horizontal
+        pagingEnabled
+        scrollEnabled
+        snapToAlignment={"center"}
+      >
+        {slides.map((item) => (
+          <View style={styles.container} key={item.key}>
+            <ImageBackground
+              source={item.image}
+              resizeMode="contain"
+              resizeMethod="resize"
+              style={styles.image}
+            >
+              <Text style={styles.Text}>{item.text}</Text>
+              <View style={styles.NextContainer}>
+                <View
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    alignItems: "center",
+                  }}
+                >
+                  <Text style={styles.Next}>Next</Text>
+                  <Image
+                    style={styles.NextIcon}
+                    source={icons.arrow_forwardLight}
+                    resizeMethod="scale"
+                    resizeMode="contain"
+                  />
+                </View>
+              </View>
+            </ImageBackground>
+          </View>
+        ))}
+      </Animated.ScrollView>
+    );
   };
 
   return (
-    <View style={styles.container}>
-      <ImageBackground
-        source={slides[count].image}
-        resizeMode="cover"
-        resizeMethod="scale"
-        style={styles.image}
-      >
-        <Text style={styles.Text}>{slides[count].text}</Text>
-
-        <View style={styles.NextContainer}>
-          <View
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
-            }}
-          >
-            <TouchableOpacity onPress={switchBG} style={styles.Touch}>
-              <Text style={styles.Next}>Next</Text>
-              <Image
-                style={styles.NextIcon}
-                source={icons.arrow_forwardLight}
-                resizeMethod="scale"
-                resizeMode="contain"
-              />
-            </TouchableOpacity>
-          </View>
-        </View>
-      </ImageBackground>
-    </View>
+    <>{renderAnimation()}</>
+    // <View style={styles.container}>
+    //   <ImageBackground
+    //     source={images.explore}
+    //     resizeMode="cover"
+    //     resizeMethod="scale"
+    //     style={styles.image}
+    //   >
+    //     <Text style={styles.Text}>Explore</Text>
+    //     <View style={styles.NextContainer}>
+    //       <View
+    //         style={{
+    //           display: "flex",
+    //           flexDirection: "row",
+    //           alignItems: "center",
+    //         }}
+    //       >
+    //         <Text style={styles.Next}>Next</Text>
+    //         <Image
+    //           style={styles.NextIcon}
+    //           source={icons.arrow_forwardLight}
+    //           resizeMethod="scale"
+    //           resizeMode="contain"
+    //         />
+    //       </View>
+    //     </View>
+    //   </ImageBackground>
+    // </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1 },
+  container: { flex: 1, alignItems: "center", justifyContent: "center" },
   image: {
     width: "100%",
     height: "100%",
@@ -110,18 +141,11 @@ const styles = StyleSheet.create({
     marginVertical: 20,
     marginHorizontal: 20,
   },
+  PrevContainer: {},
   Next: { color: COLORS.white, fontSize: 18, fontFamily: "Roboto_Light" },
   NextIcon: {
     width: 20,
     height: 20,
     paddingTop: 20,
   },
-  Touch: {
-    display: "flex",
-    flexDirection: "row",
-    alignItems: TextAlignments.text_center,
-  },
-  PrevContainer: {},
-  Prev: {},
-  PrevIcon: {},
 });
