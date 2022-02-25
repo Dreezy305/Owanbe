@@ -21,20 +21,6 @@ export default function Owanbe({ navigation }) {
     if (currentImage < imgArray.length) {
       setCurrentImage((prev) => prev + 1);
     }
-
-    return (
-      <>
-        {" "}
-        <View style={styles.container}>
-          <Image
-            source={imgArray[currentImage]}
-            resizeMethod="scale"
-            resizeMode="contain"
-            style={styles.imgStyle}
-          />
-        </View>
-      </>
-    );
   };
 
   useEffect(() => {
