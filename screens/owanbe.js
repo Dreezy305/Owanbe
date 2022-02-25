@@ -3,17 +3,23 @@ import { View, Text, StyleSheet, Image } from "react-native";
 import { TextAlignments } from "../constants/color_theme_styles";
 import { images } from "../constants";
 
-export default function Owanbe() {
+// contains the splash screen
+
+export default function Owanbe({ navigation }) {
   const imgArray = [
     images.owanbe_white,
     images.owanbe_black,
     images.owanbe_red,
   ];
 
+  setTimeout(() => {
+    navigation.navigate("OnBoarding");
+  }, 4000);
+
   return (
     <View style={styles.container}>
       <Image
-        source={images.owanbe_red}
+        source={images.owanbe_white}
         resizeMethod="scale"
         resizeMode="contain"
         style={styles.imgStyle}

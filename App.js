@@ -18,7 +18,7 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
-          name="Owanbe"
+          name="Splash"
           component={Owanbe}
           options={{ headerShown: false }}
         />
