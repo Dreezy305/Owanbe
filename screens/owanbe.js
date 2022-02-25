@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
 import { TextAlignments } from "../constants/color_theme_styles";
 import { images, icons } from "../constants";
@@ -6,6 +6,8 @@ import { images, icons } from "../constants";
 // contains the splash screen
 
 export default function Owanbe({ navigation }) {
+  const [currentImage, setCurrentImage] = useState(0);
+
   const imgArray = [
     images.owanbe_white,
     images.owanbe_black,
@@ -14,12 +16,37 @@ export default function Owanbe({ navigation }) {
 
   setTimeout(() => {
     navigation.navigate("OnBoarding");
-  }, 4000);
+  }, 5000);
+
+  const switchImage = () => {
+    if (currentImage < imgArray.length) {
+      setCurrentImage((prev) => prev + 1);
+    }
+
+    return (
+      <>
+        {" "}
+        <View style={styles.container}>
+          <Image
+            source={imgArray[currentImage]}
+            resizeMethod="scale"
+            resizeMode="contain"
+            style={styles.imgStyle}
+          />
+        </View>
+      </>
+    );
+  };
+
+  useEffect(() => {
+    setInterval(switchImage, 2000);
+    // clearInterval(switchImage);
+  }, []);
 
   return (
     <View style={styles.container}>
       <Image
-        source={images.owanbe_white}
+        source={imgArray[currentImage]}
         resizeMethod="scale"
         resizeMode="contain"
         style={styles.imgStyle}
