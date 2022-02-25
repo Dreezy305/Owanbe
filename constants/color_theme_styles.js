@@ -5,7 +5,16 @@ export const COLORS = {
   purple: "#19235B",
 };
 
-export const FONTS = {};
+export const FONTS = {
+  Roboto_Black: require("../assets/fonts/Roboto/Roboto-Black.ttf"),
+  Roboto_Bold: require("../assets/fonts/Roboto/Roboto-Bold.ttf"),
+  Roboto_Light: require("../assets/fonts/Roboto/Roboto-Light.ttf"),
+  Roboto_Medium: require("../assets/fonts/Roboto/Roboto-Medium.ttf"),
+  Roboto_Thin: require("../assets/fonts/Roboto/Roboto-Thin.ttf"),
+  Avenir_Black: require("../assets/fonts/Avenir-Font/avenir_ff/AvenirLTStd-Black.otf"),
+  Avenir_Book: require("../assets/fonts/Avenir-Font/avenir_ff/AvenirLTStd-Book.otf"),
+  Avenir_Roman: require("../assets/fonts/Avenir-Font/avenir_ff/AvenirLTStd-Roman.otf"),
+};
 
 export const fontStyles = ["normal", "italic"];
 
