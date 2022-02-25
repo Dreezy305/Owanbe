@@ -4,7 +4,6 @@ import { TextAlignments } from "../constants/color_theme_styles";
 import { images, icons } from "../constants";
 
 // contains the splash screen
-
 export default function Owanbe({ navigation }) {
   const [currentImage, setCurrentImage] = useState(0);
 
@@ -40,7 +39,6 @@ export default function Owanbe({ navigation }) {
 
   useEffect(() => {
     setInterval(switchImage, 2000);
-    // clearInterval(switchImage);
   }, []);
 
   return (
