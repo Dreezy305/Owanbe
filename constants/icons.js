@@ -10,3 +10,36 @@ const facebook = require("../assets/icons/facebook.svg");
 const google = require("../assets/icons/Google.svg");
 const home = require("../assets/icons/Home.svg");
 const location = require("../assets/icons/location.svg");
+const menu = require("../assets/icons/menu.svg");
+const myAcc = require("../assets/icons/myaccount.svg");
+const myFavs = require("../assets/icons/myfavourites.svg");
+const nearest = require("../assets/icons/nearestOwanbe.svg");
+const organise = require("../assets/icons/Organise.svg");
+const plane = require("../assets/icons/plane.svg");
+const twitter = require("../assets/icons/Twitter.svg");
+
+export default {
+  arrow_forward,
+  arrow_back,
+  bell,
+  camera,
+
+  chat,
+  chat2,
+  close_square,
+  deleteIcon,
+
+  facebook,
+  google,
+  home,
+  location,
+
+  menu,
+  myAcc,
+  myFavs,
+  nearest,
+
+  organise,
+  plane,
+  twitter,
+};
