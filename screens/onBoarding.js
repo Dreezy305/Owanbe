@@ -1,4 +1,11 @@
-import { View, Text, StyleSheet, Image, ImageBackground } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  ImageBackground,
+  TouchableOpacity,
+} from "react-native";
 import React, { useState } from "react";
 import { images, icons } from "../constants";
 import {
@@ -8,18 +15,52 @@ import {
 } from "../constants/color_theme_styles";
 import AppIntroSlider from "react-native-app-intro-slider";
 
-export default function onBoarding() {
-  const [showApp, setShowApp] = useState(false);
+export default function onBoarding({ navigation }) {
+  const [count, setCount] = useState(0);
+  // const [toggleText, setToggleText] = useState(0);
+
+  const slides = [
+    {
+      key: "one",
+      title: "",
+      text: "Explore",
+      image: images.explore,
+      backgroundColor: "",
+    },
+    {
+      key: "two",
+      title: "",
+      text: "Discover",
+      image: images.discover,
+      backgroundColor: "",
+    },
+    {
+      key: "three",
+      title: "",
+      text: "Party Like No Other",
+      image: images.party,
+      backgroundColor: "",
+    },
+  ];
+
+  const switchBG = () => {
+    if (count < slides.length - 1) {
+      setCount(count + 1);
+    } else if (count == slides.length - 1) {
+      setCount(slides.length - 1);
+    }
+  };
 
   return (
     <View style={styles.container}>
       <ImageBackground
-        source={images.explore}
+        source={slides[count].image}
         resizeMode="cover"
         resizeMethod="scale"
         style={styles.image}
       >
-        <Text style={styles.Text}>Explore</Text>
+        <Text style={styles.Text}>{slides[count].text}</Text>
+
         <View style={styles.NextContainer}>
           <View
             style={{
@@ -28,13 +69,15 @@ export default function onBoarding() {
               alignItems: "center",
             }}
           >
-            <Text style={styles.Next}>Next</Text>
-            <Image
-              style={styles.NextIcon}
-              source={icons.arrow_forwardLight}
-              resizeMethod="scale"
-              resizeMode="contain"
-            />
+            <TouchableOpacity onPress={switchBG} style={styles.Touch}>
+              <Text style={styles.Next}>Next</Text>
+              <Image
+                style={styles.NextIcon}
+                source={icons.arrow_forwardLight}
+                resizeMethod="scale"
+                resizeMode="contain"
+              />
+            </TouchableOpacity>
           </View>
         </View>
       </ImageBackground>
@@ -67,11 +110,18 @@ const styles = StyleSheet.create({
     marginVertical: 20,
     marginHorizontal: 20,
   },
-  PrevContainer: {},
   Next: { color: COLORS.white, fontSize: 18, fontFamily: "Roboto_Light" },
   NextIcon: {
     width: 20,
     height: 20,
     paddingTop: 20,
   },
+  Touch: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: TextAlignments.text_center,
+  },
+  PrevContainer: {},
+  Prev: {},
+  PrevIcon: {},
 });
