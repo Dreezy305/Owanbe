@@ -5,28 +5,55 @@ export const COLORS = {
   purple: "#19235B",
 };
 
-export const FONTS = {
-    fontStyles = { normal: "normal", italic: "italic" },
-    fontWeights = {fontNormal: "normal",
-  fontBold: "bold",
-  font100: "100",
-  font200: "200",
-  font300: "300",
-  font400: "400",
-  font500: "500",
-  font600: "600",
-  font700: "700",
-  font800: "800",
-  font900: "900"}
+export const FONTS = {};
+
+export const fontStyles = ["normal", "italic"];
+
+export const fontWeights = {
+  fwNormal: "normal",
+  fwBold: "bold",
+  fw100: "100",
+  fw200: "200",
+  fw300: "300",
+  fw400: "400",
+  fw500: "500",
+  fw600: "600",
+  fw700: "700",
+  fw800: "800",
+  fw900: "900",
 };
 
-export const textAlignments = ["auto", "left", "right", "center", "justify"];
-export const textDecorationLines = [
-  "none",
-  "underline",
-  "line-through",
-  "underline line-through"
-];
-export const textDecorationStyles = ["solid", "double", "dotted", "dashed"];
-export const textTransformations = ["none", "uppercase", "lowercase", "capitalize"];
-export const textAlignmentsVertical = ["auto", "top", "bottom", "center"];
+export const textAlignments = {
+  text_auto: "auto",
+  text_left: "left",
+  text_right: "right",
+  text_center: "center",
+  text_justify: "justify",
+};
+
+export const textDecorationLines = {
+  none: "none",
+  underline: "underline",
+  line_through: "line-through",
+  underline_linethrough: "underline line-through",
+};
+
+export const textDecorationStyles = {
+  solid: "solid",
+  double: "double",
+  dotted: "dotted",
+  dashed: "dashed",
+};
+
+export const textTransformations = {
+  none: "none",
+  uppercase: "uppercase",
+  lowercase: "lowercase",
+  capitalize: "capitalize",
+};
+export const textAlignmentsVertical = {
+  auto: "auto",
+  top: "top",
+  bottom: "bottom",
+  center: "center",
+};
