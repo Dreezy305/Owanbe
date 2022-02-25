@@ -53,3 +53,5 @@ export default {
   trad_wedding,
   white_wedding,
 };
+
+// https://www.figma.com/file/877PdU531X9p2KIwNF2fhq/OWANBE-PROJECT?node-id=0%3A1
