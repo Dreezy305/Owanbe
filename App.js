@@ -1,7 +1,10 @@
 import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { FONTS } from "./constants/color_theme_styles";
 import { useFonts } from "expo-font";
 import Owanbe from "./screens/owanbe";
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   const [loaded] = useFonts(FONTS);
@@ -10,9 +13,5 @@ export default function App() {
     return null;
   }
 
-  return (
-    <>
-      <Owanbe />
-    </>
-  );
+  return <NavigationContainer></NavigationContainer>;
 }
