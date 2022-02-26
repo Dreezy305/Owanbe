@@ -16,7 +16,6 @@ import {
   FontWeights,
   SIZES,
 } from "../constants/color_theme_styles";
-// import Onboarding from "react-native-onboarding-swiper";
 
 export default function OwanbeWelcome({ navigation }) {
   const [showApp, setShowApp] = useState(false);

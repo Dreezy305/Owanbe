@@ -26,17 +26,14 @@ import {
 const onBoardings = [
   {
     title: "Explore",
-    description: "",
     img: images.explore,
   },
   {
     title: "Discover",
-    description: "",
     img: images.discover,
   },
   {
     title: "Party Like No Other",
-    description: "",
     img: images.party,
   },
 ];
@@ -48,6 +45,7 @@ function Boarding({ navigation }) {
 
   React.useEffect(() => {
     scrollX.addListener(({ value }) => {
+      console.log(value);
       if (Math.floor(value / SIZES.width) === onBoardings.length - 1) {
         setCompleted(true);
       }
@@ -128,9 +126,7 @@ function Boarding({ navigation }) {
                 marginVertical: 20,
                 marginHorizontal: 20,
               }}
-              onPress={() => {
-                navigation.replace("Login");
-              }}
+              onPress={() => navigation.replace("Login")}
             >
               <Text
                 style={{
@@ -140,7 +136,7 @@ function Boarding({ navigation }) {
                   lineHeight: 21,
                 }}
               >
-                {completed ? "Let's Go" : "Skip"}
+                {completed ? "Get Started" : "Skip"}
               </Text>
             </TouchableOpacity>
           </View>
@@ -149,40 +145,9 @@ function Boarding({ navigation }) {
     );
   }
 
-  function renderDots() {
-    const dotPosition = Animated.divide(scrollX, SIZES.width);
-
-    return (
-      <View style={styles.dotsContainer}>
-        {onBoardings.map((item, index) => {
-          const opacity = dotPosition.interpolate({
-            inputRange: [index - 1, index, index + 1],
-            outputRange: [0.3, 1, 0.3],
-            extrapolate: "clamp",
-          });
-
-          const dotSize = dotPosition.interpolate({
-            inputRange: [index - 1, index, index + 1],
-            outputRange: [SIZES.base, 17, SIZES.base],
-            extrapolate: "clamp",
-          });
-
-          return (
-            <Animated.View
-              key={`dot-${index}`}
-              opacity={opacity}
-              style={[styles.dot, { width: dotSize, height: dotSize }]}
-            />
-          );
-        })}
-      </View>
-    );
-  }
-
   return (
     <SafeAreaView style={styles.container}>
       <View>{renderContent()}</View>
-      <View style={styles.dotsRootContainer}>{renderDots()}</View>
     </SafeAreaView>
   );
 }
@@ -195,23 +160,6 @@ const styles = StyleSheet.create({
   },
   imageAndTextContainer: {
     width: SIZES.width,
-  },
-  dotsRootContainer: {
-    position: "absolute",
-    bottom: SIZES.height > 700 ? "20%" : "16%",
-  },
-  dotsContainer: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
-    marginTop: SIZES.padding / 2,
-    marginBottom: SIZES.padding * 3,
-    height: SIZES.padding,
-  },
-  dot: {
-    borderRadius: SIZES.radius,
-    // backgroundColor: COLORS.blue,
-    marginHorizontal: SIZES.radius / 2,
   },
 });
 
