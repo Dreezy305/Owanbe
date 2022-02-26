@@ -6,6 +6,7 @@ import {
   ImageBackground,
   Animated,
   TouchableOpacity,
+  Button,
 } from "react-native";
 import React, { useState } from "react";
 import { images, icons } from "../constants";
@@ -16,37 +17,21 @@ import {
 } from "../constants/color_theme_styles";
 import Onboarding from "react-native-onboarding-swiper";
 
-export default function onBoarding({ navigation }) {
+export default function OwanbeWelcome({ navigation }) {
   const [showApp, setShowApp] = useState(false);
 
-  const slides = [
-    {
-      key: "one",
-      title: "",
-      text: "Explore",
-      image: images.explore,
-      backgroundColor: "",
-    },
-    {
-      key: "two",
-      title: "",
-      text: "Discover",
-      image: images.discover,
-      backgroundColor: "",
-    },
-    {
-      key: "three",
-      title: "",
-      text: "Party Like No Other",
-      image: images.party,
-      backgroundColor: "",
-    },
-  ];
+  const Skip = ({ ...props }) => {
+    return <Button title="SKip" color={"#0000"} {...props} />;
+  };
+
+  const Next = ({ ...props }) => {
+    return <Button title="Next" color={"#0000"} {...props} />;
+  };
 
   return (
     <>
       <Onboarding
-        onSkip={() => navigation.replace("Login")}
+        onSkip={() => navigation.navigate("Login")}
         onDone={() => navigation.navigate("Login")}
         pages={[
           {

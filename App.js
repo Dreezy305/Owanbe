@@ -3,7 +3,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { FONTS } from "./constants/color_theme_styles";
 import { useFonts } from "expo-font";
 import Owanbe from "./screens/owanbe";
-import onBoarding from "./screens/onBoarding";
+import OwanbeWelcome from "./screens/OwanbeWelcome";
 import Login from "./screens/loginScreen";
 
 const Stack = createNativeStackNavigator();
@@ -24,8 +24,8 @@ export default function App() {
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="OnBoarding"
-          component={onBoarding}
+          name="OwanbeWelcome"
+          component={OwanbeWelcome}
           options={{ headerShown: false }}
         />
         <Stack.Screen
