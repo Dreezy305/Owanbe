@@ -123,7 +123,14 @@ export default function HomeScreen({ navigation }) {
   };
 
   const renderPopularOwanbe = () => {
-    return <View></View>;
+    return (
+      <View style={styles.regionContainer}>
+        <View>
+          <Text>Popular Ówànbè</Text>
+          <Text>More</Text>
+        </View>
+      </View>
+    );
   };
 
   return (
