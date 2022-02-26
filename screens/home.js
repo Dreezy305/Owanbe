@@ -41,7 +41,14 @@ export default function HomeScreen({ navigation }) {
 
   const renderSelectRegion = () => {
     // FLAST LIST COMPONENT
-    const renderThumbnail = () => {};
+    const renderItem = ({ item }) => {
+      return (
+        <TouchableOpacity>
+          <View></View>
+          <Text></Text>
+        </TouchableOpacity>
+      );
+    };
 
     return (
       <View style={styles.regionContainer}>
