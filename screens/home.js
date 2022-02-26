@@ -127,7 +127,14 @@ export default function HomeScreen({ navigation }) {
   };
 
   const renderPopularOwanbe = () => {
-    const renderItem = ({ item }) => {};
+    const renderItem = ({ item }) => {
+      return (
+        <TouchableOpacity>
+          <View></View>
+          <View></View>
+        </TouchableOpacity>
+      );
+    };
     return (
       <View style={styles.regionContainer}>
         <View style={styles.popularContainer}>
@@ -136,6 +143,7 @@ export default function HomeScreen({ navigation }) {
         </View>
 
         {/* FLATLIST */}
+        <FlatList />
       </View>
     );
   };

@@ -43,3 +43,12 @@ export const TodayOwanbe = [
     image: images.explorer1,
   },
 ];
+
+export const PopularOwanbe = [
+  {
+    id: 1,
+    image: images.trad_wedding,
+    venue: "Festac Hall",
+    headline: "Tobi weds Shade",
+  },
+];
