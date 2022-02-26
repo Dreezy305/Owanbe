@@ -51,4 +51,16 @@ export const PopularOwanbe = [
     venue: "Festac Hall",
     headline: "Tobi weds Shade",
   },
+  {
+    id: 2,
+    image: images.white_wedding,
+    venue: "Festac Hall",
+    headline: "Tobi weds Shade",
+  },
+  {
+    id: 3,
+    image: images.bride,
+    venue: "Festac Hall",
+    headline: "Tobi weds Shade",
+  },
 ];

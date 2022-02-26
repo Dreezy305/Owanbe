@@ -17,7 +17,7 @@ import {
   TextAlignments,
   TextTransformations,
 } from "../constants/color_theme_styles";
-import { SelectRegion, TodayOwanbe } from "../data/selectRegion";
+import { SelectRegion, TodayOwanbe, PopularOwanbe } from "../data/selectRegion";
 
 export default function HomeScreen({ navigation }) {
   const [selectedId, setSelectedId] = useState(null);
@@ -129,9 +129,58 @@ export default function HomeScreen({ navigation }) {
   const renderPopularOwanbe = () => {
     const renderItem = ({ item }) => {
       return (
-        <TouchableOpacity>
-          <View></View>
-          <View></View>
+        <TouchableOpacity
+          onPress={() => setPopularId(item.id)}
+          style={{
+            borderRadius: 16,
+            backgroundColor: "#fff",
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
+            margin: 10,
+          }}
+        >
+          <View style={{ paddingVertical: 5 }}>
+            <Image
+              source={item.image}
+              resizeMethod="scale"
+              resizeMode="contain"
+            />
+          </View>
+          <View
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              paddingVertical: 5,
+              paddingHorizontal: 50,
+            }}
+          >
+            <Text
+              style={{
+                fontFamily: "Avenir_Roman",
+                fontSize: 14,
+                lineHeight: 20,
+                color: COLORS.blue,
+                fontStyle: FontStyles.normal,
+                paddingVertical: 5,
+              }}
+            >
+              {item.venue}
+            </Text>
+            <Text
+              style={{
+                fontFamily: "Avenir_Roman",
+                fontSize: 14,
+                lineHeight: 20,
+                color: COLORS.DarkBlue,
+                fontStyle: FontStyles.normal,
+                paddingVertical: 5,
+              }}
+            >
+              {item.headline}
+            </Text>
+          </View>
         </TouchableOpacity>
       );
     };
@@ -143,7 +192,14 @@ export default function HomeScreen({ navigation }) {
         </View>
 
         {/* FLATLIST */}
-        <FlatList />
+        <FlatList
+          data={PopularOwanbe}
+          horizontal={false}
+          renderItem={renderItem}
+          keyExtractor={(item) => item.id}
+          showsVerticalScrollIndicator={false}
+          contentContainerStyle={{ paddingBottom: 5 }}
+        />
       </View>
     );
   };
