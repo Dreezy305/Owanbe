@@ -64,7 +64,12 @@ export default function LoginScreen({ navigation }) {
               style={styles.password}
             />
 
-            <TouchableOpacity style={styles.signInButton}>
+            <TouchableOpacity
+              style={styles.signInButton}
+              onPress={() => {
+                navigation.replace("HomeScreen", { username });
+              }}
+            >
               <Text
                 style={{
                   padding: 20,
@@ -242,5 +247,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     borderRadius: 12,
     marginVertical: 25,
+    height: 60,
   },
 });

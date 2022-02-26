@@ -6,6 +6,7 @@ import { FONTS } from "./constants/color_theme_styles";
 import { useFonts } from "expo-font";
 import Owanbe from "./screens/owanbe";
 import LoginScreen from "./screens/loginScreen";
+import HomeScreen from "./screens/home";
 import OnboardingScreen from "./screens/OnBoardingScreen";
 
 const Stack = createNativeStackNavigator();
@@ -30,6 +31,11 @@ export default function App() {
         <Stack.Screen
           name="LoginScreen"
           component={LoginScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="HomeScreen"
+          component={HomeScreen}
           options={{ headerShown: false }}
         />
         {/* ISSUE WITH THE ONBOARDING SCREEN */}
