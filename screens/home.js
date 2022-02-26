@@ -171,6 +171,8 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     paddingTop: 3,
   },
+
+  // EXPLORE TODAY OWANBE
 });
 
 /**

@@ -32,3 +32,14 @@ export const SelectRegion = [
     name: "South South",
   },
 ];
+
+export const TodayOwanbe = [
+  {
+    id: 1,
+    image: images.explorer1,
+  },
+  {
+    id: 2,
+    image: images.lagos_owambe,
+  },
+];
