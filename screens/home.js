@@ -139,6 +139,7 @@ export default function HomeScreen({ navigation }) {
             justifyContent: "space-between",
             alignItems: "center",
             margin: 10,
+            maxWidth: "75%",
           }}
         >
           <View style={{ paddingVertical: 5 }}>
@@ -153,7 +154,7 @@ export default function HomeScreen({ navigation }) {
               display: "flex",
               flexDirection: "column",
               paddingVertical: 5,
-              paddingHorizontal: 50,
+              paddingHorizontal: 10,
             }}
           >
             <Text
