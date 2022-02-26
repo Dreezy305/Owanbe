@@ -125,9 +125,9 @@ export default function HomeScreen({ navigation }) {
   const renderPopularOwanbe = () => {
     return (
       <View style={styles.regionContainer}>
-        <View>
-          <Text>Popular Ówànbè</Text>
-          <Text>More</Text>
+        <View style={styles.popularContainer}>
+          <Text style={styles.popular}>Popular Ówànbè</Text>
+          <Text style={styles.more}>More</Text>
         </View>
       </View>
     );
@@ -138,6 +138,7 @@ export default function HomeScreen({ navigation }) {
       {renderHeader()}
       {renderSelectRegion()}
       {renderTodayOwanbe()}
+      {renderPopularOwanbe()}
     </SafeAreaView>
   );
 }
@@ -229,6 +230,28 @@ const styles = StyleSheet.create({
   },
 
   // POPULAR OWANBE
+  popularContainer: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  popular: {
+    fontFamily: "Avenir_Roman",
+    fontSize: 20,
+    lineHeight: 24,
+    color: COLORS.linearGrad_1,
+    fontStyle: FontStyles.normal,
+    fontWeight: FontWeights.fw400,
+  },
+  more: {
+    fontFamily: "Avenir_Roman",
+    fontWeight: FontWeights.fw500,
+    color: COLORS.red,
+    fontSize: 14,
+    lineHeight: 19,
+    fontStyle: FontStyles.normal,
+  },
 });
 
 /**
