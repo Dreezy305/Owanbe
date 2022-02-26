@@ -64,6 +64,8 @@ export default function HomeScreen({ navigation }) {
           data={SelectRegion}
           renderItem={renderItem}
           keyExtractor={(item) => item.id}
+          horizontal
+          showsHorizontalScrollIndicator={false}
         />
       </View>
     );
