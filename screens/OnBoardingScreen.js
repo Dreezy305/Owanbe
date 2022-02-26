@@ -9,6 +9,8 @@ import {
   TouchableOpacity,
 } from "react-native";
 
+import { StatusBar } from "expo-status-bar";
+
 // constants
 import { images } from "../constants";
 import {
@@ -122,8 +124,8 @@ function OnBoarding({ navigation }) {
                 right: 0,
                 bottom: 0,
                 justifyContent: "center",
-                paddingHorizontal: 30,
-                paddingVertical: 30,
+                paddingHorizontal: 25,
+                paddingVertical: 25,
               }}
               onPress={() => {
                 navigation.replace("LoginScreen");
@@ -149,6 +151,7 @@ function OnBoarding({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
       <View>{renderContent()}</View>
+      <StatusBar style="dark" />
     </SafeAreaView>
   );
 }
