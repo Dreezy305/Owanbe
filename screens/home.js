@@ -100,6 +100,7 @@ export default function HomeScreen({ navigation }) {
           keyExtractor={(item) => item.id}
           horizontal
           showsHorizontalScrollIndicator={false}
+          contentContainerStyle={{ paddingVertical: 5 }}
         />
       </View>
     );
