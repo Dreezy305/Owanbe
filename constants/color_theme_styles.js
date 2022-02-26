@@ -30,6 +30,8 @@ export const COLORS = {
   offPurple: "#D9DFEB",
   bg: "#E5E5E5",
   DarkBlue: "#2D4379",
+  linearGrad_1: "#0D253C",
+  linearGrad_2: "#49B0E2",
 };
 
 export const FONTS = {
