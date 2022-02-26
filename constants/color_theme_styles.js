@@ -29,6 +29,7 @@ export const COLORS = {
   white: "#fff",
   offPurple: "#D9DFEB",
   bg: "#E5E5E5",
+  DarkBlue: "#2D4379",
 };
 
 export const FONTS = {
