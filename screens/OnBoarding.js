@@ -10,12 +10,8 @@ import {
   TouchableOpacity,
 } from "react-native";
 
-// constants
 import { images, icons } from "../constants";
-// const { onboarding1, onboarding2, onboarding3 } = images;
 
-// theme
-// const { COLORS, FONTS, SIZES } = theme;
 import {
   COLORS,
   TextAlignments,
