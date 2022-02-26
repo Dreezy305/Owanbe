@@ -101,11 +101,11 @@ export default function LoginScreen({ navigation }) {
               marginTop: 15,
             }}
           >
-            {socials.map((item) => (
+            {socials.map((item, index) => (
               <>
                 <Image
                   source={item.icon}
-                  key={item.id}
+                  key={index}
                   resizeMethod="scale"
                   resizeMode="contain"
                   style={{ marginHorizontal: 20 }}

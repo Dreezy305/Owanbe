@@ -28,6 +28,7 @@ export const COLORS = {
   purple: "#19235B",
   white: "#fff",
   offPurple: "#D9DFEB",
+  bg: "#E5E5E5",
 };
 
 export const FONTS = {
