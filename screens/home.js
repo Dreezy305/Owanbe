@@ -174,8 +174,8 @@ const styles = StyleSheet.create({
 });
 
 /**
- * --> render header
- * --> render select region
+ * --> render header --> done
+ * --> render select region --> done
  * --> render today's owanbe
  * --> render popular owanbe
  */
