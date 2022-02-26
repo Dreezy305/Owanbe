@@ -21,6 +21,9 @@ const tag_partner3 = require("../assets/images/tag-partner3.png");
 const tag_partner4 = require("../assets/images/tag-partner4.png");
 const trad_wedding = require("../assets/images/trad-wedding.png");
 const white_wedding = require("../assets/images/white-wedding.png");
+const have_fun = require("../assets/images/have-fun.svg");
+const outdoor_party = require("../assets/images/outdoor-party.svg");
+const partying = require("../assets/images/partying.svg");
 
 export default {
   avatar,
@@ -52,6 +55,10 @@ export default {
 
   trad_wedding,
   white_wedding,
+
+  outdoor_party,
+  partying,
+  have_fun,
 };
 
 // https://www.figma.com/file/877PdU531X9p2KIwNF2fhq/OWANBE-PROJECT?node-id=0%3A1

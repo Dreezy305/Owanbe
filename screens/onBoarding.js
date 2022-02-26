@@ -14,9 +14,9 @@ import {
   TextAlignments,
   FontWeights,
 } from "../constants/color_theme_styles";
-import AppIntroSlider from "react-native-app-intro-slider";
+import Onboarding from "react-native-onboarding-swiper";
 
-export default function onBoarding() {
+export default function onBoarding({ navigation }) {
   const [showApp, setShowApp] = useState(false);
 
   const slides = [
@@ -43,76 +43,33 @@ export default function onBoarding() {
     },
   ];
 
-  const renderAnimation = () => {
-    return (
-      <Animated.ScrollView
-        horizontal
-        pagingEnabled
-        scrollEnabled
-        snapToAlignment={"center"}
-      >
-        {slides.map((item) => (
-          <View style={styles.container} key={item.key}>
-            <ImageBackground
-              source={item.image}
-              resizeMode="contain"
-              resizeMethod="resize"
-              style={styles.image}
-            >
-              <Text style={styles.Text}>{item.text}</Text>
-              <View style={styles.NextContainer}>
-                <View
-                  style={{
-                    display: "flex",
-                    flexDirection: "row",
-                    alignItems: "center",
-                  }}
-                >
-                  <Text style={styles.Next}>Next</Text>
-                  <Image
-                    style={styles.NextIcon}
-                    source={icons.arrow_forwardLight}
-                    resizeMethod="scale"
-                    resizeMode="contain"
-                  />
-                </View>
-              </View>
-            </ImageBackground>
-          </View>
-        ))}
-      </Animated.ScrollView>
-    );
-  };
-
   return (
-    <>{renderAnimation()}</>
-    // <View style={styles.container}>
-    //   <ImageBackground
-    //     source={images.explore}
-    //     resizeMode="cover"
-    //     resizeMethod="scale"
-    //     style={styles.image}
-    //   >
-    //     <Text style={styles.Text}>Explore</Text>
-    //     <View style={styles.NextContainer}>
-    //       <View
-    //         style={{
-    //           display: "flex",
-    //           flexDirection: "row",
-    //           alignItems: "center",
-    //         }}
-    //       >
-    //         <Text style={styles.Next}>Next</Text>
-    //         <Image
-    //           style={styles.NextIcon}
-    //           source={icons.arrow_forwardLight}
-    //           resizeMethod="scale"
-    //           resizeMode="contain"
-    //         />
-    //       </View>
-    //     </View>
-    //   </ImageBackground>
-    // </View>
+    <>
+      <Onboarding
+        onSkip={() => navigation.replace("Login")}
+        onDone={() => navigation.navigate("Login")}
+        pages={[
+          {
+            backgroundColor: "#fff",
+            image: <Image source={images.explore} />,
+            title: "Explore",
+            subtitle: "Party Like No Other",
+          },
+          {
+            backgroundColor: "#fff",
+            image: <Image source={images.discover} />,
+            title: "Discover",
+            subtitle: "Party Like No Other",
+          },
+          {
+            backgroundColor: "#fff",
+            image: <Image source={images.party} />,
+            title: "Party Like No Other",
+            subtitle: "Party Like No Other",
+          },
+        ]}
+      />
+    </>
   );
 }
 
@@ -149,3 +106,33 @@ const styles = StyleSheet.create({
     paddingTop: 20,
   },
 });
+
+/**
+ * <View style={styles.container}>
+      <ImageBackground
+        source={images.explore}
+        resizeMode="cover"
+        resizeMethod="scale"
+        style={styles.image}
+      >
+        <Text style={styles.Text}>Explore</Text>
+        <View style={styles.NextContainer}>
+          <View
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+            }}
+          >
+            <Text style={styles.Next}>Next</Text>
+            <Image
+              style={styles.NextIcon}
+              source={icons.arrow_forwardLight}
+              resizeMethod="scale"
+              resizeMode="contain"
+            />
+          </View>
+        </View>
+      </ImageBackground>
+    </View>
+ */

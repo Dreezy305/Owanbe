@@ -4,7 +4,7 @@ import { FONTS } from "./constants/color_theme_styles";
 import { useFonts } from "expo-font";
 import Owanbe from "./screens/owanbe";
 import onBoarding from "./screens/onBoarding";
-import Auth from "./screens/auth";
+import Login from "./screens/loginScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -29,8 +29,8 @@ export default function App() {
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="Auth"
-          component={Auth}
+          name="Login"
+          component={Login}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>
