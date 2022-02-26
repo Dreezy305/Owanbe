@@ -15,7 +15,7 @@ import {
   TextAlignments,
   FontWeights,
 } from "../constants/color_theme_styles";
-import Onboarding from "react-native-onboarding-swiper";
+// import Onboarding from "react-native-onboarding-swiper";
 
 export default function OwanbeWelcome({ navigation }) {
   const [showApp, setShowApp] = useState(false);
@@ -29,32 +29,38 @@ export default function OwanbeWelcome({ navigation }) {
   };
 
   return (
-    <>
-      <Onboarding
-        onSkip={() => navigation.navigate("Login")}
-        onDone={() => navigation.navigate("Login")}
-        pages={[
-          {
-            backgroundColor: "#fff",
-            image: <Image source={images.explore} />,
-            title: "Explore",
-            subtitle: "Party Like No Other",
-          },
-          {
-            backgroundColor: "#fff",
-            image: <Image source={images.discover} />,
-            title: "Discover",
-            subtitle: "Party Like No Other",
-          },
-          {
-            backgroundColor: "#fff",
-            image: <Image source={images.party} />,
-            title: "Party Like No Other",
-            subtitle: "Party Like No Other",
-          },
-        ]}
-      />
-    </>
+    <View style={styles.container}>
+      <ImageBackground
+        source={images.explore}
+        resizeMode="cover"
+        resizeMethod="scale"
+        style={styles.image}
+      >
+        <Text style={styles.Text}>Explore</Text>
+        <View style={styles.NextContainer}>
+          <View
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+            }}
+          >
+            <TouchableOpacity
+              style={styles.Touch}
+              onPress={() => navigation.replace("Login")}
+            >
+              <Text style={styles.Next}>Next</Text>
+              <Image
+                style={styles.NextIcon}
+                source={icons.arrow_forwardLight}
+                resizeMethod="scale"
+                resizeMode="contain"
+              />
+            </TouchableOpacity>
+          </View>
+        </View>
+      </ImageBackground>
+    </View>
   );
 }
 
@@ -88,7 +94,12 @@ const styles = StyleSheet.create({
   NextIcon: {
     width: 20,
     height: 20,
-    paddingTop: 20,
+    paddingTop: 10,
+  },
+  Touch: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: TextAlignments.text_center,
   },
 });
 
@@ -121,3 +132,31 @@ const styles = StyleSheet.create({
       </ImageBackground>
     </View>
  */
+
+/**
+     * 
+     * <Onboarding
+        onSkip={() => navigation.navigate("Login")}
+        onDone={() => navigation.navigate("Login")}
+        pages={[
+          {
+            backgroundColor: "#fff",
+            image: <Image source={images.explore} />,
+            title: "Explore",
+            subtitle: "Party Like No Other",
+          },
+          {
+            backgroundColor: "#fff",
+            image: <Image source={images.discover} />,
+            title: "Discover",
+            subtitle: "Party Like No Other",
+          },
+          {
+            backgroundColor: "#fff",
+            image: <Image source={images.party} />,
+            title: "Party Like No Other",
+            subtitle: "Party Like No Other",
+          },
+        ]}
+      />
+     */
