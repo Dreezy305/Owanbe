@@ -55,36 +55,14 @@ export default function HomeScreen({ navigation }) {
             textAlign: TextAlignments.text_center,
           }}
         >
-          <View
-            style={{
-              padding: 3,
-              borderRadius: 24,
-              borderWidth: 2,
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              marginHorizontal: 10,
-              borderColor: COLORS.linearGrad_1,
-            }}
-          >
+          <View style={styles.renderImageBox}>
             <Image
               source={item.image}
               resizeMethod="scale"
               resizeMode="contain"
             />
           </View>
-          <Text
-            style={{
-              fontFamily: "Avenir_Book",
-              color: COLORS.DarkBlue,
-              fontSize: 12,
-              lineHeight: 18,
-              alignSelf: "center",
-              paddingTop: 3,
-            }}
-          >
-            {item.name}
-          </Text>
+          <Text style={styles.renderName}>{item.name}</Text>
         </TouchableOpacity>
       );
     };
@@ -174,6 +152,24 @@ const styles = StyleSheet.create({
     fontStyle: FontStyles.normal,
     color: COLORS.red,
     paddingBottom: 20,
+  },
+  renderImageBox: {
+    padding: 3,
+    borderRadius: 24,
+    borderWidth: 2,
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    marginHorizontal: 10,
+    borderColor: COLORS.linearGrad_1,
+  },
+  renderName: {
+    fontFamily: "Avenir_Book",
+    color: COLORS.DarkBlue,
+    fontSize: 12,
+    lineHeight: 18,
+    alignSelf: "center",
+    paddingTop: 3,
   },
 });
 
