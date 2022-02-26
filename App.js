@@ -5,7 +5,6 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { FONTS } from "./constants/color_theme_styles";
 import { useFonts } from "expo-font";
 import Owanbe from "./screens/owanbe";
-import OwanbeWelcome from "./screens/OwanbeWelcome";
 import LoginScreen from "./screens/loginScreen";
 import OnboardingScreen from "./screens/OnBoardingScreen";
 
