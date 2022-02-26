@@ -1,4 +1,11 @@
-import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  TouchableOpacity,
+  SafeAreaView,
+} from "react-native";
 import React, { useEffect, useState } from "react";
 import { images, icons } from "../constants";
 import {
@@ -15,25 +22,19 @@ export default function HomeScreen({ navigation }) {
     return (
       <View style={styles.header}>
         <Text style={styles.headerName}>Hi, Dunni</Text>
-        <View style={styles.notificationBox}>
-          <TouchableOpacity
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "space-evenly",
-              alignItems: "center",
-            }}
-            onPress={() => navigation.navigate("LoginScreen")}
-          >
-            <Image
-              source={icons.bell}
-              resizeMethod="scale"
-              resizeMode="contain"
-              style={{ paddingRight: 5 }}
-            />
-            <Text style={styles.signOut}>Sign out</Text>
-          </TouchableOpacity>
-        </View>
+
+        <TouchableOpacity
+          style={styles.notificationBox}
+          onPress={() => navigation.navigate("LoginScreen")}
+        >
+          <Image
+            source={icons.bell}
+            resizeMethod="scale"
+            resizeMode="contain"
+            style={{ paddingRight: 5 }}
+          />
+          <Text style={styles.signOut}>Sign out</Text>
+        </TouchableOpacity>
       </View>
     );
   };
@@ -44,7 +45,7 @@ export default function HomeScreen({ navigation }) {
 
   const renderPopularOwanbe = () => {};
 
-  return <View style={styles.container}>{renderHeader()}</View>;
+  return <SafeAreaView style={styles.container}>{renderHeader()}</SafeAreaView>;
 }
 
 const styles = StyleSheet.create({
