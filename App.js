@@ -7,6 +7,7 @@ import { useFonts } from "expo-font";
 import Owanbe from "./screens/owanbe";
 import OwanbeWelcome from "./screens/OwanbeWelcome";
 import Login from "./screens/loginScreen";
+import Boarding from "./screens/OnBoarding";
 
 const Stack = createNativeStackNavigator();
 
@@ -39,8 +40,8 @@ export default function App() {
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="OwanbeWelcome"
-          component={OwanbeWelcome}
+          name="Boarding"
+          component={Boarding}
           options={{ headerShown: false }}
         />
         <Stack.Screen

@@ -14,19 +14,12 @@ import {
   COLORS,
   TextAlignments,
   FontWeights,
+  SIZES,
 } from "../constants/color_theme_styles";
 // import Onboarding from "react-native-onboarding-swiper";
 
 export default function OwanbeWelcome({ navigation }) {
   const [showApp, setShowApp] = useState(false);
-
-  const Skip = ({ ...props }) => {
-    return <Button title="SKip" color={"#0000"} {...props} />;
-  };
-
-  const Next = ({ ...props }) => {
-    return <Button title="Next" color={"#0000"} {...props} />;
-  };
 
   return (
     <View style={styles.container}>
@@ -78,7 +71,7 @@ const styles = StyleSheet.create({
     textAlign: TextAlignments.text_center,
     fontSize: 26,
     lineHeight: 31,
-    fontFamily: "Avenir_Black",
+    fontFamily: "Roboto_Light",
     fontWeight: FontWeights.fw400,
     fontStyle: FontWeights.fwNormal,
   },
@@ -102,61 +95,3 @@ const styles = StyleSheet.create({
     alignItems: TextAlignments.text_center,
   },
 });
-
-/**
- * <View style={styles.container}>
-      <ImageBackground
-        source={images.explore}
-        resizeMode="cover"
-        resizeMethod="scale"
-        style={styles.image}
-      >
-        <Text style={styles.Text}>Explore</Text>
-        <View style={styles.NextContainer}>
-          <View
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
-            }}
-          >
-            <Text style={styles.Next}>Next</Text>
-            <Image
-              style={styles.NextIcon}
-              source={icons.arrow_forwardLight}
-              resizeMethod="scale"
-              resizeMode="contain"
-            />
-          </View>
-        </View>
-      </ImageBackground>
-    </View>
- */
-
-/**
-     * 
-     * <Onboarding
-        onSkip={() => navigation.navigate("Login")}
-        onDone={() => navigation.navigate("Login")}
-        pages={[
-          {
-            backgroundColor: "#fff",
-            image: <Image source={images.explore} />,
-            title: "Explore",
-            subtitle: "Party Like No Other",
-          },
-          {
-            backgroundColor: "#fff",
-            image: <Image source={images.discover} />,
-            title: "Discover",
-            subtitle: "Party Like No Other",
-          },
-          {
-            backgroundColor: "#fff",
-            image: <Image source={images.party} />,
-            title: "Party Like No Other",
-            subtitle: "Party Like No Other",
-          },
-        ]}
-      />
-     */
