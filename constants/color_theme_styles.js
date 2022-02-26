@@ -27,6 +27,7 @@ export const COLORS = {
   red: "#E20000",
   purple: "#19235B",
   white: "#fff",
+  offPurple: "#D9DFEB",
 };
 
 export const FONTS = {

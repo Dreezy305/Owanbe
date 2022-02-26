@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Image } from "react-native";
+import { View, Text, StyleSheet, Image, TextInput } from "react-native";
 import React from "react";
 import {
   COLORS,
@@ -9,6 +9,8 @@ import {
 import { images } from "../constants";
 
 export default function LoginScreen({ navigation }) {
+  const [username, setUsername] = React.useState("");
+
   return (
     <View style={styles.container}>
       <View style={styles.topImageContainer}>
@@ -25,6 +27,28 @@ export default function LoginScreen({ navigation }) {
           <Text style={styles.signIn}>Sign in with your account</Text>
         </View>
       </View>
+      <View style={styles.inputContainer}>
+        <View style={styles.labelInputContainer}>
+          <Text style={styles.label}>Username</Text>
+          <TextInput
+            placeholder=""
+            keyboardType="name-phone-pad"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            style={styles.input}
+          />
+        </View>
+        <View style={styles.labelInputContainer}>
+          <Text style={styles.label}>Password</Text>
+          <TextInput
+            placeholder=""
+            keyboardType="name-phone-pad"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            style={styles.password}
+          />
+        </View>
+      </View>
     </View>
   );
 }
@@ -34,8 +58,8 @@ const styles = StyleSheet.create({
     flex: 1,
     width: SIZES.width,
     display: "flex",
-    flexDirection: "column",
-    alignItems: TextAlignments.text_center,
+    // flexDirection: "column",
+    // alignItems: TextAlignments.text_center,
   },
   topImageContainer: {
     display: "flex",
@@ -68,5 +92,43 @@ const styles = StyleSheet.create({
     color: COLORS.purple,
     paddingBottom: 10,
   },
-  signIn: {},
+  signIn: {
+    fontFamily: "Avenir_Book",
+    fontSize: 14,
+    lineHeight: 18,
+    color: COLORS.purple,
+    paddingTop: 10,
+  },
+  inputContainer: {
+    display: "flex",
+    flexDirection: "column",
+    // height: "50%",
+    backgroundColor: COLORS.white,
+  },
+  labelInputContainer: {
+    paddingVertical: 40,
+    paddingHorizontal: 40,
+  },
+  label: {
+    fontFamily: "Avenir_Book",
+    fontSize: 19,
+    lineHeight: 19,
+    color: COLORS.purple,
+  },
+  input: {
+    height: 50,
+    borderWidth: 2,
+    borderColor: COLORS.offPurple,
+    borderLeftWidth: 0,
+    borderRightWidth: 0,
+    borderTopWidth: 0,
+  },
+  password: {
+    height: 50,
+    borderWidth: 2,
+    borderColor: COLORS.red,
+    borderLeftWidth: 0,
+    borderRightWidth: 0,
+    borderTopWidth: 0,
+  },
 });
