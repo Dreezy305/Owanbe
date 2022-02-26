@@ -122,7 +122,9 @@ export default function HomeScreen({ navigation }) {
     );
   };
 
-  const renderPopularOwanbe = () => {};
+  const renderPopularOwanbe = () => {
+    return <View></View>;
+  };
 
   return (
     <SafeAreaView style={styles.container}>
@@ -182,8 +184,8 @@ const styles = StyleSheet.create({
     paddingTop: 30,
   },
   region: {
-    fontFamily: "Avenir_Book",
-    fontSize: 18,
+    fontFamily: "Avenir_Roman",
+    fontSize: 19,
     lineHeight: 22,
     fontWeight: FontWeights.fw600,
     fontStyle: FontStyles.normal,
@@ -218,11 +220,13 @@ const styles = StyleSheet.create({
     fontStyle: FontStyles.normal,
     color: COLORS.purple,
   },
+
+  // POPULAR OWANBE
 });
 
 /**
  * --> render header --> done
  * --> render select region --> done
- * --> render today's owanbe
+ * --> render today's owanbe --> done
  * --> render popular owanbe
  */
