@@ -80,10 +80,10 @@ export const TextDecorationStyles = {
 };
 
 export const TextTransformations = {
-  none: "none",
-  uppercase: "uppercase",
-  lowercase: "lowercase",
-  capitalize: "capitalize",
+  text_none: "none",
+  text_uppercase: "uppercase",
+  text_lowercase: "lowercase",
+  text_capitalize: "capitalize",
 };
 
 export const TextAlignmentsVertical = {

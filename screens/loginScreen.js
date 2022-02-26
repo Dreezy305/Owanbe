@@ -5,6 +5,9 @@ import {
   SIZES,
   TextAlignments,
   FontWeights,
+  TextDecorationStyles,
+  TextDecorationLines,
+  TextTransformations,
 } from "../constants/color_theme_styles";
 import { images } from "../constants";
 
@@ -47,6 +50,13 @@ export default function LoginScreen({ navigation }) {
               style={styles.password}
             />
           </View>
+          <View style={styles.forgotResetContainer}>
+            <Text style={styles.forgot}>Forgot your password?</Text>
+            <Text style={styles.reset}>Reset here</Text>
+          </View>
+          <View style={styles.otherOptions}>
+            <Text style={styles.signWith}>Or sign in with</Text>
+          </View>
         </View>
       </View>
     </View>
@@ -81,7 +91,7 @@ const styles = StyleSheet.create({
   },
   textContainer: {
     textAlign: TextAlignments.text_left,
-    paddingVertical: 40,
+    paddingTop: 40,
     paddingHorizontal: 40,
   },
   welcome: {
@@ -106,7 +116,7 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.white,
   },
   labelInputContainer: {
-    paddingVertical: 40,
+    paddingTop: 50,
     paddingHorizontal: 40,
   },
   label: {
@@ -130,5 +140,38 @@ const styles = StyleSheet.create({
     borderLeftWidth: 0,
     borderRightWidth: 0,
     borderTopWidth: 0,
+  },
+  forgotResetContainer: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center",
+    paddingTop: 30,
+    alignItems: TextAlignments.text_center,
+    textAlign: TextAlignments.text_center,
+  },
+  forgot: {
+    fontFamily: "Avenir_Book",
+    fontSize: 14,
+    lineHeight: 19,
+    color: COLORS.purple,
+    marginRight: 5,
+  },
+  reset: {
+    fontFamily: "Avenir_Book",
+    fontSize: 14,
+    lineHeight: 19,
+    color: COLORS.red,
+    marginLeft: 5,
+  },
+  otherOptions: {
+    marginTop: 50,
+    alignItems: TextAlignments.text_center,
+    textAlign: TextAlignments.text_center,
+  },
+  signWith: {
+    fontFamily: "Avenir_Book",
+    fontSize: 12,
+    lineHeight: 18,
+    textTransform: TextTransformations.text_uppercase,
   },
 });
