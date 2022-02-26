@@ -71,7 +71,6 @@ export default function HomeScreen({ navigation }) {
               source={item.image}
               resizeMethod="scale"
               resizeMode="contain"
-              // style={{ borderRadius: 12 }}
             />
           </View>
           <Text
@@ -106,6 +105,7 @@ export default function HomeScreen({ navigation }) {
     );
   };
 
+  // RENDER TODAY OWANBE
   const renderTodayOwanbe = () => {};
 
   const renderPopularOwanbe = () => {};
