@@ -38,7 +38,8 @@ export default function LoginScreen({ navigation }) {
           style={{ width: 240, height: 240 }}
         />
       </View>
-      <View style={[styles.loginCard, styles.loginCardShadow]}>
+
+      <View style={styles.loginCard}>
         <View style={styles.textContainer}>
           <Text style={styles.welcome}>Welcome back</Text>
           <Text style={styles.signIn}>Sign in with your account</Text>
@@ -67,7 +68,7 @@ export default function LoginScreen({ navigation }) {
             <TouchableOpacity
               style={styles.signInButton}
               onPress={() => {
-                navigation.replace("HomeScreen", { username });
+                navigation.replace("HomeScreen");
               }}
             >
               <Text
@@ -150,6 +151,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.1,
     shadowRadius: 22,
     elevation: 5,
+    borderTopColor: COLORS.red,
   },
   textContainer: {
     textAlign: TextAlignments.text_left,

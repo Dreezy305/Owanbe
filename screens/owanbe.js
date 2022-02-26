@@ -13,10 +13,6 @@ export default function Owanbe({ navigation }) {
     images.owanbe_red,
   ];
 
-  setTimeout(() => {
-    navigation.navigate("LoginScreen");
-  }, 5000);
-
   const switchImage = () => {
     if (currentImage < imgArray.length) {
       setCurrentImage((prev) => prev + 1);
@@ -25,6 +21,10 @@ export default function Owanbe({ navigation }) {
 
   useEffect(() => {
     setInterval(switchImage, 2000);
+
+    setTimeout(() => {
+      navigation.navigate("LoginScreen");
+    }, 5000);
   }, []);
 
   return (
