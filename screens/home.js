@@ -39,13 +39,27 @@ export default function HomeScreen({ navigation }) {
     );
   };
 
-  const renderSelectRegion = () => {};
+  const renderSelectRegion = () => {
+    // FLAST LIST COMPONENT
+    const renderThumbnail = () => {};
+
+    return (
+      <View style={styles.regionContainer}>
+        <Text style={styles.region}>Select Region</Text>
+      </View>
+    );
+  };
 
   const renderTodayOwanbe = () => {};
 
   const renderPopularOwanbe = () => {};
 
-  return <SafeAreaView style={styles.container}>{renderHeader()}</SafeAreaView>;
+  return (
+    <SafeAreaView style={styles.container}>
+      {renderHeader()}
+      {renderSelectRegion()}
+    </SafeAreaView>
+  );
 }
 
 const styles = StyleSheet.create({
@@ -58,6 +72,7 @@ const styles = StyleSheet.create({
     paddingTop: 30,
   },
 
+  // HEADER SECTION
   header: {
     display: "flex",
     flexDirection: "row",
@@ -89,6 +104,19 @@ const styles = StyleSheet.create({
     fontStyle: FontStyles.normal,
     color: COLORS.DarkBlue,
     paddingLeft: 10,
+  },
+
+  // SELECT REGION
+  regionContainer: {
+    paddingTop: 30,
+  },
+  region: {
+    fontFamily: "Avenir_Book",
+    fontSize: 18,
+    lineHeight: 22,
+    fontWeight: FontWeights.fw600,
+    fontStyle: FontStyles.normal,
+    color: COLORS.red,
   },
 });
 
