@@ -29,6 +29,11 @@ export default function App() {
           options={{ headerShown: false }}
         />
         <Stack.Screen
+          name="OnboardingScreen"
+          component={OnboardingScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
           name="LoginScreen"
           component={LoginScreen}
           options={{ headerShown: false }}
@@ -38,12 +43,6 @@ export default function App() {
           component={HomeScreen}
           options={{ headerShown: false }}
         />
-        {/* ISSUE WITH THE ONBOARDING SCREEN */}
-        {/* <Stack.Screen
-          name="OnboardingScreen"
-          component={OnboardingScreen}
-          options={{ headerShown: false }}
-        /> */}
       </Stack.Navigator>
     </NavigationContainer>
   );

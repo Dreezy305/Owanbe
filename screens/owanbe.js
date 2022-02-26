@@ -23,7 +23,7 @@ export default function Owanbe({ navigation }) {
     setInterval(switchImage, 2000);
 
     setTimeout(() => {
-      navigation.navigate("LoginScreen");
+      navigation.navigate("OnboardingScreen");
     }, 5000);
   }, []);
 

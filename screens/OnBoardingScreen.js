@@ -1,227 +1,185 @@
-import React, { useState, useRef } from "react";
+import React from "react";
 import {
-  SafeAreaView,
+  Animated,
   Image,
+  SafeAreaView,
   StyleSheet,
-  FlatList,
   View,
   Text,
-  StatusBar,
   TouchableOpacity,
-  Dimensions,
 } from "react-native";
-import { COLORS } from "../constants/color_theme_styles";
+
+// constants
 import { images } from "../constants";
+import {
+  COLORS,
+  SIZES,
+  TextAlignments,
+  TextTransformations,
+  TextDecorationStyles,
+  FontStyles,
+  FontWeights,
+} from "../constants/color_theme_styles";
 
-const { width, height } = Dimensions.get("window");
-
-const slides = [
+const onBoardings = [
   {
-    id: "1",
-    image: images.explore,
     title: "Explore",
-    subtitle: "",
+    description: "",
+    img: images.explore,
   },
   {
-    id: "2",
-    image: images.discover,
     title: "Discover",
-    subtitle: "",
+    description: "",
+    img: images.discover,
   },
   {
-    id: "3",
-    image: images.party,
     title: "Party Like No Other",
-    subtitle: "",
+    description: "",
+    img: images.party,
   },
 ];
 
-const Slide = ({ item }) => {
-  return (
-    <View style={{ alignItems: "center" }}>
-      {/* <Image
-        source={item?.image}
-        style={{ height: "100%", width, resizeMode: "contain" }}
-      /> */}
-      <View>
-        <Text style={styles.title}>{item?.title}</Text>
-        <Text style={styles.subtitle}>{item?.subtitle}</Text>
-      </View>
-    </View>
-  );
-};
+function OnBoarding({ navigation }) {
+  const [completed, setCompleted] = React.useState(false);
 
-const OnboardingScreen = ({ navigation }) => {
-  const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
+  const scrollX = new Animated.Value(0);
 
-  const ref = useRef();
+  React.useEffect(() => {
+    scrollX.addListener(({ value }) => {
+      if (Math.floor(value / SIZES.width) === onBoardings.length - 1) {
+        setCompleted(true);
+      }
+    });
 
-  const updateCurrentSlideIndex = (e) => {
-    const contentOffsetX = e.nativeEvent.contentOffset.x;
-    const currentIndex = Math.round(contentOffsetX / width);
-    setCurrentSlideIndex(currentIndex);
-  };
+    return () => scrollX.removeListener();
+  }, []);
 
-  const goToNextSlide = () => {
-    const nextSlideIndex = currentSlideIndex + 1;
-    if (nextSlideIndex != slides.length) {
-      const offset = nextSlideIndex * width;
-      ref?.current.scrollToOffset({ offset });
-      setCurrentSlideIndex(currentSlideIndex + 1);
-    }
-  };
-
-  const skip = () => {
-    const lastSlideIndex = slides.length - 1;
-    const offset = lastSlideIndex * width;
-    ref?.current.scrollToOffset({ offset });
-    setCurrentSlideIndex(lastSlideIndex);
-  };
-
-  const Footer = () => {
+  function renderContent() {
     return (
-      <View
-        style={{
-          height: height * 0.25,
-          justifyContent: "space-between",
-          paddingHorizontal: 20,
-        }}
+      <Animated.ScrollView
+        horizontal
+        pagingEnabled
+        scrollEnabled
+        decelerationRate={0}
+        scrollEventThrottle={16}
+        snapToAlignment="center"
+        showsHorizontalScrollIndicator={false}
+        onScroll={Animated.event(
+          [{ nativeEvent: { contentOffset: { x: scrollX } } }],
+          { useNativeDriver: false }
+        )}
       >
-        {/* Indicator container */}
-        <View
-          style={{
-            flexDirection: "row",
-            justifyContent: "center",
-            marginTop: 20,
-          }}
-        >
-          {/* Render indicator */}
-          {slides.map((_, index) => (
+        {onBoardings.map((item, index) => (
+          <View
+            //center
+            //bottom
+            key={`img-${index}`}
+            style={styles.imageAndTextContainer}
+          >
             <View
-              key={index}
-              style={[
-                styles.indicator,
-                currentSlideIndex == index && {
-                  backgroundColor: COLORS.white,
-                  width: 25,
-                },
-              ]}
-            />
-          ))}
-        </View>
-
-        {/* Render buttons */}
-        <View style={{ marginBottom: 20 }}>
-          {currentSlideIndex == slides.length - 1 ? (
-            <View style={{ height: 50 }}>
-              <TouchableOpacity
-                style={styles.btn}
-                onPress={() => navigation.replace("LoginScreen")}
-              >
-                <Text style={{ fontWeight: "bold", fontSize: 15 }}>
-                  GET STARTED
-                </Text>
-              </TouchableOpacity>
+              style={{
+                flex: 2,
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <Image
+                source={item.img}
+                resizeMode="cover"
+                style={{
+                  width: "100%",
+                  height: "100%",
+                }}
+              />
             </View>
-          ) : (
-            <View style={{ flexDirection: "row" }}>
-              <TouchableOpacity
-                activeOpacity={0.8}
-                style={[
-                  styles.btn,
-                  {
-                    borderColor: COLORS.white,
-                    borderWidth: 1,
-                    backgroundColor: "transparent",
-                  },
-                ]}
-                onPress={skip}
+            <View
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <Text
+                style={{
+                  color: COLORS.white,
+                  textAlign: "center",
+                  fontFamily: "Roboto_Thin",
+                  fontSize: 26,
+                  lineHeight: 31,
+                }}
               >
-                <Text
-                  style={{
-                    fontWeight: "bold",
-                    fontSize: 15,
-                    color: COLORS.white,
-                  }}
-                >
-                  SKIP
-                </Text>
-              </TouchableOpacity>
-              <View style={{ width: 15 }} />
-              <TouchableOpacity
-                activeOpacity={0.8}
-                onPress={goToNextSlide}
-                style={styles.btn}
-              >
-                <Text
-                  style={{
-                    fontWeight: "bold",
-                    fontSize: 15,
-                  }}
-                >
-                  NEXT
-                </Text>
-              </TouchableOpacity>
+                {item.title}
+              </Text>
             </View>
-          )}
-        </View>
-      </View>
+            {/* Button */}
+            <TouchableOpacity
+              style={{
+                position: "absolute",
+                right: 0,
+                bottom: 0,
+                justifyContent: "center",
+                paddingHorizontal: 30,
+                paddingVertical: 30,
+              }}
+              onPress={() => {
+                navigation.replace("LoginScreen");
+              }}
+            >
+              <Text
+                style={{
+                  color: COLORS.white,
+                  fontFamily: "Roboto_Thin",
+                  fontSize: 18,
+                  lineHeight: 21,
+                }}
+              >
+                {completed ? "Let's Go" : "Skip"}
+              </Text>
+            </TouchableOpacity>
+          </View>
+        ))}
+      </Animated.ScrollView>
     );
-  };
+  }
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
-      <StatusBar />
-      <FlatList
-        ref={ref}
-        onMomentumScrollEnd={updateCurrentSlideIndex}
-        contentContainerStyle={{ height: height * 0.75 }}
-        showsHorizontalScrollIndicator={false}
-        horizontal
-        data={slides}
-        pagingEnabled
-        renderItem={({ item }) => <Slide item={item} />}
-      />
-      <Footer />
+    <SafeAreaView style={styles.container}>
+      <View>{renderContent()}</View>
     </SafeAreaView>
   );
-};
+}
 
 const styles = StyleSheet.create({
-  subtitle: {
-    color: COLORS.white,
-    fontSize: 13,
-    marginTop: 10,
-    maxWidth: "70%",
-    textAlign: "center",
-    lineHeight: 23,
-  },
-  title: {
-    color: COLORS.white,
-    fontSize: 22,
-    fontWeight: "bold",
-    marginTop: 20,
-    textAlign: "center",
-  },
-  image: {
-    height: "100%",
-    width: "100%",
-    resizeMode: "contain",
-  },
-  indicator: {
-    height: 2.5,
-    width: 10,
-    backgroundColor: "grey",
-    marginHorizontal: 3,
-    borderRadius: 2,
-  },
-  btn: {
+  container: {
     flex: 1,
-    height: 50,
-    borderRadius: 5,
-    backgroundColor: "#fff",
     justifyContent: "center",
     alignItems: "center",
+    backgroundColor: COLORS.white,
+  },
+  imageAndTextContainer: {
+    width: SIZES.width,
+  },
+  dotsRootContainer: {
+    position: "absolute",
+    bottom: SIZES.height > 700 ? "20%" : "16%",
+  },
+  dotsContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: SIZES.padding / 2,
+    marginBottom: SIZES.padding * 3,
+    height: SIZES.padding,
+  },
+  dot: {
+    borderRadius: SIZES.radius,
+    // backgroundColor: COLORS.blue,
+    marginHorizontal: SIZES.radius / 2,
   },
 });
-export default OnboardingScreen;
+
+export default OnBoarding;
