@@ -98,7 +98,7 @@ export default function LoginScreen({ navigation }) {
               flexDirection: "row",
               alignItems: "center",
               justifyContent: "center",
-              marginTop: 15,
+              marginTop: 10,
             }}
           >
             {socials.map((item, index) => (
@@ -108,7 +108,7 @@ export default function LoginScreen({ navigation }) {
                   key={index}
                   resizeMethod="scale"
                   resizeMode="contain"
-                  style={{ marginHorizontal: 20 }}
+                  style={{ marginHorizontal: 20, paddingVertical: 3 }}
                 />
               </>
             ))}
@@ -124,6 +124,7 @@ const styles = StyleSheet.create({
     flex: 1,
     width: SIZES.width,
     display: "flex",
+    paddingBottom: 40,
     // flexDirection: "column",
     // alignItems: TextAlignments.text_center,
   },

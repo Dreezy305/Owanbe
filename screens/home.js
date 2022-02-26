@@ -22,6 +22,7 @@ import { SelectRegion, TodayOwanbe } from "../data/selectRegion";
 export default function HomeScreen({ navigation }) {
   const [selectedId, setSelectedId] = useState(null);
   const [todayId, setTodayId] = useState(null);
+  const [popularId, setPopularId] = useState(null);
 
   // RENDERS HEADER
   const renderHeader = () => {
@@ -51,7 +52,10 @@ export default function HomeScreen({ navigation }) {
     const renderItem = ({ item }) => {
       return (
         <TouchableOpacity
-          onPress={() => setSelectedId(item.id)}
+          onPress={() => {
+            setSelectedId(item.id);
+            console.log(selectedId);
+          }}
           style={{
             textAlign: TextAlignments.text_center,
           }}
@@ -123,12 +127,15 @@ export default function HomeScreen({ navigation }) {
   };
 
   const renderPopularOwanbe = () => {
+    const renderItem = ({ item }) => {};
     return (
       <View style={styles.regionContainer}>
         <View style={styles.popularContainer}>
           <Text style={styles.popular}>Popular Ówànbè</Text>
           <Text style={styles.more}>More</Text>
         </View>
+
+        {/* FLATLIST */}
       </View>
     );
   };
