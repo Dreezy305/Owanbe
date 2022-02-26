@@ -38,7 +38,7 @@ export default function LoginScreen({ navigation }) {
           style={{ width: 240, height: 240 }}
         />
       </View>
-      <View style={styles.loginCard}>
+      <View style={[styles.loginCard, styles.loginCardShadow]}>
         <View style={styles.textContainer}>
           <Text style={styles.welcome}>Welcome back</Text>
           <Text style={styles.signIn}>Sign in with your account</Text>
@@ -79,7 +79,6 @@ export default function LoginScreen({ navigation }) {
               </Text>
             </TouchableOpacity>
           </View>
-
           <View style={styles.forgotResetContainer}>
             <Text style={styles.forgot}>Forgot your password?</Text>
             <Text style={styles.reset}>Reset here</Text>
@@ -93,7 +92,7 @@ export default function LoginScreen({ navigation }) {
               flexDirection: "row",
               alignItems: "center",
               justifyContent: "center",
-              marginTop: 20,
+              marginTop: 15,
             }}
           >
             {socials.map((item) => (
@@ -130,15 +129,22 @@ const styles = StyleSheet.create({
   },
   loginCard: {
     width: "100%",
-    borderTopLeftRadius: 28,
-    borderTopRightRadius: 28,
+    borderTopLeftRadius: 30,
+    borderTopRightRadius: 30,
     borderBottomLeftRadius: 0,
     borderBottomRightRadius: 0,
     backgroundColor: COLORS.white,
     shadowColor: COLORS.red,
     shadowOpacity: 0.1,
-    shadowRadius: 2,
+    shadowRadius: 20,
     flex: 1,
+  },
+  loginCardShadow: {
+    shadowColor: COLORS.red,
+    shadowOffset: { width: 40, height: 40 },
+    shadowOpacity: 0.1,
+    shadowRadius: 22,
+    elevation: 5,
   },
   textContainer: {
     textAlign: TextAlignments.text_left,
@@ -196,7 +202,7 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     justifyContent: "center",
-    paddingTop: 10,
+    paddingBottom: 10,
     alignItems: TextAlignments.text_center,
     textAlign: TextAlignments.text_center,
   },
@@ -215,7 +221,7 @@ const styles = StyleSheet.create({
     marginLeft: 5,
   },
   otherOptions: {
-    marginTop: 10,
+    marginTop: 15,
     alignItems: TextAlignments.text_center,
     textAlign: TextAlignments.text_center,
   },
