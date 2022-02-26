@@ -17,10 +17,11 @@ import {
   TextAlignments,
   TextTransformations,
 } from "../constants/color_theme_styles";
-import { SelectRegion } from "../data/selectRegion";
+import { SelectRegion, TodayOwanbe } from "../data/selectRegion";
 
 export default function HomeScreen({ navigation }) {
   const [selectedId, setSelectedId] = useState(null);
+  const [todayId, setTodayId] = useState(null);
 
   // RENDERS HEADER
   const renderHeader = () => {
@@ -84,7 +85,42 @@ export default function HomeScreen({ navigation }) {
   };
 
   // RENDER TODAY OWANBE
-  const renderTodayOwanbe = () => {};
+  const renderTodayOwanbe = () => {
+    // RENDER FUNCTION FOR FLAST LIST COMPONENT
+    const renderItem = ({ item }) => {
+      return (
+        <TouchableOpacity
+          onPress={() => setTodayId(item.id)}
+          style={{
+            textAlign: TextAlignments.text_center,
+          }}
+        >
+          <View style={{ marginEnd: 20 }}>
+            <Image
+              source={item.image}
+              resizeMethod="scale"
+              resizeMode="contain"
+            />
+          </View>
+        </TouchableOpacity>
+      );
+    };
+
+    return (
+      <View style={styles.regionContainer}>
+        <Text style={styles.explore}>Explore today's Ówànbè</Text>
+
+        <FlatList
+          data={TodayOwanbe}
+          renderItem={renderItem}
+          keyExtractor={(item) => item.id}
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={{ paddingVertical: 20 }}
+        />
+      </View>
+    );
+  };
 
   const renderPopularOwanbe = () => {};
 
@@ -92,6 +128,7 @@ export default function HomeScreen({ navigation }) {
     <SafeAreaView style={styles.container}>
       {renderHeader()}
       {renderSelectRegion()}
+      {renderTodayOwanbe()}
     </SafeAreaView>
   );
 }
@@ -111,7 +148,7 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
-    alignItems: "center",
+    alignItems: TextAlignments.text_center,
   },
 
   headerName: {
@@ -127,7 +164,7 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-evenly",
-    alignItems: "center",
+    alignItems: TextAlignments.text_center,
   },
 
   signOut: {
@@ -159,8 +196,8 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     display: "flex",
     flexDirection: "column",
-    alignItems: "center",
-    marginHorizontal: 10,
+    alignItems: TextAlignments.text_center,
+    marginEnd: 10,
     borderColor: COLORS.linearGrad_1,
   },
   renderName: {
@@ -168,11 +205,19 @@ const styles = StyleSheet.create({
     color: COLORS.DarkBlue,
     fontSize: 12,
     lineHeight: 18,
-    alignSelf: "center",
+    alignSelf: TextAlignments.text_center,
     paddingTop: 3,
   },
 
   // EXPLORE TODAY OWANBE
+  explore: {
+    fontFamily: "Avenir_Black",
+    fontSize: 20,
+    lineHeight: 22,
+    fontWeight: FontWeights.fw800,
+    fontStyle: FontStyles.normal,
+    color: COLORS.purple,
+  },
 });
 
 /**

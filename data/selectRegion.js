@@ -40,6 +40,6 @@ export const TodayOwanbe = [
   },
   {
     id: 2,
-    image: images.lagos_owambe,
+    image: images.explorer1,
   },
 ];
