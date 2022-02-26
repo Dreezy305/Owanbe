@@ -14,7 +14,7 @@ export default function Owanbe({ navigation }) {
   ];
 
   setTimeout(() => {
-    navigation.navigate("Boarding");
+    navigation.navigate("LoginScreen");
   }, 5000);
 
   const switchImage = () => {

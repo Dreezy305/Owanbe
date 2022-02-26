@@ -6,24 +6,13 @@ import { FONTS } from "./constants/color_theme_styles";
 import { useFonts } from "expo-font";
 import Owanbe from "./screens/owanbe";
 import OwanbeWelcome from "./screens/OwanbeWelcome";
-import Login from "./screens/loginScreen";
-import Boarding from "./screens/OnBoarding";
+import LoginScreen from "./screens/loginScreen";
+import OnboardingScreen from "./screens/OnBoardingScreen";
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   const [firstLaunch, setFirstLaunch] = useState(null);
-
-  // useEffect(() => {
-  //   AsyncStorage.getItem("alreadyLaunched").then((value) => {
-  //     if (value == null) {
-  //       AsyncStorage.setItem("alreadyLaunched", "true");
-  //       setFirstLaunch(true);
-  //     } else {
-  //       setFirstLaunch(false);
-  //     }
-  //   });
-  // }, []);
 
   const [loaded] = useFonts(FONTS);
 
@@ -40,15 +29,16 @@ export default function App() {
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="Boarding"
-          component={Boarding}
+          name="LoginScreen"
+          component={LoginScreen}
           options={{ headerShown: false }}
         />
-        <Stack.Screen
-          name="Login"
-          component={Login}
+        {/* ISSUE WITH THE ONBOARDING SCREEN */}
+        {/* <Stack.Screen
+          name="OnboardingScreen"
+          component={OnboardingScreen}
           options={{ headerShown: false }}
-        />
+        /> */}
       </Stack.Navigator>
     </NavigationContainer>
   );
