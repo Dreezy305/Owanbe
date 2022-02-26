@@ -1,4 +1,12 @@
-import { View, Text, StyleSheet, Image, TextInput } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  TextInput,
+  Button,
+  TouchableOpacity,
+} from "react-native";
 import React from "react";
 import {
   COLORS,
@@ -9,10 +17,16 @@ import {
   TextDecorationLines,
   TextTransformations,
 } from "../constants/color_theme_styles";
-import { images } from "../constants";
+import { images, icons } from "../constants";
 
 export default function LoginScreen({ navigation }) {
   const [username, setUsername] = React.useState("");
+
+  const socials = [
+    { id: 1, icon: icons.google },
+    { id: 2, icon: icons.facebook },
+    { id: 3, icon: icons.twitter },
+  ];
 
   return (
     <View style={styles.container}>
@@ -49,13 +63,50 @@ export default function LoginScreen({ navigation }) {
               onChange={(e) => setUsername(e.target.value)}
               style={styles.password}
             />
+
+            <TouchableOpacity style={styles.signInButton}>
+              <Text
+                style={{
+                  padding: 20,
+                  color: COLORS.white,
+                  fontFamily: "Avenir_Book",
+                  fontWeight: FontWeights.fw600,
+                  fontSize: 16,
+                  lineHeight: 19,
+                }}
+              >
+                SIGN IN
+              </Text>
+            </TouchableOpacity>
           </View>
+
           <View style={styles.forgotResetContainer}>
             <Text style={styles.forgot}>Forgot your password?</Text>
             <Text style={styles.reset}>Reset here</Text>
           </View>
           <View style={styles.otherOptions}>
             <Text style={styles.signWith}>Or sign in with</Text>
+          </View>
+          <View
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "center",
+              marginTop: 20,
+            }}
+          >
+            {socials.map((item) => (
+              <>
+                <Image
+                  source={item.icon}
+                  key={item.id}
+                  resizeMethod="scale"
+                  resizeMode="contain"
+                  style={{ marginHorizontal: 20 }}
+                />
+              </>
+            ))}
           </View>
         </View>
       </View>
@@ -145,7 +196,7 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     justifyContent: "center",
-    paddingTop: 30,
+    paddingTop: 10,
     alignItems: TextAlignments.text_center,
     textAlign: TextAlignments.text_center,
   },
@@ -164,7 +215,7 @@ const styles = StyleSheet.create({
     marginLeft: 5,
   },
   otherOptions: {
-    marginTop: 50,
+    marginTop: 10,
     alignItems: TextAlignments.text_center,
     textAlign: TextAlignments.text_center,
   },
@@ -172,6 +223,18 @@ const styles = StyleSheet.create({
     fontFamily: "Avenir_Book",
     fontSize: 12,
     lineHeight: 18,
+    letterSpacing: 1.75,
     textTransform: TextTransformations.text_uppercase,
+  },
+  signInButton: {
+    textAlign: TextAlignments.text_center,
+    backgroundColor: COLORS.red,
+    color: COLORS.white,
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 12,
+    marginVertical: 25,
   },
 });

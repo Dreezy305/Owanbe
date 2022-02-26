@@ -7,8 +7,8 @@ const chat = require("../assets/icons/Chat.svg");
 const chat2 = require("../assets/icons/chat2.svg");
 const close_square = require("../assets/icons/Close_Square.svg");
 const deleteIcon = require("../assets/icons/delete.svg");
-const facebook = require("../assets/icons/facebook.svg");
-const google = require("../assets/icons/Google.svg");
+const facebook = require("../assets/icons/facebook.png");
+const google = require("../assets/icons/Google.png");
 const home = require("../assets/icons/Home.svg");
 const location = require("../assets/icons/location.svg");
 const menu = require("../assets/icons/menu.svg");
@@ -17,7 +17,7 @@ const myFavs = require("../assets/icons/myfavourites.svg");
 const nearest = require("../assets/icons/nearestOwanbe.svg");
 const organise = require("../assets/icons/Organise.svg");
 const plane = require("../assets/icons/plane.svg");
-const twitter = require("../assets/icons/Twitter.svg");
+const twitter = require("../assets/icons/Twitter.png");
 
 export default {
   arrow_forward,
