@@ -26,27 +26,27 @@ export default function LoginScreen({ navigation }) {
           <Text style={styles.welcome}>Welcome back</Text>
           <Text style={styles.signIn}>Sign in with your account</Text>
         </View>
-      </View>
-      <View style={styles.inputContainer}>
-        <View style={styles.labelInputContainer}>
-          <Text style={styles.label}>Username</Text>
-          <TextInput
-            placeholder=""
-            keyboardType="name-phone-pad"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            style={styles.input}
-          />
-        </View>
-        <View style={styles.labelInputContainer}>
-          <Text style={styles.label}>Password</Text>
-          <TextInput
-            placeholder=""
-            keyboardType="name-phone-pad"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            style={styles.password}
-          />
+        <View style={styles.inputContainer}>
+          <View style={styles.labelInputContainer}>
+            <Text style={styles.label}>Username</Text>
+            <TextInput
+              placeholder=""
+              keyboardType="name-phone-pad"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              style={styles.input}
+            />
+          </View>
+          <View style={styles.labelInputContainer}>
+            <Text style={styles.label}>Password</Text>
+            <TextInput
+              placeholder=""
+              keyboardType="name-phone-pad"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              style={styles.password}
+            />
+          </View>
         </View>
       </View>
     </View>
