@@ -5,6 +5,7 @@ import {
   Image,
   TouchableOpacity,
   SafeAreaView,
+  FlatList,
 } from "react-native";
 import React, { useEffect, useState } from "react";
 import { images, icons } from "../constants";
@@ -16,8 +17,12 @@ import {
   TextAlignments,
   TextTransformations,
 } from "../constants/color_theme_styles";
+import { SelectRegion } from "../data/selectRegion";
 
 export default function HomeScreen({ navigation }) {
+  const [selectedId, setSelectedId] = useState(null);
+
+  // RENDERS HEADER
   const renderHeader = () => {
     return (
       <View style={styles.header}>
@@ -39,8 +44,9 @@ export default function HomeScreen({ navigation }) {
     );
   };
 
+  // RENDER REGIONS FOR SELECTION
   const renderSelectRegion = () => {
-    // FLAST LIST COMPONENT
+    // RENDER FUNCTION FOR FLAST LIST COMPONENT
     const renderItem = ({ item }) => {
       return (
         <TouchableOpacity>
@@ -53,6 +59,12 @@ export default function HomeScreen({ navigation }) {
     return (
       <View style={styles.regionContainer}>
         <Text style={styles.region}>Select Region</Text>
+
+        <FlatList
+          data={SelectRegion}
+          renderItem={renderItem}
+          keyExtractor={(item) => item.id}
+        />
       </View>
     );
   };
