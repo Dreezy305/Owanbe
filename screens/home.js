@@ -136,7 +136,7 @@ export default function HomeScreen({ navigation }) {
             backgroundColor: "#fff",
             display: "flex",
             flexDirection: "row",
-            justifyContent: "space-between",
+            justifyContent: "flex-start",
             alignItems: "center",
             margin: 10,
             // maxWidth: "75%",
@@ -154,7 +154,8 @@ export default function HomeScreen({ navigation }) {
               display: "flex",
               flexDirection: "column",
               paddingVertical: 5,
-              paddingHorizontal: 10,
+              paddingHorizontal: 20,
+              textAlign: TextAlignments.text_center,
             }}
           >
             <Text
