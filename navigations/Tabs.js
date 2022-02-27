@@ -10,11 +10,11 @@ const Tab = createBottomTabNavigator();
 
 export default function Tabs() {
   return (
-    <Tab.Navigator tabBar={}>
-      <Tab.Screen name="HomeScreen" component={HomeScreen} />
-      <Tab.Screen name="OrganizeScreen" component={OrganizeScreen} />
-      <Tab.Screen name="ChatScreen" component={ChatScreen} />
-      <Tab.Screen name="MenuScreen" component={MenuScreen} />
+    <Tab.Navigator>
+      <Tab.Screen name="Home" component={HomeScreen} />
+      <Tab.Screen name="Organize" component={OrganizeScreen} />
+      <Tab.Screen name="Chat" component={ChatScreen} />
+      <Tab.Screen name="Menu" component={MenuScreen} />
     </Tab.Navigator>
   );
 }

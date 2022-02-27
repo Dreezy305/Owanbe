@@ -8,6 +8,10 @@ import Owanbe from "./screens/owanbe";
 import LoginScreen from "./screens/loginScreen";
 import HomeScreen from "./screens/home";
 import OnboardingScreen from "./screens/OnBoardingScreen";
+import Tabs from "./navigations/Tabs";
+import OrganizeScreen from "./screens/organize";
+import ChatScreen from "./screens/chat";
+import MenuScreen from "./screens/menu";
 
 const Stack = createNativeStackNavigator();
 
@@ -40,7 +44,22 @@ export default function App() {
         />
         <Stack.Screen
           name="HomeScreen"
-          component={HomeScreen}
+          component={Tabs}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="OrganizeScreen"
+          component={OrganizeScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="ChatScreen"
+          component={ChatScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="MenuScreen"
+          component={MenuScreen}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>
