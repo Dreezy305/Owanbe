@@ -15,10 +15,19 @@ export default function Button({
   image = true || false,
   BorderRadius = Number,
   src = "",
+  backgroundColor = "",
+  Color = "",
+  height = Number,
 }) {
   return (
     <TouchableOpacity
-      style={{ ...styles.Button, borderRadius: BorderRadius || 12 }}
+      style={{
+        ...styles.Button,
+        borderRadius: BorderRadius || 12,
+        backgroundColor: backgroundColor,
+        color: Color,
+        height: height || 60,
+      }}
       onPress={onPress}
     >
       <Text
@@ -33,11 +42,6 @@ export default function Button({
       >
         {title}
       </Text>
-      {image && (
-        <View>
-          <Image source={src} resizeMethod="scale" resizeMode="contain" />
-        </View>
-      )}
     </TouchableOpacity>
   );
 }
@@ -45,14 +49,10 @@ export default function Button({
 const styles = StyleSheet.create({
   Button: {
     textAlign: TextAlignments.text_center,
-    backgroundColor: COLORS.red,
-    color: COLORS.white,
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    borderRadius: 12,
     marginVertical: 25,
-    height: 60,
   },
 });
