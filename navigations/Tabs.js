@@ -1,4 +1,4 @@
-import { View, Text } from "react-native";
+import { View, Text, TouchableOpacity, Image } from "react-native";
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import HomeScreen from "../screens/home";
@@ -11,8 +11,11 @@ import {
   FontWeights,
   FontStyles,
 } from "../constants/color_theme_styles";
+import { icons, images } from "../constants";
 
 const Tab = createBottomTabNavigator();
+
+const TabBarCustomButton = () => {};
 
 export default function Tabs() {
   return (
@@ -31,6 +34,17 @@ export default function Tabs() {
             letterSpacing: 0.12,
             fontStle: FontStyles.normal,
           },
+          tabBarIcon: () => {
+            <TouchableOpacity>
+              <View>
+                <Image
+                  source={icons.home}
+                  resizeMethod="scale"
+                  resizeMode="contain"
+                />
+              </View>
+            </TouchableOpacity>;
+          },
         }}
       />
       <Tab.Screen
@@ -46,6 +60,17 @@ export default function Tabs() {
             fontSize: 12,
             lineHeight: 12,
             letterSpacing: 0.12,
+          },
+          tabBarIcon: () => {
+            <TouchableOpacity>
+              <View>
+                <Image
+                  source={icons.chart}
+                  resizeMethod="scale"
+                  resizeMode="contain"
+                />
+              </View>
+            </TouchableOpacity>;
           },
         }}
       />
@@ -63,6 +88,17 @@ export default function Tabs() {
             lineHeight: 12,
             letterSpacing: 0.12,
           },
+          tabBarIcon: () => {
+            <TouchableOpacity>
+              <View>
+                <Image
+                  source={icons.chat}
+                  resizeMethod="scale"
+                  resizeMode="contain"
+                />
+              </View>
+            </TouchableOpacity>;
+          },
         }}
       />
       <Tab.Screen
@@ -78,6 +114,17 @@ export default function Tabs() {
             fontSize: 12,
             lineHeight: 12,
             letterSpacing: 0.12,
+          },
+          tabBarIcon: () => {
+            <TouchableOpacity>
+              <View>
+                <Image
+                  source={icons.upload}
+                  resizeMethod="scale"
+                  resizeMode="contain"
+                />
+              </View>
+            </TouchableOpacity>;
           },
         }}
       />
