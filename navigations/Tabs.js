@@ -1,5 +1,6 @@
 import { View, Text, TouchableOpacity, Image } from "react-native";
 import React from "react";
+import { createDrawerNavigator } from "@react-navigation/drawer";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import HomeScreen from "../screens/home";
 import OrganizeScreen from "../screens/organize";
@@ -12,6 +13,8 @@ import {
   FontStyles,
 } from "../constants/color_theme_styles";
 import { icons, images } from "../constants";
+
+const Drawer = createDrawerNavigator();
 
 const Tab = createBottomTabNavigator();
 
