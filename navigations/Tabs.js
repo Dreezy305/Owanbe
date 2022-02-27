@@ -7,6 +7,7 @@ import HomeScreen from "../screens/home";
 import OrganizeScreen from "../screens/organize";
 import ChatScreen from "../screens/chat";
 import MenuScreen from "../screens/menu";
+
 import {
   COLORS,
   FONTS,
@@ -15,9 +16,9 @@ import {
 } from "../constants/color_theme_styles";
 import { icons, images } from "../constants";
 
-const Drawer = createDrawerNavigator();
-
 const Tab = createBottomTabNavigator();
+
+const Drawer = createDrawerNavigator();
 
 export default function Tabs() {
   return (

@@ -13,6 +13,7 @@ import Tabs from "./navigations/Tabs";
 import OrganizeScreen from "./screens/organize";
 import ChatScreen from "./screens/chat";
 import MenuScreen from "./screens/menu";
+import DrawerScreen from "./navigations/Drawers";
 
 const Stack = createNativeStackNavigator();
 
@@ -28,6 +29,11 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        {/* <Stack.Screen
+          name="Drawer"
+          component={DrawerScreen}
+          options={{ headerShown: false }}
+        /> */}
         <Stack.Screen
           name="Splash"
           component={Owanbe}
