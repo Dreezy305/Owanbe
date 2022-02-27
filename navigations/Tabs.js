@@ -1,3 +1,4 @@
+import "react-native-gesture-handler";
 import { View, Text, TouchableOpacity, Image } from "react-native";
 import React from "react";
 import { createDrawerNavigator } from "@react-navigation/drawer";
@@ -40,7 +41,7 @@ export default function Tabs() {
             fontSize: 12,
             lineHeight: 12,
             letterSpacing: 0.12,
-            fontStle: FontStyles.normal,
+            fontStyle: FontStyles.normal,
           },
           tabBarIcon: (props) => {
             return (
@@ -65,7 +66,7 @@ export default function Tabs() {
           tabBarLabelStyle: {
             fontFamily: "Avenir_Roman",
             fontWeight: FontWeights.fw800,
-            fontStle: FontStyles.normal,
+            fontStyle: FontStyles.normal,
             color: COLORS.purple,
             fontSize: 12,
             lineHeight: 12,
@@ -94,7 +95,7 @@ export default function Tabs() {
           tabBarLabelStyle: {
             fontFamily: "Avenir_Roman",
             fontWeight: FontWeights.fw800,
-            fontStle: FontStyles.normal,
+            fontStyle: FontStyles.normal,
             color: COLORS.purple,
             fontSize: 12,
             lineHeight: 12,
@@ -123,7 +124,7 @@ export default function Tabs() {
           tabBarLabelStyle: {
             fontFamily: "Avenir_Roman",
             fontWeight: FontWeights.fw800,
-            fontStle: FontStyles.normal,
+            fontStyle: FontStyles.normal,
             color: COLORS.purple,
             fontSize: 12,
             lineHeight: 12,
