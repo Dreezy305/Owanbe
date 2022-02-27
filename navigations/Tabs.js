@@ -35,15 +35,17 @@ export default function Tabs() {
             fontStle: FontStyles.normal,
           },
           tabBarIcon: () => {
-            <TouchableOpacity>
-              <View>
-                <Image
-                  source={icons.home}
-                  resizeMethod="scale"
-                  resizeMode="contain"
-                />
-              </View>
-            </TouchableOpacity>;
+            return (
+              <TouchableOpacity style={{}}>
+                <View>
+                  <Image
+                    source={icons.home}
+                    resizeMethod="scale"
+                    resizeMode="contain"
+                  />
+                </View>
+              </TouchableOpacity>
+            );
           },
         }}
       />
@@ -62,15 +64,17 @@ export default function Tabs() {
             letterSpacing: 0.12,
           },
           tabBarIcon: () => {
-            <TouchableOpacity>
-              <View>
-                <Image
-                  source={icons.chart}
-                  resizeMethod="scale"
-                  resizeMode="contain"
-                />
-              </View>
-            </TouchableOpacity>;
+            return (
+              <TouchableOpacity>
+                <View>
+                  <Image
+                    source={icons.chart}
+                    resizeMethod="scale"
+                    resizeMode="contain"
+                  />
+                </View>
+              </TouchableOpacity>
+            );
           },
         }}
       />
@@ -89,15 +93,17 @@ export default function Tabs() {
             letterSpacing: 0.12,
           },
           tabBarIcon: () => {
-            <TouchableOpacity>
-              <View>
-                <Image
-                  source={icons.chat}
-                  resizeMethod="scale"
-                  resizeMode="contain"
-                />
-              </View>
-            </TouchableOpacity>;
+            return (
+              <TouchableOpacity>
+                <View>
+                  <Image
+                    source={icons.chat}
+                    resizeMethod="scale"
+                    resizeMode="contain"
+                  />
+                </View>
+              </TouchableOpacity>
+            );
           },
         }}
       />
@@ -116,15 +122,17 @@ export default function Tabs() {
             letterSpacing: 0.12,
           },
           tabBarIcon: () => {
-            <TouchableOpacity>
-              <View>
-                <Image
-                  source={icons.upload}
-                  resizeMethod="scale"
-                  resizeMode="contain"
-                />
-              </View>
-            </TouchableOpacity>;
+            return (
+              <TouchableOpacity>
+                <View>
+                  <Image
+                    source={icons.upload}
+                    resizeMethod="scale"
+                    resizeMode="contain"
+                  />
+                </View>
+              </TouchableOpacity>
+            );
           },
         }}
       />
