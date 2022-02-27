@@ -24,7 +24,7 @@ export default function Button({
       style={{
         ...styles.Button,
         borderRadius: BorderRadius || 12,
-        backgroundColor: backgroundColor,
+        backgroundColor: backgroundColor || COLORS.red,
         color: Color,
         height: height || 60,
       }}
@@ -51,8 +51,8 @@ const styles = StyleSheet.create({
     textAlign: TextAlignments.text_center,
     display: "flex",
     flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: TextAlignments.text_center,
+    justifyContent: TextAlignments.text_center,
     marginVertical: 25,
   },
 });
