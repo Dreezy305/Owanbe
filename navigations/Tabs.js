@@ -19,7 +19,14 @@ const TabBarCustomButton = () => {};
 
 export default function Tabs() {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator
+      screenOptions={{
+        tabBarStyle: {
+          backgroundColor: COLORS.white,
+          elevation: 0,
+        },
+      }}
+    >
       <Tab.Screen
         name="Home"
         component={HomeScreen}
@@ -34,9 +41,9 @@ export default function Tabs() {
             letterSpacing: 0.12,
             fontStle: FontStyles.normal,
           },
-          tabBarIcon: () => {
+          tabBarIcon: (props) => {
             return (
-              <TouchableOpacity style={{}}>
+              <TouchableOpacity {...props}>
                 <View>
                   <Image
                     source={icons.home}
@@ -63,9 +70,9 @@ export default function Tabs() {
             lineHeight: 12,
             letterSpacing: 0.12,
           },
-          tabBarIcon: () => {
+          tabBarIcon: (props) => {
             return (
-              <TouchableOpacity>
+              <TouchableOpacity {...props}>
                 <View>
                   <Image
                     source={icons.chart}
@@ -92,9 +99,9 @@ export default function Tabs() {
             lineHeight: 12,
             letterSpacing: 0.12,
           },
-          tabBarIcon: () => {
+          tabBarIcon: (props) => {
             return (
-              <TouchableOpacity>
+              <TouchableOpacity {...props}>
                 <View>
                   <Image
                     source={icons.chat}
@@ -121,9 +128,9 @@ export default function Tabs() {
             lineHeight: 12,
             letterSpacing: 0.12,
           },
-          tabBarIcon: () => {
+          tabBarIcon: (props) => {
             return (
-              <TouchableOpacity>
+              <TouchableOpacity {...props}>
                 <View>
                   <Image
                     source={icons.upload}
