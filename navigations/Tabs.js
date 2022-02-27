@@ -15,8 +15,6 @@ import { icons, images } from "../constants";
 
 const Tab = createBottomTabNavigator();
 
-const TabBarCustomButton = () => {};
-
 export default function Tabs() {
   return (
     <Tab.Navigator
