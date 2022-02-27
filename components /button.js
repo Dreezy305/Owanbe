@@ -38,6 +38,7 @@ export default function Button({
           fontWeight: FontWeights.fw600,
           fontSize: 16,
           lineHeight: 19,
+          fontStyle: FontStyles.normal,
         }}
       >
         {title}
