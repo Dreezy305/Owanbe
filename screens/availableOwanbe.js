@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import {
   View,
   Text,
@@ -15,7 +16,7 @@ import {
   SIZES,
 } from "../constants/color_theme_styles";
 import { images, icons } from "../constants";
-import React, { useState } from "react";
+import { parties } from "../data/selectRegion";
 
 export default function AvailableOwanbe({ navigation }) {
   const [selectedId, setSelectedId] = useState(null);
@@ -52,12 +53,35 @@ export default function AvailableOwanbe({ navigation }) {
   };
 
   const renderAvailableOwanbe = () => {
-    const renderItem = ({ item }) => {};
+    const renderItem = ({ item }) => {
+      return (
+        <TouchableOpacity>
+          <Image
+            source={item.image}
+            resizeMethod="scale"
+            resizeMode="contain"
+          />
+          <View style={{ display: "flex", alignItems: "center" }}>
+            <Text>{item.headline}</Text>
+            <Text>{item.abb}</Text>
+          </View>
+        </TouchableOpacity>
+      );
+    };
 
     return (
       <View style={styles.availableContainer}>
         <Text style={styles.city}>Lagos</Text>
         <Text style={styles.OwanbeAvailable}>Ówànbè available</Text>
+
+        <FlatList
+          data={parties}
+          horizontal={false}
+          renderItem={renderItem}
+          keyExtractor={(item) => item.id}
+          showsVerticalScrollIndicator={false}
+          contentContainerStyle={{ paddingBottom: 5 }}
+        />
       </View>
     );
   };
