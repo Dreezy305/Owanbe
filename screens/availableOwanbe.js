@@ -127,6 +127,7 @@ const styles = StyleSheet.create({
     fontStyle: FontStyles.normal,
     paddingBottom: 20,
   },
+
   OwanbeAvailable: {
     fontFamily: "Avenir_Black",
     fontSize: 18,
@@ -135,4 +136,6 @@ const styles = StyleSheet.create({
     fontStyle: FontStyles.normal,
     color: COLORS.DarkBlue,
   },
+
+  thumbnail: {},
 });
