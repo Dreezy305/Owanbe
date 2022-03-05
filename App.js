@@ -9,6 +9,7 @@ import Owanbe from "./screens/owanbe";
 import LoginScreen from "./screens/loginScreen";
 import HomeScreen from "./screens/home";
 import OnboardingScreen from "./screens/OnBoardingScreen";
+import AvailableOwanbe from "./screens/availableOwanbe";
 import Tabs from "./navigations/Tabs";
 import OrganizeScreen from "./screens/organize";
 import ChatScreen from "./screens/chat";
@@ -67,6 +68,11 @@ export default function App() {
         <Stack.Screen
           name="MenuScreen"
           component={MenuScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="AvailableOwanble"
+          component={AvailableOwanbe}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>
