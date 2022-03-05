@@ -51,7 +51,7 @@ export default function SingleOwanbe() {
   const renderWeddingDetails = () => {
     return (
       <View style={styles.weddingCard}>
-        <View style={{ display: "flex", flexDirection: "column" }}>
+        <View style={styles.hubby_and_wife}>
           <Text>ADEJOBI WEDS RONKE</Text>
           <Text>ADERO 2022</Text>
         </View>
@@ -60,10 +60,10 @@ export default function SingleOwanbe() {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
+    <>
       {renderGallery()}
       {renderWeddingDetails()}
-    </SafeAreaView>
+    </>
   );
 }
 
@@ -85,6 +85,7 @@ const styles = StyleSheet.create({
     flexWrap: "wrap",
     justifyContent: "space-evenly",
     alignItems: TextAlignments.text_center,
+    marginVertical: 20,
   },
 
   //   WEDDING DETAILS
@@ -96,6 +97,8 @@ const styles = StyleSheet.create({
   },
 
   hubby_and_wife: {
-    paddingLeft: 20,
+    display: "flex",
+    flexDirection: "column",
+    paddingHorizontal: 40,
   },
 });
