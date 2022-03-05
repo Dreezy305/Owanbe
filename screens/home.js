@@ -94,7 +94,10 @@ export default function HomeScreen({ navigation }) {
     const renderItem = ({ item }) => {
       return (
         <TouchableOpacity
-          onPress={() => setTodayId(item.id)}
+          onPress={() => {
+            setTodayId(item.id);
+            navigation.navigate("AvailableOwanble");
+          }}
           style={{
             textAlign: TextAlignments.text_center,
           }}
