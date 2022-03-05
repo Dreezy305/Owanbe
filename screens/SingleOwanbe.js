@@ -17,7 +17,7 @@ import {
 } from "../constants/color_theme_styles";
 import { images, icons } from "../constants";
 
-export default function SingleOwanbe() {
+export default function SingleOwanbe({ navigation }) {
   const renderGallery = () => {
     return (
       <View style={styles.gallery}>
@@ -30,19 +30,19 @@ export default function SingleOwanbe() {
           source={images.invitation}
           resizeMethod="scale"
           resizeMode="contain"
-          style={{ borderRadius: 10, marginVertical: 5 }}
+          style={{ borderRadius: 10, marginVertical: 25 }}
         />
         <Image
           source={images.party_dancer}
           resizeMethod="scale"
           resizeMode="contain"
-          style={{ borderRadius: 10, marginVertical: 5 }}
+          style={{ borderRadius: 10, marginVertical: 25 }}
         />
         <Image
           source={images.bride}
           resizeMethod="scale"
           resizeMode="contain"
-          style={{ marginVertical: 5 }}
+          style={{ marginVertical: 25 }}
         />
       </View>
     );
@@ -54,6 +54,54 @@ export default function SingleOwanbe() {
         <View style={styles.hubby_and_wife}>
           <Text style={styles.headline}>ADEJOBI WEDS RONKE</Text>
           <Text style={styles.abb}>ADERO 2022</Text>
+
+          <Text style={styles.weddingAnnouncement}>
+            Adejobi and Ronke weds today, join them in celebrating their happy
+            matrimony.
+          </Text>
+
+          <View
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "space-between",
+              marginTop: 100,
+            }}
+          >
+            <TouchableOpacity
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+              onPress={() => navigation.navigate("HomeScreen")}
+            >
+              <Image
+                source={icons.arrow_back}
+                resizeMethod="scale"
+                resizeMode="contain"
+                style={{ paddingRight: 10 }}
+              />
+              <Text style={styles.back}>Back</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <Text style={{ ...styles.back, paddingRight: 10 }}>Next</Text>
+              <Image
+                source={icons.arrow_forward}
+                resizeMethod="scale"
+                resizeMode="contain"
+              />
+            </TouchableOpacity>
+          </View>
         </View>
       </View>
     );
@@ -120,5 +168,27 @@ const styles = StyleSheet.create({
     color: COLORS.red,
     fontWeight: FontWeights.fw400,
     fontStyle: FontStyles.normal,
+  },
+
+  weddingAnnouncement: {
+    marginTop: 30,
+    color: COLORS.DarkBlue,
+    fontFamily: "Avenir_Roman",
+    fontSize: 18,
+    lineHeight: 22,
+    textAlign: "left",
+    width: "95%",
+    fontStyle: FontStyles.normal,
+  },
+
+  //   BACK AND NEXT
+  back: {
+    fontFamily: "Avenir_Book",
+    fontSize: 18,
+    lineHeight: 21,
+    color: COLORS.red,
+    fontWeight: FontWeights.fw400,
+    fontStyle: FontStyles.normal,
+    paddingLeft: 10,
   },
 });
