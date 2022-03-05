@@ -69,8 +69,8 @@ export default function AvailableOwanbe({ navigation }) {
               flexDirection: "column",
             }}
           >
-            <Text style={{ marginVertical: 5 }}>{item.headline}</Text>
-            <Text>{item.abb}</Text>
+            <Text style={styles.headline}>{item.headline}</Text>
+            <Text style={styles.abb}>{item.abb}</Text>
           </View>
         </TouchableOpacity>
       );
@@ -180,5 +180,22 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: TextAlignments.text_center,
     marginVertical: 15,
+  },
+  headline: {
+    fontFamily: "Avenir_Roman",
+    fontSize: 15,
+    lineHeight: 20,
+    color: COLORS.purple,
+    fontWeight: FontWeights.fw400,
+    fontStyle: FontStyles.normal,
+    marginVertical: 5,
+  },
+  abb: {
+    fontFamily: "Avenir_Roman",
+    fontSize: 12,
+    lineHeight: 18,
+    color: COLORS.red,
+    fontWeight: FontWeights.fw400,
+    fontStyle: FontStyles.normal,
   },
 });
