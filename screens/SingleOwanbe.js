@@ -19,8 +19,20 @@ import { images, icons } from "../constants";
 
 export default function SingleOwanbe() {
   return (
-    <View>
+    <SafeAreaView style={styles.container}>
       <Text>SingleOwanbe</Text>
-    </View>
+    </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  // CONTAINER
+  container: {
+    flex: 1,
+    width: SIZES.width,
+    backgroundColor: COLORS.bg,
+    paddingLeft: 20,
+    paddingHorizontal: 20,
+    paddingTop: 30,
+  },
+});
