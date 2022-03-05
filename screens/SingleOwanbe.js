@@ -93,6 +93,7 @@ export default function SingleOwanbe({ navigation }) {
                 alignItems: "center",
                 justifyContent: "center",
               }}
+              onPress={() => navigation.navigate("TagPartner")}
             >
               <Text style={{ ...styles.back, paddingRight: 10 }}>Next</Text>
               <Image

@@ -11,6 +11,7 @@ import HomeScreen from "./screens/home";
 import OnboardingScreen from "./screens/OnBoardingScreen";
 import AvailableOwanbe from "./screens/availableOwanbe";
 import SingleOwanbe from "./screens/SingleOwanbe";
+import TagPartner from "./screens/tagPartner";
 import Tabs from "./navigations/Tabs";
 import OrganizeScreen from "./screens/organize";
 import ChatScreen from "./screens/chat";
@@ -79,6 +80,11 @@ export default function App() {
         <Stack.Screen
           name="SingleOwanble"
           component={SingleOwanbe}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="TagPartner"
+          component={TagPartner}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>
