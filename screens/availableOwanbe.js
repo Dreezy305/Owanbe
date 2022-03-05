@@ -55,14 +55,21 @@ export default function AvailableOwanbe({ navigation }) {
   const renderAvailableOwanbe = () => {
     const renderItem = ({ item }) => {
       return (
-        <TouchableOpacity>
+        <TouchableOpacity style={styles.thumbnailContainer}>
           <Image
             source={item.image}
             resizeMethod="scale"
             resizeMode="contain"
+            style={{ paddingRight: 30 }}
           />
-          <View style={{ display: "flex", alignItems: "center" }}>
-            <Text>{item.headline}</Text>
+          <View
+            style={{
+              marginLeft: 20,
+              display: "flex",
+              flexDirection: "column",
+            }}
+          >
+            <Text style={{ marginVertical: 5 }}>{item.headline}</Text>
             <Text>{item.abb}</Text>
           </View>
         </TouchableOpacity>
@@ -80,7 +87,7 @@ export default function AvailableOwanbe({ navigation }) {
           renderItem={renderItem}
           keyExtractor={(item) => item.id}
           showsVerticalScrollIndicator={false}
-          contentContainerStyle={{ paddingBottom: 5 }}
+          contentContainerStyle={{ marginBottom: 20 }}
         />
       </View>
     );
@@ -164,7 +171,14 @@ const styles = StyleSheet.create({
     fontWeight: FontWeights.fw800,
     fontStyle: FontStyles.normal,
     color: COLORS.DarkBlue,
+    marginBottom: 10,
   },
 
-  thumbnail: {},
+  // RENDER ITEM --> OWANBE AVAILABLE
+  thumbnailContainer: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: TextAlignments.text_center,
+    marginVertical: 15,
+  },
 });

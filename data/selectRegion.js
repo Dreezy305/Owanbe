@@ -84,4 +84,10 @@ export const parties = [
     headline: "HAMMED WEDS AMINA",
     abb: "(HAM 2022)",
   },
+  {
+    id: 4,
+    image: images.bride,
+    headline: "OLA WEDS SOLA",
+    abb: "(OLASOLA 2022)",
+  },
 ];
