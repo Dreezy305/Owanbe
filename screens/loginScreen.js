@@ -30,20 +30,20 @@ export default function LoginScreen({ navigation }) {
 
   return (
     <View style={styles.container}>
-      {/* <View style={styles.topImageContainer}>
+      <View style={styles.topImageContainer}>
         <Image
           source={images.owanbe_red}
           resizeMethod="scale"
           resizeMode="contain"
           style={{ width: 240, height: 240 }}
         />
-      </View> */}
+      </View>
 
       {/* AUTH TAB */}
-      <View style={styles.tabContainer}>
+      {/* <View style={styles.tabContainer}>
         <Text style={styles.tabContent}>SIGN IN</Text>
         <Text style={styles.tabContent}>SIGN UP</Text>
-      </View>
+      </View> */}
 
       <View style={styles.loginCard}>
         <View style={styles.textContainer}>
