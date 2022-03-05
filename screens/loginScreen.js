@@ -30,13 +30,19 @@ export default function LoginScreen({ navigation }) {
 
   return (
     <View style={styles.container}>
-      <View style={styles.topImageContainer}>
+      {/* <View style={styles.topImageContainer}>
         <Image
           source={images.owanbe_red}
           resizeMethod="scale"
           resizeMode="contain"
           style={{ width: 240, height: 240 }}
         />
+      </View> */}
+
+      {/* AUTH TAB */}
+      <View style={styles.tabContainer}>
+        <Text style={styles.tabContent}>SIGN IN</Text>
+        <Text style={styles.tabContent}>SIGN UP</Text>
       </View>
 
       <View style={styles.loginCard}>
@@ -108,7 +114,10 @@ export default function LoginScreen({ navigation }) {
                   key={index}
                   resizeMethod="scale"
                   resizeMode="contain"
-                  style={{ marginHorizontal: 20, paddingVertical: 3 }}
+                  style={{
+                    marginHorizontal: 20,
+                    paddingVertical: 3,
+                  }}
                 />
               </>
             ))}
@@ -251,5 +260,26 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     marginVertical: 25,
     height: 60,
+  },
+  // SIGN IN TAB
+  tabContainer: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: TextAlignments.text_center,
+    alignItems: TextAlignments.text_center,
+    backgroundColor: COLORS.red,
+    borderTopLeftRadius: 28,
+    borderTopRightRadius: 28,
+    marginTop: 20,
+  },
+  tabContent: {
+    fontFamily: "Avenir_Roman",
+    fontSize: 18,
+    lineHeight: 18,
+    fontWeight: FontWeights.fw600,
+    paddingTop: 25,
+    paddingBottom: 25,
+    marginHorizontal: 20,
+    color: COLORS.white,
   },
 });
