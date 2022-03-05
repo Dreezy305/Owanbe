@@ -30,30 +30,40 @@ export default function SingleOwanbe() {
           source={images.invitation}
           resizeMethod="scale"
           resizeMode="contain"
-          style={{ borderRadius: 10, marginVertical: 10 }}
+          style={{ borderRadius: 10, marginVertical: 5 }}
         />
         <Image
           source={images.party_dancer}
           resizeMethod="scale"
           resizeMode="contain"
-          style={{ borderRadius: 10, marginVertical: 10 }}
+          style={{ borderRadius: 10, marginVertical: 5 }}
         />
         <Image
           source={images.bride}
           resizeMethod="scale"
           resizeMode="contain"
-          style={{ marginVertical: 10 }}
+          style={{ marginVertical: 5 }}
         />
       </View>
     );
   };
 
   const renderWeddingDetails = () => {
-    return <View></View>;
+    return (
+      <View style={styles.weddingCard}>
+        <View style={{ display: "flex", flexDirection: "column" }}>
+          <Text>ADEJOBI WEDS RONKE</Text>
+          <Text>ADERO 2022</Text>
+        </View>
+      </View>
+    );
   };
 
   return (
-    <SafeAreaView style={styles.container}>{renderGallery()}</SafeAreaView>
+    <SafeAreaView style={styles.container}>
+      {renderGallery()}
+      {renderWeddingDetails()}
+    </SafeAreaView>
   );
 }
 
@@ -75,5 +85,17 @@ const styles = StyleSheet.create({
     flexWrap: "wrap",
     justifyContent: "space-evenly",
     alignItems: TextAlignments.text_center,
+  },
+
+  //   WEDDING DETAILS
+  weddingCard: {
+    backgroundColor: COLORS.white,
+    borderTopLeftRadius: 28,
+    borderTopRightRadius: 28,
+    width: "100%",
+  },
+
+  hubby_and_wife: {
+    paddingLeft: 20,
   },
 });
