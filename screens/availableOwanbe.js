@@ -55,7 +55,10 @@ export default function AvailableOwanbe({ navigation }) {
   const renderAvailableOwanbe = () => {
     const renderItem = ({ item }) => {
       return (
-        <TouchableOpacity style={styles.thumbnailContainer}>
+        <TouchableOpacity
+          style={styles.thumbnailContainer}
+          onPress={() => navigation.navigate("SingleOwanble")}
+        >
           <Image
             source={item.image}
             resizeMethod="scale"
