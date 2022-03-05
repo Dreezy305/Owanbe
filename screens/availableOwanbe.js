@@ -5,6 +5,7 @@ import {
   StyleSheet,
   Image,
   SafeAreaView,
+  FlatList,
 } from "react-native";
 import {
   TextAlignments,
@@ -14,9 +15,11 @@ import {
   SIZES,
 } from "../constants/color_theme_styles";
 import { images, icons } from "../constants";
-import React from "react";
+import React, { useState } from "react";
 
 export default function AvailableOwanbe({ navigation }) {
+  const [selectedId, setSelectedId] = useState(null);
+
   const renderHeader = () => {
     return (
       <View style={styles.header}>
@@ -49,6 +52,8 @@ export default function AvailableOwanbe({ navigation }) {
   };
 
   const renderAvailableOwanbe = () => {
+    const renderItem = ({ item }) => {};
+
     return (
       <View style={styles.availableContainer}>
         <Text style={styles.city}>Lagos</Text>

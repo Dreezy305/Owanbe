@@ -64,3 +64,24 @@ export const PopularOwanbe = [
   //   headline: "Tobi weds Shade",
   // },
 ];
+
+export const parties = [
+  {
+    id: 1,
+    image: images.trad_wedding,
+    headline: "DAVID WEDS CHIOMA",
+    abb: "(DACHI 2022)",
+  },
+  {
+    id: 2,
+    image: images.white_wedding,
+    headline: "ADEJOBI WEDS RONKE",
+    abb: "(ADERO 2022)",
+  },
+  {
+    id: 3,
+    image: images.bride,
+    headline: "HAMMED WEDS AMINA",
+    abb: "(HAM 2022)",
+  },
+];
