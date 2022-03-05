@@ -52,18 +52,18 @@ export default function SingleOwanbe() {
     return (
       <View style={styles.weddingCard}>
         <View style={styles.hubby_and_wife}>
-          <Text>ADEJOBI WEDS RONKE</Text>
-          <Text>ADERO 2022</Text>
+          <Text style={styles.headline}>ADEJOBI WEDS RONKE</Text>
+          <Text style={styles.abb}>ADERO 2022</Text>
         </View>
       </View>
     );
   };
 
   return (
-    <>
+    <View style={{ width: SIZES.width }}>
       {renderGallery()}
       {renderWeddingDetails()}
-    </>
+    </View>
   );
 }
 
@@ -93,12 +93,32 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.white,
     borderTopLeftRadius: 28,
     borderTopRightRadius: 28,
-    width: "100%",
   },
 
   hubby_and_wife: {
     display: "flex",
     flexDirection: "column",
     paddingHorizontal: 40,
+    paddingVertical: 20,
+  },
+
+  headline: {
+    fontFamily: "Avenir_Roman",
+    fontSize: 24,
+    lineHeight: 32,
+    color: COLORS.purple,
+    fontWeight: FontWeights.fw400,
+    fontStyle: FontStyles.normal,
+    marginBottom: 20,
+    marginTop: 10,
+  },
+
+  abb: {
+    fontFamily: "Avenir_Roman",
+    fontSize: 18,
+    lineHeight: 18,
+    color: COLORS.red,
+    fontWeight: FontWeights.fw400,
+    fontStyle: FontStyles.normal,
   },
 });
