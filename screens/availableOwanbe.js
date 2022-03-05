@@ -48,7 +48,21 @@ export default function AvailableOwanbe({ navigation }) {
     );
   };
 
-  return <SafeAreaView style={styles.container}>{renderHeader()}</SafeAreaView>;
+  const renderAvailableOwanbe = () => {
+    return (
+      <View style={styles.availableContainer}>
+        <Text style={styles.city}>Lagos</Text>
+        <Text style={styles.OwanbeAvailable}>Ówànbè available</Text>
+      </View>
+    );
+  };
+
+  return (
+    <SafeAreaView style={styles.container}>
+      {renderHeader()}
+      {renderAvailableOwanbe()}
+    </SafeAreaView>
+  );
 }
 
 const styles = StyleSheet.create({
@@ -97,5 +111,28 @@ const styles = StyleSheet.create({
     fontWeight: FontWeights.fw400,
     fontStyle: FontStyles.normal,
     paddingLeft: 10,
+  },
+
+  //   AVAILABLE
+  availableContainer: {
+    marginTop: 40,
+  },
+
+  city: {
+    fontFamily: "Avenir_Book",
+    fontSize: 18,
+    lineHeight: 22,
+    color: COLORS.red,
+    fontWeight: FontWeights.fw600,
+    fontStyle: FontStyles.normal,
+    paddingBottom: 20,
+  },
+  OwanbeAvailable: {
+    fontFamily: "Avenir_Black",
+    fontSize: 18,
+    lineHeight: 22,
+    fontWeight: FontWeights.fw800,
+    fontStyle: FontStyles.normal,
+    color: COLORS.DarkBlue,
   },
 });
