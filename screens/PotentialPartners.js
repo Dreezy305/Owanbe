@@ -67,7 +67,7 @@ export default function PotentialPartners({ navigation }) {
       <View style={styles.potentialContainer}>
         <View style={styles.avatar_text}>
           <Image source={images.avatar2} />
-          <Text>Ade Johson</Text>
+          <Text style={styles.potentialName}>Ade Johson</Text>
         </View>
         <View style={styles.potentialActionBox}>
           <TouchableOpacity
@@ -75,6 +75,7 @@ export default function PotentialPartners({ navigation }) {
           >
             <Text
               style={{
+                ...styles.actionTexts,
                 color: COLORS.white,
                 textAlign: TextAlignments.text_center,
                 paddingHorizontal: 10,
@@ -88,11 +89,12 @@ export default function PotentialPartners({ navigation }) {
               ...styles.common,
               backgroundColor: COLORS.ash,
               flexGrow: 1,
-              marginHorizontal: 20,
+              marginHorizontal: 15,
             }}
           >
             <Text
               style={{
+                ...styles.actionTexts,
                 color: COLORS.white,
                 textAlign: TextAlignments.text_center,
               }}
@@ -103,8 +105,8 @@ export default function PotentialPartners({ navigation }) {
           <TouchableOpacity
             style={{
               ...styles.common,
-              borderWidth: 2,
-              borderColor: COLORS.red,
+              borderWidth: 1,
+              borderColor: COLORS.lightBrown,
             }}
           >
             <Image
@@ -195,25 +197,40 @@ const styles = StyleSheet.create({
   potentialContainer: {
     display: "flex",
     flexDirection: "column",
-    paddingVertical: 10,
+    marginTop: 30,
+  },
+
+  potentialName: {
+    fontFamily: "Avenir_Roman",
+    fontWeight: FontWeights.fw600,
+    fontSize: 18,
+    lineHeight: 22,
+    color: COLORS.purple,
+    textTransform: TextTransformations.text_capitalize,
   },
 
   avatar_text: {
     display: "flex",
     flexDirection: "row",
-    alignItems: "center",
+    alignItems: TextAlignments.text_center,
     justifyContent: "space-between",
-    marginBottom: 10,
+    marginBottom: 15,
   },
   potentialActionBox: {
     display: "flex",
     flexDirection: "row",
-    alignItems: "center",
-    // justifyContent: "space-between",
+    alignItems: TextAlignments.text_center,
   },
 
   common: {
     borderRadius: 10,
     padding: 15,
+  },
+
+  actionTexts: {
+    fontFamily: "Avenir_Roman",
+    fontWeight: FontWeights.fw600,
+    fontSize: 15,
+    lineHeight: 18,
   },
 });
