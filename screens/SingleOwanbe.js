@@ -59,7 +59,7 @@ export default function SingleOwanbe({ navigation }) {
               <Text style={styles.headline}>ADEJOBI WEDS RONKE</Text>
               <Text style={styles.abb}>ADERO 2022</Text>
 
-              <Text style={styles.weddingAnnouncement}>
+              <Text style={{ ...styles.weddingAnnouncement, marginBottom: 90 }}>
                 Adejobi and Ronke weds today, join them in celebrating their
                 happy matrimony.
               </Text>
