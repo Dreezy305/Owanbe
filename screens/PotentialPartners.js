@@ -28,7 +28,7 @@ export default function PotentialPartners({ navigation }) {
           flexDirection: "row",
           alignItems: TextAlignments.text_center,
         }}
-        onPress={() => navigation.navigate("HomeScreen")}
+        onPress={() => navigation.navigate("SingleOwanble")}
       >
         <Image
           source={icons.arrow_back}

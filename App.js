@@ -84,11 +84,11 @@ export default function App() {
           component={SingleOwanbe}
           options={{ headerShown: false }}
         />
-        <Stack.Screen
+        {/* <Stack.Screen
           name="TagPartner"
           component={TagPartner}
           options={{ headerShown: false }}
-        />
+        /> */}
         <Stack.Screen
           name="SearchPartner"
           component={SearchPartner}
