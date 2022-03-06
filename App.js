@@ -14,7 +14,7 @@ import SingleOwanbe from "./screens/SingleOwanbe";
 import TagPartner from "./screens/tagPartner";
 import SearchPartner from "./screens/SearchPartner";
 import PotentialPartners from "./screens/PotentialPartners";
-import ChatWithPartner from "./screens/ChatWithPartner";
+import MessagePartner from "./screens/Message";
 import Tabs from "./navigations/Tabs";
 import OrganizeScreen from "./screens/organize";
 import ChatScreen from "./screens/chat";
@@ -101,8 +101,8 @@ export default function App() {
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="ChatWithPartner"
-          component={ChatWithPartner}
+          name="MessagePartner"
+          component={MessagePartner}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>

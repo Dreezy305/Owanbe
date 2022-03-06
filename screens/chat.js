@@ -79,6 +79,7 @@ export default function ChatScreen({ navigation }) {
                   item.status === "Offline" ? COLORS.purple : COLORS.red
                 }`,
               }}
+              onPress={() => navigation.navigate("MessagePartner")}
             >
               <Text
                 style={{
