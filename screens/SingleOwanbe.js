@@ -133,7 +133,6 @@ export default function SingleOwanbe({ navigation }) {
               flexDirection: "row",
               alignItems: TextAlignments.text_center,
               justifyContent: "space-between",
-              //   marginTop: 50,
             }}
           >
             <TouchableOpacity
