@@ -69,12 +69,17 @@ export default function PotentialPartners({ navigation }) {
       return (
         <View style={styles.potentialContainer}>
           <View style={styles.avatar_text}>
-            <Image source={images.avatar2} />
+            <Image source={item.image} />
             <Text style={styles.potentialName}>{item.name}</Text>
           </View>
           <View style={styles.potentialActionBox}>
             <TouchableOpacity
-              style={{ ...styles.common, backgroundColor: COLORS.purple }}
+              style={{
+                ...styles.common,
+                backgroundColor: `${
+                  item.status === "Offline" ? COLORS.purple : COLORS.red
+                }`,
+              }}
             >
               <Text
                 style={{
@@ -90,7 +95,9 @@ export default function PotentialPartners({ navigation }) {
             <TouchableOpacity
               style={{
                 ...styles.common,
-                backgroundColor: COLORS.ash,
+                backgroundColor: `${
+                  item.status === "Offline" ? COLORS.ash : COLORS.purple
+                }`,
                 flexGrow: 1,
                 marginHorizontal: 15,
               }}
@@ -102,7 +109,7 @@ export default function PotentialPartners({ navigation }) {
                   textAlign: TextAlignments.text_center,
                 }}
               >
-                Offline
+                {item.status}
               </Text>
             </TouchableOpacity>
             <TouchableOpacity

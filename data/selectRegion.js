@@ -94,11 +94,26 @@ export const parties = [
 
 export const Partners = [
   { id: 1, name: "Ade Johnson", status: "Offline", image: images.avatar2 },
-  { id: 2, name: "Onome Rose", status: "Online", image: "" },
-  { id: 3, name: "Halimat Hassan", status: "Offline", image: "" },
-  { id: 4, name: "Idris Adegbite", status: "Online", image: "" },
-  { id: 5, name: "Samuel Ajala", status: "Online", image: "" },
-  { id: 6, name: "Ade Adeola", status: "Online", image: "" },
-  { id: 7, name: "John James", status: "Online", image: "" },
-  { id: 8, name: "Jackie Appiah", status: "Online", image: "" },
+  { id: 2, name: "Onome Rose", status: "Online", image: images.avatar2 },
+  {
+    id: 3,
+    name: "Halimat Hassan",
+    status: "Offline",
+    image: images.avatar2,
+  },
+  {
+    id: 4,
+    name: "Idris Adegbite",
+    status: "Online",
+    image: images.avatar2,
+  },
+  { id: 5, name: "Samuel Ajala", status: "Offline", image: images.avatar2 },
+  { id: 6, name: "Ade Adeola", status: "Online", image: images.avatar2 },
+  { id: 7, name: "John James", status: "Offline", image: images.avatar2 },
+  {
+    id: 8,
+    name: "Jackie Appiah",
+    status: "Online",
+    image: images.avatar2,
+  },
 ];
