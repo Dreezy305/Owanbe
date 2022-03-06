@@ -60,6 +60,8 @@ export default function PotentialPartners({ navigation }) {
     );
   };
 
+  const Potentials = () => {};
+
   return (
     <SafeAreaView style={styles.container}>
       {Back()}
