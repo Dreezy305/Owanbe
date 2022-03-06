@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     flex: 1,
     width: SIZES.width,
     backgroundColor: COLORS.bg,
-    paddingLeft: 20,
+    // paddingLeft: 20,
     paddingHorizontal: 20,
     paddingTop: 30,
   },
