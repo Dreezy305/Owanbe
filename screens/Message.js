@@ -24,6 +24,8 @@ export default function MessagePartner({ navigation }) {
   return (
     <SafeAreaView style={{ ...styles.container }}>
       <MessageHead />
+      <MessageList />
+      <MessageInput />
     </SafeAreaView>
   );
 }
