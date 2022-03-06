@@ -6,7 +6,6 @@ import {
   StyleSheet,
   Image,
   SafeAreaView,
-  FlatList,
   ImageBackground,
 } from "react-native";
 import {
@@ -20,15 +19,16 @@ import { images, icons } from "../constants";
 
 export default function SearchPartner() {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <ImageBackground
         source={images.party}
         style={styles.image}
         resizeMode="cover"
       >
-        <Text>Searching for partners</Text>
+        <View></View>
+        <Text style={styles.text}>Searching for partners</Text>
       </ImageBackground>
-    </View>
+    </SafeAreaView>
   );
 }
 
@@ -38,14 +38,13 @@ const styles = StyleSheet.create({
   },
   image: {
     flex: 1,
-    justifyContent: "center",
+    justifyContent: TextAlignments.text_center,
   },
   text: {
-    color: "white",
-    fontSize: 42,
-    lineHeight: 84,
-    fontWeight: "bold",
-    textAlign: "center",
-    backgroundColor: "#000000c0",
+    color: COLORS.white,
+    fontSize: 14,
+    lineHeight: 16,
+    fontWeight: FontWeights.fw700,
+    textAlign: TextAlignments.text_center,
   },
 });
