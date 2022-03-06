@@ -20,10 +20,16 @@ import { images, icons } from "../constants";
 export default function SearchPartner({ navigation }) {
   const [show, setShow] = useState(false);
 
+  const loader = () => {
+    setShow(true);
+  };
+
   useEffect(() => {
+    setTimeout(loader, 1000);
     setTimeout(() => {
-      setShow(true);
+      navigation.navigate("PotentialPartners");
     }, 10000);
+    clearTimeout(loader);
   }, []);
 
   return (
