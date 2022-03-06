@@ -18,6 +18,8 @@ import {
 import { images, icons } from "../constants";
 
 export default function SingleOwanbe({ navigation }) {
+  const [next, setNext] = useState(false);
+
   const renderGallery = () => {
     return (
       <View style={styles.gallery}>
@@ -52,13 +54,75 @@ export default function SingleOwanbe({ navigation }) {
     return (
       <View style={styles.weddingCard}>
         <View style={styles.hubby_and_wife}>
-          <Text style={styles.headline}>ADEJOBI WEDS RONKE</Text>
-          <Text style={styles.abb}>ADERO 2022</Text>
+          {next == false ? (
+            <>
+              <Text style={styles.headline}>ADEJOBI WEDS RONKE</Text>
+              <Text style={styles.abb}>ADERO 2022</Text>
 
-          <Text style={styles.weddingAnnouncement}>
-            Adejobi and Ronke weds today, join them in celebrating their happy
-            matrimony.
-          </Text>
+              <Text style={styles.weddingAnnouncement}>
+                Adejobi and Ronke weds today, join them in celebrating their
+                happy matrimony.
+              </Text>
+            </>
+          ) : (
+            <>
+              <Text style={styles.weddingAnnouncement}>
+                Would you be willing to tag along with a partner nearby?
+              </Text>
+
+              <View
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  alignItems: "center",
+                  justifyContent: "space-around",
+                  marginVertical: 70,
+                }}
+              >
+                <TouchableOpacity
+                  style={{
+                    backgroundColor: COLORS.purple,
+                    borderRadius: 12,
+                    padding: 20,
+                    textAlign: "center",
+                  }}
+                >
+                  <Text
+                    style={{
+                      color: COLORS.white,
+                      paddingHorizontal: 10,
+                      fontFamily: "Avenir_Book",
+                      fontSize: 24,
+                      lineHeight: 22,
+                    }}
+                  >
+                    Yes
+                  </Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  style={{
+                    backgroundColor: COLORS.red,
+                    borderRadius: 12,
+                    borderRadius: 12,
+                    padding: 20,
+                    textAlign: "center",
+                  }}
+                >
+                  <Text
+                    style={{
+                      color: COLORS.white,
+                      paddingHorizontal: 10,
+                      fontFamily: "Avenir_Book",
+                      fontSize: 24,
+                      lineHeight: 22,
+                    }}
+                  >
+                    No
+                  </Text>
+                </TouchableOpacity>
+              </View>
+            </>
+          )}
 
           <View
             style={{
@@ -66,7 +130,7 @@ export default function SingleOwanbe({ navigation }) {
               flexDirection: "row",
               alignItems: "center",
               justifyContent: "space-between",
-              marginTop: 100,
+              //   marginTop: 50,
             }}
           >
             <TouchableOpacity
@@ -93,7 +157,7 @@ export default function SingleOwanbe({ navigation }) {
                 alignItems: "center",
                 justifyContent: "center",
               }}
-              onPress={() => navigation.navigate("TagPartner")}
+              onPress={() => setNext(true)}
             >
               <Text style={{ ...styles.back, paddingRight: 10 }}>Next</Text>
               <Image
