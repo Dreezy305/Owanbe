@@ -21,7 +21,11 @@ import { images, icons } from "../constants";
 export default function SearchPartner() {
   return (
     <SafeAreaView>
-      <Text>SearchPartner</Text>
+      <ImageBackground
+        source={images.party}
+        resizeMethod="scale"
+        resizeMode="contain"
+      />
     </SafeAreaView>
   );
 }
