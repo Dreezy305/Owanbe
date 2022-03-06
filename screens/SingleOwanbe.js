@@ -74,7 +74,7 @@ export default function SingleOwanbe({ navigation }) {
                 style={{
                   display: "flex",
                   flexDirection: "row",
-                  alignItems: "center",
+                  alignItems: TextAlignments.text_center,
                   justifyContent: "space-around",
                   marginVertical: 70,
                 }}
@@ -84,7 +84,7 @@ export default function SingleOwanbe({ navigation }) {
                     backgroundColor: COLORS.purple,
                     borderRadius: 12,
                     padding: 20,
-                    textAlign: "center",
+                    textAlign: TextAlignments.text_center,
                   }}
                   onPress={() => navigation.navigate("SearchPartner")}
                 >
@@ -107,7 +107,7 @@ export default function SingleOwanbe({ navigation }) {
                     borderRadius: 12,
                     borderRadius: 12,
                     padding: 20,
-                    textAlign: "center",
+                    textAlign: TextAlignments.text_center,
                   }}
                   onPress={() => setNext(false)}
                 >
@@ -131,7 +131,7 @@ export default function SingleOwanbe({ navigation }) {
             style={{
               display: "flex",
               flexDirection: "row",
-              alignItems: "center",
+              alignItems: TextAlignments.text_center,
               justifyContent: "space-between",
               //   marginTop: 50,
             }}
@@ -140,8 +140,8 @@ export default function SingleOwanbe({ navigation }) {
               style={{
                 display: "flex",
                 flexDirection: "row",
-                alignItems: "center",
-                justifyContent: "center",
+                alignItems: TextAlignments.text_center,
+                justifyContent: TextAlignments.text_center,
               }}
               onPress={() => navigation.navigate("HomeScreen")}
             >
@@ -158,8 +158,8 @@ export default function SingleOwanbe({ navigation }) {
                 style={{
                   display: "flex",
                   flexDirection: "row",
-                  alignItems: "center",
-                  justifyContent: "center",
+                  alignItems: TextAlignments.text_center,
+                  justifyContent: TextAlignments.text_center,
                 }}
                 onPress={() => setNext(true)}
               >
