@@ -29,7 +29,9 @@ export default function MessageInput() {
         placeholderTextColor={COLORS.purple}
         selectTextOnFocus
         allowFontScaling
-        autoCapitalize="words"
+        autoCapitalize="none"
+        value={msg}
+        onChangeText={setMsg}
       />
     </KeyboardAvoidingView>
   );
