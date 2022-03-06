@@ -19,7 +19,7 @@ import OrganizeScreen from "./screens/organize";
 import ChatScreen from "./screens/chat";
 import MenuScreen from "./screens/menu";
 import DrawerScreen from "./navigations/Drawers";
-
+import { BackHandler } from "react-native";
 const Stack = createNativeStackNavigator();
 
 export default function App() {

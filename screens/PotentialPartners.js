@@ -14,7 +14,7 @@ import {
   FontStyles,
   TextTransformations,
 } from "../constants/color_theme_styles";
-import { icons } from "../constants";
+import { icons, images } from "../constants";
 import React from "react";
 
 export default function PotentialPartners({ navigation }) {
@@ -51,7 +51,9 @@ export default function PotentialPartners({ navigation }) {
           style={{
             ...styles.types,
             backgroundColor: COLORS.lightBrown,
-            marginLeft: 20,
+            marginLeft: 10,
+            // alignSelf: "flex-end",
+            flexGrow: 1,
           }}
         >
           <Text style={styles.types_text}>existing partner</Text>
@@ -60,7 +62,27 @@ export default function PotentialPartners({ navigation }) {
     );
   };
 
-  const Potentials = () => {};
+  const Potentials = () => {
+    return (
+      <View style={styles.potentialContainer}>
+        <View style={styles.avatar_text}>
+          <Image source={images.avatar2} />
+          <Text>Ade Johson</Text>
+        </View>
+        <View style={styles.potentialActionBox}>
+          <TouchableOpacity>
+            <Text>Chat</Text>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Text>Chat</Text>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Text>Chat</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+    );
+  };
 
   return (
     <SafeAreaView style={styles.container}>
@@ -75,6 +97,7 @@ export default function PotentialPartners({ navigation }) {
         Potential Partners found
       </Text>
       {ParterTypes()}
+      {Potentials()}
     </SafeAreaView>
   );
 }
@@ -117,7 +140,6 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     alignItems: TextAlignments.text_center,
-    // justifyContent: "space-around",
     marginTop: 20,
   },
   types: {
@@ -132,5 +154,27 @@ const styles = StyleSheet.create({
     fontSize: 15,
     lineHeight: 18,
     paddingHorizontal: 10,
+    textAlign: TextAlignments.text_center,
+  },
+
+  //   POTENTIALS
+  potentialContainer: {
+    display: "flex",
+    flexDirection: "column",
+    paddingVertical: 10,
+  },
+
+  avatar_text: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    marginBottom: 10,
+  },
+  potentialActionBox: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    // justifyContent: "space-between",
   },
 });
