@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   View,
   Text,
-  TouchableOpacity,
   StyleSheet,
   Image,
   SafeAreaView,
   ImageBackground,
+  ActivityIndicator,
 } from "react-native";
 import {
   TextAlignments,
@@ -18,6 +18,8 @@ import {
 import { images, icons } from "../constants";
 
 export default function SearchPartner() {
+  const [show, setShow] = useState(false);
+
   return (
     <SafeAreaView style={styles.container}>
       <ImageBackground
@@ -26,11 +28,15 @@ export default function SearchPartner() {
         resizeMode="cover"
       >
         <View style={styles.loaderBox}>
-          <Image
-            source={images.loader}
-            resizeMethod="scale"
-            resizeMode="contain"
-            style={{ alignSelf: "center", marginVertical: 10 }}
+          <ActivityIndicator
+            size="large"
+            color={COLORS.white}
+            style={{
+              alignSelf: "center",
+              marginVertical: 10,
+              width: 50,
+              height: 50,
+            }}
           />
           <Text style={{ ...styles.text, marginVertical: 10 }}>
             Searching for partners
