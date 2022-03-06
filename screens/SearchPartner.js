@@ -17,8 +17,14 @@ import {
 } from "../constants/color_theme_styles";
 import { images, icons } from "../constants";
 
-export default function SearchPartner() {
+export default function SearchPartner({ navigation }) {
   const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setShow(true);
+    }, 10000);
+  }, []);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -28,16 +34,18 @@ export default function SearchPartner() {
         resizeMode="cover"
       >
         <View style={styles.loaderBox}>
-          <ActivityIndicator
-            size="large"
-            color={COLORS.white}
-            style={{
-              alignSelf: "center",
-              marginVertical: 10,
-              width: 50,
-              height: 50,
-            }}
-          />
+          {show && (
+            <ActivityIndicator
+              size="large"
+              color={COLORS.white}
+              style={{
+                alignSelf: "center",
+                marginVertical: 10,
+                width: 50,
+                height: 50,
+              }}
+            />
+          )}
           <Text style={{ ...styles.text, marginVertical: 10 }}>
             Searching for partners
           </Text>
