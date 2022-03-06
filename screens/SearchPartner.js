@@ -25,8 +25,17 @@ export default function SearchPartner() {
         style={styles.image}
         resizeMode="cover"
       >
-        <View></View>
-        <Text style={styles.text}>Searching for partners</Text>
+        <View style={styles.loaderBox}>
+          <Image
+            source={images.loader}
+            resizeMethod="scale"
+            resizeMode="contain"
+            style={{ alignSelf: "center", marginVertical: 10 }}
+          />
+          <Text style={{ ...styles.text, marginVertical: 10 }}>
+            Searching for partners
+          </Text>
+        </View>
       </ImageBackground>
     </SafeAreaView>
   );
@@ -39,6 +48,11 @@ const styles = StyleSheet.create({
   image: {
     flex: 1,
     justifyContent: TextAlignments.text_center,
+  },
+  loaderBox: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
   },
   text: {
     color: COLORS.white,
