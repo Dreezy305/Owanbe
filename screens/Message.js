@@ -23,11 +23,18 @@ import MessageList from "../components /MessageComponents/MessageList";
 export default function MessagePartner({ navigation }) {
   return (
     <SafeAreaView style={{ ...styles.container }}>
-      <Text>Send Message</Text>
+      <MessageHead />
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1 },
+  container: {
+    flex: 1,
+    width: SIZES.width,
+    backgroundColor: COLORS.bg,
+    paddingLeft: 20,
+    paddingHorizontal: 20,
+    paddingTop: 30,
+  },
 });

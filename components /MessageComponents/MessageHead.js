@@ -1,10 +1,15 @@
-import { View, Text } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import React from "react";
 
 export default function MessageHead() {
   return (
     <View>
-      <Text>MessageHead</Text>
+      <View></View>
+      <View></View>
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {},
+});
