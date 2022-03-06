@@ -107,6 +107,7 @@ export default function PotentialPartners({ navigation }) {
                   ...styles.actionTexts,
                   color: COLORS.white,
                   textAlign: TextAlignments.text_center,
+                  textTransform: TextTransformations.text_capitalize,
                 }}
               >
                 {item.status}
