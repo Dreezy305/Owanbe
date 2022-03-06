@@ -40,6 +40,107 @@ export default function ChatScreen({ navigation }) {
     );
   };
 
+  const ParterTypes = () => {
+    return (
+      <View style={styles.partnerContainer}>
+        <TouchableOpacity
+          style={{ ...styles.types, backgroundColor: COLORS.lightBlue }}
+        >
+          <Text style={styles.types_text}>new partner</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={{
+            ...styles.types,
+            backgroundColor: COLORS.lightBrown,
+            marginLeft: 10,
+            // alignSelf: "flex-end",
+            flexGrow: 1,
+          }}
+        >
+          <Text style={styles.types_text}>existing partner</Text>
+        </TouchableOpacity>
+      </View>
+    );
+  };
+
+  const Potentials = () => {
+    const renderItem = ({ item }) => {
+      return (
+        <View style={styles.potentialContainer}>
+          <View style={styles.avatar_text}>
+            <Image source={item.image} />
+            <Text style={styles.potentialName}>{item.name}</Text>
+          </View>
+          <View style={styles.potentialActionBox}>
+            <TouchableOpacity
+              style={{
+                ...styles.common,
+                backgroundColor: `${
+                  item.status === "Offline" ? COLORS.purple : COLORS.red
+                }`,
+              }}
+            >
+              <Text
+                style={{
+                  ...styles.actionTexts,
+                  color: COLORS.white,
+                  textAlign: TextAlignments.text_center,
+                  paddingHorizontal: 10,
+                }}
+              >
+                Chat
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={{
+                ...styles.common,
+                backgroundColor: `${
+                  item.status === "Offline" ? COLORS.ash : COLORS.purple
+                }`,
+                flexGrow: 1,
+                marginHorizontal: 15,
+              }}
+            >
+              <Text
+                style={{
+                  ...styles.actionTexts,
+                  color: COLORS.white,
+                  textAlign: TextAlignments.text_center,
+                  textTransform: TextTransformations.text_capitalize,
+                }}
+              >
+                {item.status}
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={{
+                ...styles.common,
+                borderWidth: 1,
+                borderColor: COLORS.lightBrown,
+              }}
+            >
+              <Image
+                source={icons.trash}
+                resizeMethod="scale"
+                resizeMode="contain"
+              />
+            </TouchableOpacity>
+          </View>
+        </View>
+      );
+    };
+
+    return (
+      <FlatList
+        data={Partners}
+        renderItem={renderItem}
+        keyExtractor={(item) => item.id}
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{ paddingBottom: 20 }}
+      />
+    );
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       {Back()}
@@ -52,6 +153,8 @@ export default function ChatScreen({ navigation }) {
       >
         Chats
       </Text>
+      {ParterTypes()}
+      {Potentials()}
     </SafeAreaView>
   );
 }
@@ -87,5 +190,68 @@ const styles = StyleSheet.create({
     fontStyle: FontStyles.normal,
     letterSpacing: 1,
     textTransform: TextTransformations.text_capitalize,
+  },
+
+  //   PARTNER TYPE
+  partnerContainer: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: TextAlignments.text_center,
+    marginTop: 1,
+  },
+  types: {
+    borderRadius: 10,
+    padding: 15,
+  },
+  types_text: {
+    fontFamily: "Avenir_Book",
+    color: COLORS.white,
+    fontWeight: FontWeights.fw600,
+    letterSpacing: 1,
+    fontSize: 15,
+    lineHeight: 18,
+    paddingHorizontal: 10,
+    textAlign: TextAlignments.text_center,
+  },
+
+  //   POTENTIALS
+  potentialContainer: {
+    display: "flex",
+    flexDirection: "column",
+    marginTop: 20,
+  },
+
+  potentialName: {
+    fontFamily: "Avenir_Roman",
+    fontWeight: FontWeights.fw600,
+    fontSize: 18,
+    lineHeight: 22,
+    color: COLORS.purple,
+    textTransform: TextTransformations.text_capitalize,
+  },
+
+  avatar_text: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: TextAlignments.text_center,
+    justifyContent: "space-between",
+    marginBottom: 15,
+  },
+  potentialActionBox: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: TextAlignments.text_center,
+  },
+
+  common: {
+    borderRadius: 10,
+    padding: 15,
+  },
+
+  actionTexts: {
+    fontFamily: "Avenir_Roman",
+    fontWeight: FontWeights.fw600,
+    fontSize: 15,
+    lineHeight: 18,
   },
 });
