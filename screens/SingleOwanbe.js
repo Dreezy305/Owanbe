@@ -99,6 +99,7 @@ export default function SingleOwanbe({ navigation }) {
                     Yes
                   </Text>
                 </TouchableOpacity>
+
                 <TouchableOpacity
                   style={{
                     backgroundColor: COLORS.red,
@@ -150,22 +151,24 @@ export default function SingleOwanbe({ navigation }) {
               />
               <Text style={styles.back}>Back</Text>
             </TouchableOpacity>
-            <TouchableOpacity
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-              onPress={() => setNext(true)}
-            >
-              <Text style={{ ...styles.back, paddingRight: 10 }}>Next</Text>
-              <Image
-                source={icons.arrow_forward}
-                resizeMethod="scale"
-                resizeMode="contain"
-              />
-            </TouchableOpacity>
+            {!next && (
+              <TouchableOpacity
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+                onPress={() => setNext(true)}
+              >
+                <Text style={{ ...styles.back, paddingRight: 10 }}>Next</Text>
+                <Image
+                  source={icons.arrow_forward}
+                  resizeMethod="scale"
+                  resizeMode="contain"
+                />
+              </TouchableOpacity>
+            )}
           </View>
         </View>
       </View>
