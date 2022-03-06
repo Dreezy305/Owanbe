@@ -1,3 +1,4 @@
+import React from "react";
 import {
   View,
   Text,
@@ -15,7 +16,7 @@ import {
   TextTransformations,
 } from "../constants/color_theme_styles";
 import { icons, images } from "../constants";
-import React from "react";
+import { Partners } from "../data/selectRegion";
 
 export default function PotentialPartners({ navigation }) {
   const Back = () => {
