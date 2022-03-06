@@ -25,6 +25,7 @@ const have_fun = require("../assets/images/have-fun.svg");
 const outdoor_party = require("../assets/images/outdoor-party.svg");
 const partying = require("../assets/images/partying.svg");
 const loader = require("../assets/images/loader.png");
+const logo = require("../assets/images/logo.png");
 
 export default {
   avatar,
@@ -61,6 +62,8 @@ export default {
   partying,
   have_fun,
   loader,
+
+  logo,
 };
 
 // https://www.figma.com/file/877PdU531X9p2KIwNF2fhq/OWANBE-PROJECT?node-id=0%3A1
