@@ -93,8 +93,12 @@ export const parties = [
 ];
 
 export const Partners = [
-  { id: 1, name: "Ade Johnson", status: "Offline" },
-  { id: 1, name: "Onome Rose", status: "Online" },
-  { id: 1, name: "Halimat Hassan", status: "Offline" },
-  { id: 1, name: "Idris Adegbite", status: "Online" },
+  { id: 1, name: "Ade Johnson", status: "Offline", image: images.avatar2 },
+  { id: 2, name: "Onome Rose", status: "Online", image: "" },
+  { id: 3, name: "Halimat Hassan", status: "Offline", image: "" },
+  { id: 4, name: "Idris Adegbite", status: "Online", image: "" },
+  { id: 5, name: "Samuel Ajala", status: "Online", image: "" },
+  { id: 6, name: "Ade Adeola", status: "Online", image: "" },
+  { id: 7, name: "John James", status: "Online", image: "" },
+  { id: 8, name: "Jackie Appiah", status: "Online", image: "" },
 ];

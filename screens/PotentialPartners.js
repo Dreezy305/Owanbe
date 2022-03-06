@@ -6,6 +6,7 @@ import {
   SafeAreaView,
   TouchableOpacity,
   Image,
+  FlatList,
 } from "react-native";
 import {
   SIZES,
@@ -64,60 +65,72 @@ export default function PotentialPartners({ navigation }) {
   };
 
   const Potentials = () => {
+    const renderItem = ({ item }) => {
+      return (
+        <View style={styles.potentialContainer}>
+          <View style={styles.avatar_text}>
+            <Image source={images.avatar2} />
+            <Text style={styles.potentialName}>{item.name}</Text>
+          </View>
+          <View style={styles.potentialActionBox}>
+            <TouchableOpacity
+              style={{ ...styles.common, backgroundColor: COLORS.purple }}
+            >
+              <Text
+                style={{
+                  ...styles.actionTexts,
+                  color: COLORS.white,
+                  textAlign: TextAlignments.text_center,
+                  paddingHorizontal: 10,
+                }}
+              >
+                Chat
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={{
+                ...styles.common,
+                backgroundColor: COLORS.ash,
+                flexGrow: 1,
+                marginHorizontal: 15,
+              }}
+            >
+              <Text
+                style={{
+                  ...styles.actionTexts,
+                  color: COLORS.white,
+                  textAlign: TextAlignments.text_center,
+                }}
+              >
+                Offline
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={{
+                ...styles.common,
+                borderWidth: 1,
+                borderColor: COLORS.lightBrown,
+              }}
+            >
+              <Image
+                source={icons.trash}
+                resizeMethod="scale"
+                resizeMode="contain"
+              />
+            </TouchableOpacity>
+          </View>
+        </View>
+      );
+    };
+
     return (
-      <View style={styles.potentialContainer}>
-        <View style={styles.avatar_text}>
-          <Image source={images.avatar2} />
-          <Text style={styles.potentialName}>Ade Johson</Text>
-        </View>
-        <View style={styles.potentialActionBox}>
-          <TouchableOpacity
-            style={{ ...styles.common, backgroundColor: COLORS.purple }}
-          >
-            <Text
-              style={{
-                ...styles.actionTexts,
-                color: COLORS.white,
-                textAlign: TextAlignments.text_center,
-                paddingHorizontal: 10,
-              }}
-            >
-              Chat
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={{
-              ...styles.common,
-              backgroundColor: COLORS.ash,
-              flexGrow: 1,
-              marginHorizontal: 15,
-            }}
-          >
-            <Text
-              style={{
-                ...styles.actionTexts,
-                color: COLORS.white,
-                textAlign: TextAlignments.text_center,
-              }}
-            >
-              Offline
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={{
-              ...styles.common,
-              borderWidth: 1,
-              borderColor: COLORS.lightBrown,
-            }}
-          >
-            <Image
-              source={icons.trash}
-              resizeMethod="scale"
-              resizeMode="contain"
-            />
-          </TouchableOpacity>
-        </View>
-      </View>
+      <FlatList
+        data={Partners}
+        renderItem={renderItem}
+        keyExtractor={(item) => item.id}
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{ paddingBottom: 20 }}
+      />
     );
   };
 
@@ -177,7 +190,7 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     alignItems: TextAlignments.text_center,
-    marginTop: 20,
+    marginTop: 1,
   },
   types: {
     borderRadius: 10,
@@ -198,7 +211,7 @@ const styles = StyleSheet.create({
   potentialContainer: {
     display: "flex",
     flexDirection: "column",
-    marginTop: 30,
+    marginTop: 20,
   },
 
   potentialName: {
