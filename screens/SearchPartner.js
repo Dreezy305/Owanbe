@@ -25,7 +25,7 @@ export default function SearchPartner({ navigation }) {
   };
 
   useEffect(() => {
-    setTimeout(loader, 1000);
+    setTimeout(loader, 300);
     setTimeout(() => {
       navigation.navigate("PotentialPartners");
     }, 10000);
@@ -45,7 +45,7 @@ export default function SearchPartner({ navigation }) {
               size="large"
               color={COLORS.white}
               style={{
-                alignSelf: "center",
+                alignSelf: TextAlignments.text_center,
                 marginVertical: 10,
                 width: 50,
                 height: 50,
