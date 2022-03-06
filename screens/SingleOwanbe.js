@@ -108,6 +108,7 @@ export default function SingleOwanbe({ navigation }) {
                     padding: 20,
                     textAlign: "center",
                   }}
+                  onPress={() => setNext(false)}
                 >
                   <Text
                     style={{
