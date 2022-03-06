@@ -27,7 +27,7 @@ export default function ChatScreen({ navigation }) {
           flexDirection: "row",
           alignItems: TextAlignments.text_center,
         }}
-        onPress={() => navigation.navigate("SingleOwanble")}
+        onPress={() => navigation.navigate("HomeScreen")}
       >
         <Image
           source={icons.arrow_back}
