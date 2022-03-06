@@ -80,6 +80,7 @@ export default function PotentialPartners({ navigation }) {
                   item.status === "Offline" ? COLORS.purple : COLORS.red
                 }`,
               }}
+              onPress={() => navigation.navigate("MessagePartner")}
             >
               <Text
                 style={{

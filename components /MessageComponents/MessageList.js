@@ -1,10 +1,10 @@
 import { View, Text } from "react-native";
 import React from "react";
 
-export default function MessageHead() {
+export default function MessageList() {
   return (
     <View>
-      <Text>MessageHead</Text>
+      <Text>MessageList</Text>
     </View>
   );
 }
