@@ -86,6 +86,7 @@ export default function SingleOwanbe({ navigation }) {
                     padding: 20,
                     textAlign: "center",
                   }}
+                  onPress={() => navigation.navigate("SearchPartner")}
                 >
                   <Text
                     style={{
