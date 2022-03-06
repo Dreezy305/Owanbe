@@ -30,7 +30,7 @@ export default function SearchPartner({ navigation }) {
       navigation.navigate("PotentialPartners");
     }, 10000);
     clearTimeout(loader);
-  }, []);
+  }, [loader]);
 
   return (
     <SafeAreaView style={styles.container}>
