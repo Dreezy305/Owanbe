@@ -22,8 +22,12 @@ import MessageList from "../components /MessageComponents/MessageList";
 
 export default function MessagePartner() {
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{ ...styles.container }}>
       <Text>Send Message</Text>
     </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: { flex: 1 },
+});
