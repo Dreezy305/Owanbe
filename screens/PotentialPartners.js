@@ -42,11 +42,19 @@ export default function PotentialPartners({ navigation }) {
   const ParterTypes = () => {
     return (
       <View style={styles.partnerContainer}>
-        <TouchableOpacity>
-          <Text>new partner</Text>
+        <TouchableOpacity
+          style={{ ...styles.types, backgroundColor: COLORS.lightBlue }}
+        >
+          <Text style={styles.types_text}>new partner</Text>
         </TouchableOpacity>
-        <TouchableOpacity>
-          <Text>existing partner</Text>
+        <TouchableOpacity
+          style={{
+            ...styles.types,
+            backgroundColor: COLORS.lightBrown,
+            marginLeft: 20,
+          }}
+        >
+          <Text style={styles.types_text}>existing partner</Text>
         </TouchableOpacity>
       </View>
     );
@@ -99,6 +107,7 @@ const styles = StyleSheet.create({
     color: COLORS.red,
     fontWeight: FontWeights.fw600,
     fontStyle: FontStyles.normal,
+    letterSpacing: 1,
   },
 
   //   PARTNER TYPE
@@ -106,7 +115,20 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     alignItems: TextAlignments.text_center,
-    justifyContent: "space-around",
+    // justifyContent: "space-around",
     marginTop: 20,
+  },
+  types: {
+    borderRadius: 10,
+    padding: 15,
+  },
+  types_text: {
+    fontFamily: "Avenir_Book",
+    color: COLORS.white,
+    fontWeight: FontWeights.fw600,
+    letterSpacing: 1,
+    fontSize: 15,
+    lineHeight: 18,
+    paddingHorizontal: 10,
   },
 });

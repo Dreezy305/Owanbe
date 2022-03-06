@@ -33,6 +33,8 @@ export const COLORS = {
   linearGrad_1: "#0D253C",
   linearGrad_2: "#49B0E2",
   blue: "#376AED",
+  lightBlue: "#03A9F1",
+  lightBrown: "#F18303",
 };
 
 export const FONTS = {
