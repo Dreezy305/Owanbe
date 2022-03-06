@@ -91,3 +91,10 @@ export const parties = [
     abb: "(OLASOLA 2022)",
   },
 ];
+
+export const Partners = [
+  { id: 1, name: "Ade Johnson", status: "Offline" },
+  { id: 1, name: "Onome Rose", status: "Online" },
+  { id: 1, name: "Halimat Hassan", status: "Offline" },
+  { id: 1, name: "Idris Adegbite", status: "Online" },
+];
