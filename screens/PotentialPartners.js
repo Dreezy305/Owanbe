@@ -38,6 +38,20 @@ export default function PotentialPartners({ navigation }) {
       </TouchableOpacity>
     );
   };
+
+  const ParterTypes = () => {
+    return (
+      <View style={styles.partnerContainer}>
+        <TouchableOpacity>
+          <Text>new partner</Text>
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Text>existing partner</Text>
+        </TouchableOpacity>
+      </View>
+    );
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       {Back()}
@@ -50,6 +64,7 @@ export default function PotentialPartners({ navigation }) {
       >
         Potential Partners found
       </Text>
+      {ParterTypes()}
     </SafeAreaView>
   );
 }
@@ -76,6 +91,7 @@ const styles = StyleSheet.create({
     paddingTop: 3,
   },
 
+  //   POTENTIAL PARTNERS FOUND
   headline: {
     fontFamily: "Avenir_Book",
     fontSize: 20,
@@ -83,5 +99,14 @@ const styles = StyleSheet.create({
     color: COLORS.red,
     fontWeight: FontWeights.fw600,
     fontStyle: FontStyles.normal,
+  },
+
+  //   PARTNER TYPE
+  partnerContainer: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: TextAlignments.text_center,
+    justifyContent: "space-around",
+    marginTop: 20,
   },
 });
