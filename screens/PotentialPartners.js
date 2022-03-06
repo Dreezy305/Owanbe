@@ -70,14 +70,48 @@ export default function PotentialPartners({ navigation }) {
           <Text>Ade Johson</Text>
         </View>
         <View style={styles.potentialActionBox}>
-          <TouchableOpacity>
-            <Text>Chat</Text>
+          <TouchableOpacity
+            style={{ ...styles.common, backgroundColor: COLORS.purple }}
+          >
+            <Text
+              style={{
+                color: COLORS.white,
+                textAlign: TextAlignments.text_center,
+                paddingHorizontal: 10,
+              }}
+            >
+              Chat
+            </Text>
           </TouchableOpacity>
-          <TouchableOpacity>
-            <Text>Chat</Text>
+          <TouchableOpacity
+            style={{
+              ...styles.common,
+              backgroundColor: COLORS.ash,
+              flexGrow: 1,
+              marginHorizontal: 20,
+            }}
+          >
+            <Text
+              style={{
+                color: COLORS.white,
+                textAlign: TextAlignments.text_center,
+              }}
+            >
+              Offline
+            </Text>
           </TouchableOpacity>
-          <TouchableOpacity>
-            <Text>Chat</Text>
+          <TouchableOpacity
+            style={{
+              ...styles.common,
+              borderWidth: 2,
+              borderColor: COLORS.red,
+            }}
+          >
+            <Image
+              source={icons.trash}
+              resizeMethod="scale"
+              resizeMode="contain"
+            />
           </TouchableOpacity>
         </View>
       </View>
@@ -176,5 +210,10 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     // justifyContent: "space-between",
+  },
+
+  common: {
+    borderRadius: 10,
+    padding: 15,
   },
 });

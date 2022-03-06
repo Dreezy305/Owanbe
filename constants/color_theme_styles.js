@@ -35,6 +35,7 @@ export const COLORS = {
   blue: "#376AED",
   lightBlue: "#03A9F1",
   lightBrown: "#F18303",
+  ash: "#7A8194",
 };
 
 export const FONTS = {

@@ -6,7 +6,7 @@ const camera = require("../assets/icons/Camera.png");
 const chat = require("../assets/icons/Chat.png");
 const chart = require("../assets/icons/Chart.png");
 const close_square = require("../assets/icons/Close_Square.svg");
-const deleteIcon = require("../assets/icons/delete.svg");
+const trash = require("../assets/icons/delete.png");
 const facebook = require("../assets/icons/facebook.png");
 const google = require("../assets/icons/Google.png");
 const home = require("../assets/icons/Home.png");
@@ -29,7 +29,7 @@ export default {
   chat,
   chart,
   close_square,
-  deleteIcon,
+  trash,
 
   facebook,
   google,
