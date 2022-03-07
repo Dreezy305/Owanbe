@@ -89,7 +89,7 @@ export default function MessageInput() {
     );
   };
 
-  const renderSend = () => {};
+  const renderSend = (props) => {};
 
   return (
     <GiftedChat
@@ -99,6 +99,8 @@ export default function MessageInput() {
         _id: 1,
       }}
       isTyping={false}
+      loadEarlier
+      infiniteScroll
       placeholder="Type a message"
       alwaysShowSend
       showUserAvatar
