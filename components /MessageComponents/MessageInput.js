@@ -7,7 +7,8 @@ import {
   Image,
   TouchableOpacity,
 } from "react-native";
-import React, { useState } from "react";
+import React, { useState, useEffect, useCallback } from "react";
+import { GiftedChat } from "react-native-gifted-chat";
 import { images, icons } from "../../constants";
 import {
   COLORS,
@@ -20,6 +21,7 @@ import {
 
 export default function MessageInput() {
   const [msg, setMsg] = useState("");
+  const [messages, setMessages] = useState([]);
 
   return (
     <KeyboardAvoidingView
