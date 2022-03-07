@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 import React, { useState, useEffect, useCallback } from "react";
-import { GiftedChat } from "react-native-gifted-chat";
+import { GiftedChat, Bubble } from "react-native-gifted-chat";
 import { images, icons } from "../../constants";
 import {
   COLORS,
@@ -26,16 +26,70 @@ export default function MessageInput() {
     setMessages([
       {
         _id: 1,
-        text: "Hello developer",
+        text: "Hello, would you be interested in joining me for a party?",
         createdAt: new Date(),
         user: {
           _id: 2,
           name: "React Native",
-          avatar: "https://placeimg.com/140/140/any",
+          avatar: images.avatar2,
+        },
+      },
+      {
+        _id: 2,
+        text: "Hello",
+        createdAt: new Date(),
+        user: {
+          _id: 1,
+          name: "React Native",
+          avatar: images.logo,
         },
       },
     ]);
   }, []);
+
+  const onSend = useCallback((messages = []) => {
+    setMessages((previousMessages) =>
+      GiftedChat.append(previousMessages, messages)
+    );
+  }, []);
+
+  const renderBubble = (props) => {
+    return (
+      <Bubble
+        {...props}
+        wrapperStyle={{
+          right: {
+            backgroundColor: COLORS.red,
+            borderRadius: 20,
+            paddingHorizontal: 20,
+            textAlign: TextAlignments.text_center,
+          },
+          left: {
+            backgroundColor: COLORS.purple,
+            borderRadius: 20,
+            paddingHorizontal: 20,
+            textAlign: TextAlignments.text_center,
+          },
+        }}
+        textStyle={{
+          right: {
+            color: COLORS.white,
+            fontFamily: "Avenir_Roman",
+            fontWeight: FontWeights.fw400,
+            fontSize: 12,
+          },
+          left: {
+            color: COLORS.white,
+            fontFamily: "Avenir_Roman",
+            fontWeight: FontWeights.fw400,
+            fontSize: 12,
+          },
+        }}
+      />
+    );
+  };
+
+  const renderSend = () => {};
 
   return (
     <GiftedChat
@@ -44,6 +98,12 @@ export default function MessageInput() {
       user={{
         _id: 1,
       }}
+      isTyping={false}
+      placeholder="Type a message"
+      alwaysShowSend
+      showUserAvatar
+      renderBubble={renderBubble}
+      renderSend={renderSend}
     />
   );
 }

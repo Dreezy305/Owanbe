@@ -18,13 +18,11 @@ import {
 import { images, icons } from "../constants";
 import MessageHead from "../components /MessageComponents/MessageHead";
 import MessageInput from "../components /MessageComponents/MessageInput";
-import MessageList from "../components /MessageComponents/MessageList";
 
 export default function MessagePartner({ navigation }) {
   return (
     <SafeAreaView style={{ ...styles.container }}>
       <MessageHead />
-      <MessageList />
       <MessageInput />
     </SafeAreaView>
   );
