@@ -20,35 +20,31 @@ import {
 } from "../../constants/color_theme_styles";
 
 export default function MessageInput() {
-  const [msg, setMsg] = useState("");
   const [messages, setMessages] = useState([]);
 
+  useEffect(() => {
+    setMessages([
+      {
+        _id: 1,
+        text: "Hello developer",
+        createdAt: new Date(),
+        user: {
+          _id: 2,
+          name: "React Native",
+          avatar: "https://placeimg.com/140/140/any",
+        },
+      },
+    ]);
+  }, []);
+
   return (
-    <KeyboardAvoidingView
-      behavior={Platform.OS === "ios" ? "padding" : "height"}
-      style={{ display: "flex", flexDirection: "row", alignItems: "center" }}
-    >
-      <TextInput
-        placeholder="Type here"
-        style={{ ...styles.TextInput, flexGrow: 1 }}
-        placeholderTextColor={COLORS.purple}
-        selectTextOnFocus
-        allowFontScaling
-        autoCapitalize="none"
-        value={msg}
-        onChangeText={setMsg}
-      />
-      <TouchableOpacity
-        style={{
-          backgroundColor: COLORS.red,
-          padding: 20,
-          borderRadius: 13,
-          marginLeft: 3,
-        }}
-      >
-        <Image source={icons.plane} resizeMethod="scale" resizeMode="contain" />
-      </TouchableOpacity>
-    </KeyboardAvoidingView>
+    <GiftedChat
+      messages={messages}
+      onSend={(messages) => onSend(messages)}
+      user={{
+        _id: 1,
+      }}
+    />
   );
 }
 
