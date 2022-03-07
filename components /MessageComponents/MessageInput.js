@@ -4,6 +4,7 @@ import {
   StyleSheet,
   TextInput,
   KeyboardAvoidingView,
+  Image,
 } from "react-native";
 import React, { useState } from "react";
 import { images, icons } from "../../constants";
@@ -33,6 +34,7 @@ export default function MessageInput() {
         value={msg}
         onChangeText={setMsg}
       />
+      <Image />
     </KeyboardAvoidingView>
   );
 }

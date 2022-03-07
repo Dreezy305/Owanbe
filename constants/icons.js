@@ -16,7 +16,7 @@ const myAcc = require("../assets/icons/myaccount.svg");
 const myFavs = require("../assets/icons/myfavourites.svg");
 const nearest = require("../assets/icons/nearestOwanbe.svg");
 const organise = require("../assets/icons/Organise.svg");
-const plane = require("../assets/icons/plane.svg");
+const plane = require("../assets/icons/plane.png");
 const twitter = require("../assets/icons/Twitter.png");
 
 export default {
