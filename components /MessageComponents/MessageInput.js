@@ -5,6 +5,7 @@ import {
   TextInput,
   KeyboardAvoidingView,
   Image,
+  TouchableOpacity,
 } from "react-native";
 import React, { useState } from "react";
 import { images, icons } from "../../constants";
@@ -23,10 +24,11 @@ export default function MessageInput() {
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === "ios" ? "padding" : "height"}
+      style={{ display: "flex", flexDirection: "row", alignItems: "center" }}
     >
       <TextInput
         placeholder="Type here"
-        style={{ ...styles.TextInput }}
+        style={{ ...styles.TextInput, flexGrow: 1 }}
         placeholderTextColor={COLORS.purple}
         selectTextOnFocus
         allowFontScaling
@@ -34,7 +36,16 @@ export default function MessageInput() {
         value={msg}
         onChangeText={setMsg}
       />
-      <Image />
+      <TouchableOpacity
+        style={{
+          backgroundColor: COLORS.red,
+          padding: 20,
+          borderRadius: 13,
+          marginLeft: 3,
+        }}
+      >
+        <Image source={icons.plane} resizeMethod="scale" resizeMode="contain" />
+      </TouchableOpacity>
     </KeyboardAvoidingView>
   );
 }
