@@ -20,7 +20,7 @@ export default function MessageHead({ navigation }) {
           alignItems: TextAlignments.text_center,
           marginTop: 10,
         }}
-        // onPress={() => navigation.navigate("MessagePartner")}
+        onPress={() => navigation.navigate("ChatScreen")}
       >
         <Image
           source={icons.arrow_back}
