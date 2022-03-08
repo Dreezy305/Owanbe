@@ -136,21 +136,7 @@ export default function MessageInput() {
       renderBubble={renderBubble}
       renderSend={renderSend}
       scrollToBottom
-      textInputStyle={{
-        fontFamily: "Avenir_Roman",
-        color: COLORS.purple,
-        fontSize: 14,
-        lineHeight: 17,
-        letterSpacing: 1,
-        borderRadius: 10,
-        paddingTop: 10,
-        paddingBottom: 10,
-        borderWidth: 1,
-        marginRight: 2,
-        marginTop: 2,
-        paddingLeft: 10,
-        borderColor: COLORS.red,
-      }}
+      textInputStyle={{ ...styles.textInputStyle }}
       scrollToBottomComponent={scrollToBottomComponent}
     />
   );
@@ -166,5 +152,20 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     backgroundColor: "rgba(220, 220, 220, 0.25)",
     fontFamily: "Avenir_Roman",
+  },
+  textInputStyle: {
+    fontFamily: "Avenir_Roman",
+    color: COLORS.purple,
+    fontSize: 14,
+    lineHeight: 17,
+    letterSpacing: 1,
+    borderRadius: 10,
+    paddingTop: 10,
+    paddingBottom: 10,
+    borderWidth: 1,
+    marginRight: 2,
+    marginTop: 2,
+    paddingLeft: 10,
+    borderColor: COLORS.red,
   },
 });
