@@ -1,5 +1,5 @@
 import { View, Text } from "react-native";
-import React from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 import LoginScreen from "../screens/loginScreen";
 import SignUpScreen from "../screens/SignupScreen";
@@ -8,6 +8,7 @@ import {
   FontWeights,
   FontStyles,
 } from "../constants/color_theme_styles";
+import { AuthContext } from "../contexts/AuthContext";
 
 const Tab = createMaterialTopTabNavigator();
 

@@ -18,9 +18,16 @@ import {
   TextTransformations,
 } from "../constants/color_theme_styles";
 import { images, icons } from "../constants";
+import { AuthContext } from "../contexts/AuthContext";
 
 export default function LoginScreen({ navigation }) {
   const [username, setUsername] = React.useState("");
+
+  const { signIn } = React.useContext(AuthContext);
+
+  // console.log(signIn);
+
+  // console.log(authValue);
 
   const socials = [
     { id: 1, icon: icons.google },
@@ -68,9 +75,10 @@ export default function LoginScreen({ navigation }) {
             <TouchableOpacity
               style={styles.signInButton}
               onPress={() => {
-                navigation.replace("HomeScreen");
+                signIn();
               }}
             >
+              {/*  // navigation.replace("HomeScreen"); */}
               <Text
                 style={{
                   padding: 20,
