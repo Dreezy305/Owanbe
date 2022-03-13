@@ -18,11 +18,14 @@ import {
   TextTransformations,
 } from "../constants/color_theme_styles";
 import { SelectRegion, TodayOwanbe, PopularOwanbe } from "../data/selectRegion";
+import { AuthContext } from "../contexts/AuthContext";
 
 export default function HomeScreen({ navigation }) {
   const [selectedId, setSelectedId] = useState(null);
   const [todayId, setTodayId] = useState(null);
   const [popularId, setPopularId] = useState(null);
+
+  const { signOut } = React.useContext(AuthContext);
 
   // RENDERS HEADER
   const renderHeader = () => {
@@ -32,7 +35,8 @@ export default function HomeScreen({ navigation }) {
 
         <TouchableOpacity
           style={styles.notificationBox}
-          onPress={() => navigation.navigate("TopTabBar")}
+          // onPress={() => navigation.navigate("TopTabBar")}
+          onPress={() => signOut()}
         >
           <Image
             source={icons.bell}
