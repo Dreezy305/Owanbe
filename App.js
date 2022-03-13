@@ -22,7 +22,7 @@ import ChatScreen from "./screens/chat";
 import MenuScreen from "./screens/menu";
 import TopTab from "./navigations/TopTab";
 import DrawerScreen from "./navigations/Drawers";
-import { AuthContext, authSetup } from "./contexts/AuthContext";
+import { AuthContext } from "./contexts/AuthContext";
 import { loginReducer, initialState } from "./contexts/AuthReducer";
 
 const Stack = createNativeStackNavigator();
