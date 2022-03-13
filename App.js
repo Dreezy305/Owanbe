@@ -36,19 +36,7 @@ export default function App() {
     return null;
   }
 
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     setIsLoading(false);
-  //   }, 1000);
-  // }, []);
-
-  // if (isLoading) {
-  //   return (
-  //     <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-  //       <ActivityIndicator size={"large"} color="#fff" />
-  //     </View>
-  //   );
-  // }
+  const authContext = useMemo(() => {}, []);
 
   return (
     <NavigationContainer>
