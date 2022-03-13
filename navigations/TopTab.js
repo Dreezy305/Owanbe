@@ -17,7 +17,7 @@ export default function TopTab() {
       screenOptions={{
         tabBarLabelStyle: { fontSize: 12 },
         tabBarItemStyle: { width: 100 },
-        tabBarStyle: { backgroundColor: COLORS.red, paddingVertical: 10 },
+        tabBarStyle: { backgroundColor: COLORS.red, paddingVertical: 5 },
         swipeEnabled: false,
       }}
       keyboardDismissMode="auto"

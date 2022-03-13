@@ -51,11 +51,11 @@ export default function App() {
           component={OnboardingScreen}
           options={{ headerShown: false }}
         />
-        <Stack.Screen
+        {/* <Stack.Screen
           name="LoginScreen"
           component={LoginScreen}
           options={{ headerShown: false }}
-        />
+        /> */}
         <Stack.Screen
           name="HomeScreen"
           component={Tabs}

@@ -32,7 +32,7 @@ export default function HomeScreen({ navigation }) {
 
         <TouchableOpacity
           style={styles.notificationBox}
-          onPress={() => navigation.navigate("LoginScreen")}
+          onPress={() => navigation.navigate("TopTabBar")}
         >
           <Image
             source={icons.bell}

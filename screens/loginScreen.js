@@ -35,15 +35,9 @@ export default function LoginScreen({ navigation }) {
           source={images.owanbe_red}
           resizeMethod="scale"
           resizeMode="contain"
-          style={{ width: 240, height: 240 }}
+          style={{ width: 240, height: 150 }}
         />
       </View>
-
-      {/* AUTH TAB */}
-      {/* <View style={styles.tabContainer}>
-        <Text style={styles.tabContent}>SIGN IN</Text>
-        <Text style={styles.tabContent}>SIGN UP</Text>
-      </View> */}
 
       <View style={styles.loginCard}>
         <View style={styles.textContainer}>
