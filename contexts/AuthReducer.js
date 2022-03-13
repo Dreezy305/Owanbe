@@ -48,4 +48,4 @@ const loginReducer = (prevState, action) => {
   }
 };
 
-export default { initialState, loginReducer };
+export { initialState, loginReducer };

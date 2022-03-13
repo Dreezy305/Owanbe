@@ -1,5 +1,5 @@
 import "react-native-gesture-handler";
-import React, { useEffect, useState, useMemo } from "react";
+import React, { useEffect, useState, useMemo, useReducer } from "react";
 import { View, ActivityIndicator } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -23,12 +23,14 @@ import MenuScreen from "./screens/menu";
 import TopTab from "./navigations/TopTab";
 import DrawerScreen from "./navigations/Drawers";
 import { AuthContext, authSetup } from "./contexts/AuthContext";
+import { loginReducer, initialState } from "./contexts/AuthReducer";
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   const [isLoading, setIsLoading] = React.useState(true);
   const [userToken, setUserToken] = React.useState(null);
+  const [authState, dispatch] = useReducer(loginReducer, initialState);
 
   const authContext = useMemo(
     () => ({
