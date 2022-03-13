@@ -128,7 +128,7 @@ function OnBoarding({ navigation }) {
                 paddingVertical: 25,
               }}
               onPress={() => {
-                navigation.replace("LoginScreen");
+                navigation.replace("TopTabBar");
               }}
             >
               <Text

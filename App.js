@@ -19,6 +19,7 @@ import Tabs from "./navigations/Tabs";
 import OrganizeScreen from "./screens/organize";
 import ChatScreen from "./screens/chat";
 import MenuScreen from "./screens/menu";
+import TopTab from "./navigations/TopTab";
 import DrawerScreen from "./navigations/Drawers";
 import { BackHandler } from "react-native";
 const Stack = createNativeStackNavigator();
@@ -103,6 +104,11 @@ export default function App() {
         <Stack.Screen
           name="MessagePartner"
           component={MessagePartner}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="TopTabBar"
+          component={TopTab}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>
