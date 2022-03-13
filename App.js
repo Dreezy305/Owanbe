@@ -35,6 +35,14 @@ export default function App() {
     return null;
   }
 
+  // if (isLoading) {
+  //   return (
+  //     <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+  //       <ActivityIndicator size={"large"} color="#fff" />
+  //     </View>
+  //   );
+  // }
+
   return (
     <NavigationContainer>
       <Stack.Navigator>

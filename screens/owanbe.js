@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
-import { TextAlignments } from "../constants/color_theme_styles";
+import { TextAlignments, COLORS } from "../constants/color_theme_styles";
 import { images, icons } from "../constants";
 
 // contains the splash screen
@@ -42,9 +42,9 @@ export default function Owanbe({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: COLORS.white,
     alignItems: TextAlignments.text_center,
-    justifyContent: "center",
+    justifyContent: TextAlignments.text_center,
   },
 
   imgStyle: {
