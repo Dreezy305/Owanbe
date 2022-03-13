@@ -22,7 +22,8 @@ import ChatScreen from "./screens/chat";
 import MenuScreen from "./screens/menu";
 import TopTab from "./navigations/TopTab";
 import DrawerScreen from "./navigations/Drawers";
-import { BackHandler } from "react-native";
+import { AuthContext } from "./contexts/AuthContext";
+
 const Stack = createNativeStackNavigator();
 
 export default function App() {
