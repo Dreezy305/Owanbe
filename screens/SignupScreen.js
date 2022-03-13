@@ -42,103 +42,101 @@ export default function SignUpScreen() {
         />
       </View>
 
-      <View style={styles.loginCard}>
-        <ScrollView>
-          <View style={styles.inputContainer}>
-            <View style={styles.labelInputContainer}>
-              <Text style={styles.label}>First Name</Text>
-              <TextInput
-                placeholder=""
-                keyboardType="name-phone-pad"
-                value={firstname}
-                onChange={(e) => setFirstname(e.target.value)}
-                style={styles.input}
-              />
-            </View>
+      <ScrollView style={styles.loginCard}>
+        <View style={styles.inputContainer}>
+          <View style={styles.labelInputContainer}>
+            <Text style={styles.label}>First Name</Text>
+            <TextInput
+              placeholder=""
+              keyboardType="name-phone-pad"
+              value={firstname}
+              onChange={(e) => setFirstname(e.target.value)}
+              style={styles.input}
+            />
+          </View>
 
-            <View style={styles.labelInputContainer}>
-              <Text style={styles.label}>Last Name</Text>
-              <TextInput
-                placeholder=""
-                keyboardType="name-phone-pad"
-                value={lastname}
-                onChange={(e) => setLastname(e.target.value)}
-                style={styles.input}
-              />
-            </View>
+          <View style={styles.labelInputContainer}>
+            <Text style={styles.label}>Last Name</Text>
+            <TextInput
+              placeholder=""
+              keyboardType="name-phone-pad"
+              value={lastname}
+              onChange={(e) => setLastname(e.target.value)}
+              style={styles.input}
+            />
+          </View>
 
-            <View style={styles.labelInputContainer}>
-              <Text style={styles.label}>Email Address</Text>
-              <TextInput
-                placeholder=""
-                keyboardType="name-phone-pad"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                style={styles.input}
-              />
-            </View>
+          <View style={styles.labelInputContainer}>
+            <Text style={styles.label}>Email Address</Text>
+            <TextInput
+              placeholder=""
+              keyboardType="name-phone-pad"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              style={styles.input}
+            />
+          </View>
 
-            <View style={styles.labelInputContainer}>
-              <Text style={styles.label}>Password</Text>
-              <TextInput
-                placeholder=""
-                keyboardType="name-phone-pad"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                style={styles.password}
-              />
+          <View style={styles.labelInputContainer}>
+            <Text style={styles.label}>Password</Text>
+            <TextInput
+              placeholder=""
+              keyboardType="name-phone-pad"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              style={styles.password}
+            />
 
-              <TouchableOpacity
-                style={styles.signInButton}
-                onPress={() => {
-                  navigation.replace("HomeScreen");
-                }}
-              >
-                <Text
-                  style={{
-                    padding: 20,
-                    color: COLORS.white,
-                    fontFamily: "Avenir_Book",
-                    fontWeight: FontWeights.fw600,
-                    fontSize: 16,
-                    lineHeight: 19,
-                  }}
-                >
-                  SIGN IN
-                </Text>
-              </TouchableOpacity>
-            </View>
-
-            <View style={styles.otherOptions}>
-              <Text style={styles.signWith}>Or sign up with</Text>
-            </View>
-            <View
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-                justifyContent: "center",
-                marginTop: 10,
+            <TouchableOpacity
+              style={styles.signInButton}
+              onPress={() => {
+                navigation.replace("HomeScreen");
               }}
             >
-              {socials.map((item, index) => (
-                <>
-                  <Image
-                    source={item.icon}
-                    key={index}
-                    resizeMethod="scale"
-                    resizeMode="contain"
-                    style={{
-                      marginHorizontal: 20,
-                      // paddingVertical: 3,
-                    }}
-                  />
-                </>
-              ))}
-            </View>
+              <Text
+                style={{
+                  padding: 20,
+                  color: COLORS.white,
+                  fontFamily: "Avenir_Book",
+                  fontWeight: FontWeights.fw600,
+                  fontSize: 16,
+                  lineHeight: 19,
+                }}
+              >
+                SIGN UP
+              </Text>
+            </TouchableOpacity>
           </View>
-        </ScrollView>
-      </View>
+
+          <View style={styles.otherOptions}>
+            <Text style={styles.signWith}>Or sign up with</Text>
+          </View>
+          <View
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "center",
+              marginTop: 10,
+            }}
+          >
+            {socials.map((item, index) => (
+              <>
+                <Image
+                  source={item.icon}
+                  key={index}
+                  resizeMethod="scale"
+                  resizeMode="contain"
+                  style={{
+                    marginHorizontal: 20,
+                    // paddingVertical: 3,
+                  }}
+                />
+              </>
+            ))}
+          </View>
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 }
@@ -203,6 +201,10 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     // height: "50%",
     backgroundColor: COLORS.white,
+    borderTopLeftRadius: 30,
+    borderTopRightRadius: 30,
+    borderBottomLeftRadius: 0,
+    borderBottomRightRadius: 0,
   },
   labelInputContainer: {
     paddingTop: 50,
