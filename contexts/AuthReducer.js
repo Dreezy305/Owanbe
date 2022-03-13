@@ -26,3 +26,5 @@ const loginReducer = (prevState, action) => {
       return prevState;
   }
 };
+
+export default { initialState, loginReducer };
