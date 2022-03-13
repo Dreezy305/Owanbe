@@ -19,7 +19,7 @@ import {
 } from "../constants/color_theme_styles";
 import { icons, images } from "../constants";
 
-export default function SignUpScreen() {
+export default function SignUpScreen({ navigation }) {
   const [username, setUsername] = useState("");
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
