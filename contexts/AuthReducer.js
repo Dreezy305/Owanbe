@@ -1,8 +1,8 @@
 // constants
-const LOGIN_USER = "LOGIN_USER";
-const LOGOUT_USER = "LOGOUT_USER";
-const REGISTER_USER = "REGISTER_USER";
-const CHECK_TOKEN = "CHECK_TOKEN";
+export const LOGIN_USER = "LOGIN_USER";
+export const LOGOUT_USER = "LOGOUT_USER";
+export const REGISTER_USER = "REGISTER_USER";
+export const CHECK_TOKEN = "CHECK_TOKEN";
 
 const initialState = {
   isLoading: true,

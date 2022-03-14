@@ -22,6 +22,7 @@ import { AuthContext } from "../contexts/AuthContext";
 
 export default function LoginScreen({ navigation }) {
   const [username, setUsername] = React.useState("");
+  const [pass, setPass] = React.useState("");
 
   const { signIn } = React.useContext(AuthContext);
 
@@ -67,15 +68,15 @@ export default function LoginScreen({ navigation }) {
             <TextInput
               placeholder=""
               keyboardType="name-phone-pad"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              value={pass}
+              onChange={(e) => setPass(e.target.value)}
               style={styles.password}
             />
 
             <TouchableOpacity
               style={styles.signInButton}
               onPress={() => {
-                signIn();
+                signIn(username, pass);
               }}
             >
               {/*  // navigation.replace("HomeScreen"); */}

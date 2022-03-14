@@ -24,6 +24,12 @@ import TopTab from "./navigations/TopTab";
 import DrawerScreen from "./navigations/Drawers";
 import { AuthContext } from "./contexts/AuthContext";
 import { loginReducer, initialState } from "./contexts/AuthReducer";
+import {
+  LOGIN_USER,
+  LOGOUT_USER,
+  REGISTER_USER,
+  CHECK_TOKEN,
+} from "./contexts/AuthReducer";
 
 const Stack = createNativeStackNavigator();
 
@@ -32,17 +38,20 @@ export default function App() {
   const [userToken, setUserToken] = React.useState(null);
   const [authState, dispatch] = useReducer(loginReducer, initialState);
 
+  console.log(authState);
+
   const authContext = useMemo(
     () => ({
-      signIn: () => {
-        setIsLoading(false);
-        setUserToken("abc");
-        console.log("signin");
+      signIn: (userName, password) => {
+        let userToken;
+        userName = null;
+        if (userName == "John Doe" && password == "password") {
+          userToken = "abcde";
+          dispatch({ type: LOGIN_USER, id: userName, token: userToken });
+        }
       },
       signOut: () => {
-        setIsLoading(false);
-        setUserToken(null);
-        console.log("signout");
+        dispatch({ type: LOGOUT_USER });
       },
       signUp: () => {
         setIsLoading(false);
@@ -53,6 +62,12 @@ export default function App() {
     []
   );
 
+  useEffect(() => {
+    setTimeout(() => {
+      dispatch({ type: REGISTER_USER, token: "fghijk" });
+    }, 1000);
+  }, []);
+
   const [loaded] = useFonts(FONTS);
 
   if (!loaded) {
@@ -62,7 +77,7 @@ export default function App() {
   return (
     <AuthContext.Provider value={authContext}>
       <NavigationContainer>
-        {userToken !== null ? (
+        {authState.userToken !== null ? (
           <Stack.Navigator>
             <Stack.Screen
               name="HomeScreen"
