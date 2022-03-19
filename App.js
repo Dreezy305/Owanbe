@@ -93,11 +93,7 @@ export default function App() {
             component={TopTab}
             options={{ headerShown: false }}
           />
-          {/* <Stack.Screen
-            name="HomeScreen"
-            component={Tabs}
-            options={{ headerShown: false }}
-          /> */}
+
           <Stack.Screen
             name="HomeScreen"
             component={DrawerScreen}
@@ -144,11 +140,6 @@ export default function App() {
             component={MessagePartner}
             options={{ headerShown: false }}
           />
-          {/* <Stack.Screen
-            name="TopTabBar"
-            component={TopTab}
-            options={{ headerShown: false }}
-          /> */}
         </Stack.Navigator>
       </NavigationContainer>
     </AuthContext.Provider>

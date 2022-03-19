@@ -14,7 +14,10 @@ export default function DrawerScreen() {
         component={Tabs}
         options={{ headerShown: false }}
       />
-      {/* <Drawer.Screen name="Article" component={Article} /> */}
+      {/* <Drawer.Screen
+        name="Help"
+        component={<></>}
+      /> */}
     </Drawer.Navigator>
   );
 }
