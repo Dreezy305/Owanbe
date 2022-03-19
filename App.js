@@ -77,80 +77,79 @@ export default function App() {
   return (
     <AuthContext.Provider value={authContext}>
       <NavigationContainer>
-        {authState.userToken !== null ? (
-          <Stack.Navigator>
-            <Stack.Screen
-              name="HomeScreen"
-              component={Tabs}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="OrganizeScreen"
-              component={OrganizeScreen}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="ChatScreen"
-              component={ChatScreen}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="MenuScreen"
-              component={MenuScreen}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="AvailableOwanble"
-              component={AvailableOwanbe}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="SingleOwanble"
-              component={SingleOwanbe}
-              options={{ headerShown: false }}
-            />
+        <Stack.Navigator>
+          <Stack.Screen
+            name="Splash"
+            component={Owanbe}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="OnboardingScreen"
+            component={OnboardingScreen}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="TopTabBar"
+            component={TopTab}
+            options={{ headerShown: false }}
+          />
+          {/* <Stack.Screen
+            name="HomeScreen"
+            component={Tabs}
+            options={{ headerShown: false }}
+          /> */}
+          <Stack.Screen
+            name="HomeScreen"
+            component={DrawerScreen}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="OrganizeScreen"
+            component={OrganizeScreen}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="ChatScreen"
+            component={ChatScreen}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="MenuScreen"
+            component={MenuScreen}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="AvailableOwanble"
+            component={AvailableOwanbe}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="SingleOwanble"
+            component={SingleOwanbe}
+            options={{ headerShown: false }}
+          />
 
-            <Stack.Screen
-              name="SearchPartner"
-              component={SearchPartner}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="PotentialPartners"
-              component={PotentialPartners}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="MessagePartner"
-              component={MessagePartner}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="TopTabBar"
-              component={TopTab}
-              options={{ headerShown: false }}
-            />
-          </Stack.Navigator>
-        ) : (
-          <Stack.Navigator>
-            <Stack.Screen
-              name="Splash"
-              component={Owanbe}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="OnboardingScreen"
-              component={OnboardingScreen}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="TopTabBar"
-              component={TopTab}
-              options={{ headerShown: false }}
-            />
-          </Stack.Navigator>
-        )}
-        {/* <Stack.Navigator></Stack.Navigator> */}
+          <Stack.Screen
+            name="SearchPartner"
+            component={SearchPartner}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="PotentialPartners"
+            component={PotentialPartners}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="MessagePartner"
+            component={MessagePartner}
+            options={{ headerShown: false }}
+          />
+          {/* <Stack.Screen
+            name="TopTabBar"
+            component={TopTab}
+            options={{ headerShown: false }}
+          /> */}
+        </Stack.Navigator>
       </NavigationContainer>
     </AuthContext.Provider>
   );

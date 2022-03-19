@@ -76,10 +76,11 @@ export default function LoginScreen({ navigation }) {
             <TouchableOpacity
               style={styles.signInButton}
               onPress={() => {
-                signIn(username, pass);
+                // signIn(username, pass);
+                navigation.replace("HomeScreen");
               }}
             >
-              {/*  // navigation.replace("HomeScreen"); */}
+              {/* // navigation.replace("HomeScreen"); */}
               <Text
                 style={{
                   padding: 20,
