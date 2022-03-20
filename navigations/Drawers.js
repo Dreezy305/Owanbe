@@ -237,5 +237,3 @@ export default function DrawerScreen({ navigation }) {
     </Drawer.Navigator>
   );
 }
-
-// https://www.youtube.com/watch?v=mRoDNjhRO3E
