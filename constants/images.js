@@ -26,6 +26,8 @@ const outdoor_party = require("../assets/images/outdoor-party.svg");
 const partying = require("../assets/images/partying.svg");
 const loader = require("../assets/images/loader.png");
 const logo = require("../assets/images/logo.png");
+const DrawerBg = require("../assets/images/DrawerBg.png");
+const DrawerAvatar = require("../assets/images/Drawer-Avatar.png");
 
 export default {
   avatar,
@@ -64,6 +66,8 @@ export default {
   loader,
 
   logo,
+  DrawerAvatar,
+  DrawerBg,
 };
 
 // https://www.figma.com/file/877PdU531X9p2KIwNF2fhq/OWANBE-PROJECT?node-id=0%3A1
