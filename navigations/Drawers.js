@@ -43,6 +43,8 @@ function CustomDrawerContent(props) {
                 flexDirection: "row",
                 justifyContent: "space-between",
                 paddingHorizontal: 20,
+                paddingVertical: 20,
+                paddingTop: 50,
               }}
             >
               <Image
@@ -59,6 +61,37 @@ function CustomDrawerContent(props) {
                   style={{ paddingVertical: 30 }}
                 />
               </TouchableOpacity>
+            </View>
+
+            <View
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "space-between",
+                paddingHorizontal: 20,
+                paddingVertical: 15,
+                marginBottom: 15,
+              }}
+            >
+              <Text
+                style={{
+                  fontFamily: "Roboto_Bold",
+                  fontWeight: FontWeights.fw500,
+                  fontSize: 15,
+                  lineHeight: 18,
+                  color: COLORS.white,
+                }}
+              >
+                Dunni Olowu
+              </Text>
+              <View>
+                <Image
+                  source={icons.down}
+                  style={{ height: 10, width: 10 }}
+                  resizeMode="contain"
+                  resizeMethod="scale"
+                />
+              </View>
             </View>
           </ImageBackground>
         </View>

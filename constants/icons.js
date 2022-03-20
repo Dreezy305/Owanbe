@@ -19,6 +19,7 @@ const organise = require("../assets/icons/Organise.svg");
 const plane = require("../assets/icons/plane.png");
 const twitter = require("../assets/icons/Twitter.png");
 const bag = require("../assets/icons/bag.png");
+const down = require("../assets/icons/down.png");
 
 export default {
   arrow_forward,
@@ -46,4 +47,6 @@ export default {
   plane,
   twitter,
   bag,
+
+  down,
 };
