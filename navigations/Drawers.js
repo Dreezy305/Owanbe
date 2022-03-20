@@ -59,6 +59,7 @@ export default function DrawerScreen() {
             fontFamily: "Avenir_Black",
             fontSize: 14,
             fontWeight: FontWeights.fw800,
+            fontStyle: FontStyles.normal,
             background: "rgba(226, 0, 0, 0.2)",
           },
         }}
@@ -87,6 +88,7 @@ export default function DrawerScreen() {
             fontFamily: "Avenir_Black",
             fontSize: 14,
             fontWeight: FontWeights.fw800,
+            fontStyle: FontStyles.normal,
             background: "rgba(226, 0, 0, 0.2)",
           },
         }}
@@ -115,6 +117,7 @@ export default function DrawerScreen() {
             fontFamily: "Avenir_Black",
             fontSize: 14,
             fontWeight: FontWeights.fw800,
+            fontStyle: FontStyles.normal,
             background: "rgba(226, 0, 0, 0.2)",
           },
         }}
@@ -144,6 +147,7 @@ export default function DrawerScreen() {
             fontFamily: "Avenir_Black",
             fontSize: 14,
             fontWeight: FontWeights.fw800,
+            fontStyle: FontStyles.normal,
             background: "rgba(226, 0, 0, 0.2)",
           },
         }}
