@@ -17,20 +17,19 @@ import Tabs from "./Tabs";
 import MyAccScreen from "../screens/MyAcc";
 import MyFavScreen from "../screens/MyFavs";
 import PubAccessScreen from "../screens/PublicAccess";
-import { icons } from "../constants";
+import { icons, images } from "../constants";
 import {
   TextAlignments,
   COLORS,
   FontWeights,
   FontStyles,
 } from "../constants/color_theme_styles";
-import { images } from "../constants";
 
 const Drawer = createDrawerNavigator();
 
 function CustomDrawerContent(props) {
   return (
-    <View style={{ flex: 1 }}>
+    <View style={{ flex: 1, marginTop: 0 }}>
       <DrawerContentScrollView {...props}>
         <View style={{ height: "40%" }}>
           <ImageBackground
@@ -39,8 +38,28 @@ function CustomDrawerContent(props) {
             resizeMethod="scale"
             style={{ height: "100%", justifyContent: "center" }}
           >
-            <View>
-              <Text>Hello</Text>
+            <View
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "space-between",
+                paddingHorizontal: 20,
+              }}
+            >
+              <Image
+                source={images.DrawerAvatar}
+                resizeMethod="scale"
+                resizeMode="contain"
+                style={{ paddingVertical: 30 }}
+              />
+              <TouchableOpacity onPress={() => props.navigation.closeDrawer()}>
+                <Image
+                  source={icons.close_square}
+                  resizeMethod="scale"
+                  resizeMode="contain"
+                  style={{ paddingVertical: 30 }}
+                />
+              </TouchableOpacity>
             </View>
           </ImageBackground>
         </View>
@@ -120,12 +139,13 @@ function CustomDrawerContent(props) {
   );
 }
 
-export default function DrawerScreen() {
+export default function DrawerScreen({ navigation }) {
   return (
     <Drawer.Navigator
       drawerContent={(props) => {
         return <CustomDrawerContent {...props} />;
       }}
+      screenOptions={{ swipeEnabled: true, keyboardDismissMode: "none" }}
     >
       <Drawer.Screen
         name="HomeScreen"
