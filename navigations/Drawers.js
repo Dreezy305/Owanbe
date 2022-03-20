@@ -37,7 +37,7 @@ function CustomDrawerContent(props) {
             source={images.DrawerBg}
             resizeMode="cover"
             resizeMethod="scale"
-            style={{ height: "100%" }}
+            style={{ height: "100%", justifyContent: "center" }}
           >
             <View>
               <Text>Hello</Text>
@@ -62,7 +62,7 @@ function CustomDrawerContent(props) {
             display: "flex",
             flexDirection: "row",
             alignItems: "center",
-            paddingVertical: 30,
+            paddingVertical: 20,
           }}
         >
           <Image
@@ -83,7 +83,7 @@ function CustomDrawerContent(props) {
               paddingLeft: 30,
             }}
           >
-            Public Access
+            Nearest Ówànbè
           </Text>
         </TouchableOpacity>
         <TouchableOpacity
@@ -112,7 +112,7 @@ function CustomDrawerContent(props) {
               paddingLeft: 30,
             }}
           >
-            Nearest Owanbe
+            Public access
           </Text>
         </TouchableOpacity>
       </View>
