@@ -18,6 +18,7 @@ const nearest = require("../assets/icons/pubaccess.png");
 const organise = require("../assets/icons/Organise.svg");
 const plane = require("../assets/icons/plane.png");
 const twitter = require("../assets/icons/Twitter.png");
+const bag = require("../assets/icons/bag.png");
 
 export default {
   arrow_forward,
@@ -44,4 +45,5 @@ export default {
   organise,
   plane,
   twitter,
+  bag,
 };

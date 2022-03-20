@@ -16,7 +16,6 @@ import React from "react";
 import Tabs from "./Tabs";
 import MyAccScreen from "../screens/MyAcc";
 import MyFavScreen from "../screens/MyFavs";
-import PubAccessScreen from "../screens/PublicAccess";
 import { icons, images } from "../constants";
 import {
   TextAlignments,
@@ -174,6 +173,7 @@ export default function DrawerScreen({ navigation }) {
             fontStyle: FontStyles.normal,
             background: "rgba(226, 0, 0, 0.2)",
           },
+          drawerActiveBackgroundColor: { backgroundColor: COLORS.red },
         }}
       />
       <Drawer.Screen
@@ -186,7 +186,7 @@ export default function DrawerScreen({ navigation }) {
             return (
               <View>
                 <Image
-                  source={icons.myAcc}
+                  source={icons.bag}
                   resizeMethod="scale"
                   resizeMode="contain"
                   style={{ width: 20 }}
