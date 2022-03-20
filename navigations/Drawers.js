@@ -3,6 +3,9 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 import HomeScreen from "../screens/home";
 import React from "react";
 import Tabs from "./Tabs";
+import MyAccScreen from "../screens/MyAcc";
+import MyFavScreen from "../screens/MyFavs";
+import PubAccessScreen from "../screens/PublicAccess";
 
 const Drawer = createDrawerNavigator();
 
