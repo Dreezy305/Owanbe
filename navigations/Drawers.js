@@ -146,7 +146,7 @@ function CustomDrawerContent(props) {
           }}
         >
           <Image
-            source={icons.nearest}
+            source={icons.user}
             resizeMethod="scale"
             resizeMode="contain"
             style={{ width: 20 }}
@@ -214,7 +214,58 @@ export default function DrawerScreen({ navigation }) {
         component={MyAccScreen}
         options={{
           headerShown: false,
-          title: "My account",
+          // title: "My account",
+          drawerLabel: ({ props }) => {
+            return (
+              <View
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                }}
+                {...props}
+              >
+                <Text
+                  style={{
+                    color: "rgba(0, 0, 0, 0.87)",
+                    fontFamily: "Avenir_Black",
+                    fontSize: 14,
+                    fontWeight: FontWeights.fw800,
+                    fontStyle: FontStyles.normal,
+                    background: "rgba(226, 0, 0, 0.2)",
+                  }}
+                >
+                  My account
+                </Text>
+                <View
+                  style={{
+                    backgroundColor: COLORS.red,
+                    borderRadius: 3,
+                    padding: 3,
+                    // marginLeft: 70,
+                    alignSelf: "flex-end",
+                  }}
+                >
+                  <Text
+                    style={{
+                      color: COLORS.white,
+                      fontFamily: "Roboto_Medium",
+                      fontSize: 14,
+                      fontWeight: FontWeights.fw500,
+                      fontStyle: FontStyles.normal,
+                      background: "rgba(226, 0, 0, 0.2)",
+                      lineHeight: 18,
+                      paddingHorizontal: 3,
+                      paddingVertical: 3,
+                    }}
+                  >
+                    18
+                  </Text>
+                </View>
+              </View>
+            );
+          },
           drawerIcon: ({ props }) => {
             return (
               <View>
@@ -243,7 +294,47 @@ export default function DrawerScreen({ navigation }) {
         component={MyFavScreen}
         options={{
           headerShown: false,
-          title: "My favourites",
+          drawerLabel: ({ props }) => {
+            return (
+              <View
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                }}
+                {...props}
+              >
+                <Text
+                  style={{
+                    color: "rgba(0, 0, 0, 0.87)",
+                    fontFamily: "Avenir_Black",
+                    fontSize: 14,
+                    fontWeight: FontWeights.fw800,
+                    fontStyle: FontStyles.normal,
+                    background: "rgba(226, 0, 0, 0.2)",
+                  }}
+                >
+                  My favourites
+                </Text>
+                <Text
+                  style={{
+                    color: "rgba(0, 0, 0, 0.87)",
+                    fontFamily: "Roboto_Thin",
+                    fontSize: 16,
+                    fontWeight: FontWeights.fw400,
+                    fontStyle: FontStyles.normal,
+                    background: "rgba(226, 0, 0, 0.2)",
+                    lineHeight: 21,
+                    // paddingLeft: 50,
+                    alignSelf: "flex-end",
+                  }}
+                >
+                  128
+                </Text>
+              </View>
+            );
+          },
           drawerIcon: ({ props }) => {
             return (
               <View>
