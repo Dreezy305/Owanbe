@@ -105,7 +105,7 @@ function CustomDrawerContent(props) {
           right: 0,
           left: 0,
           bottom: 0,
-          backgroundColor: "#f6f6f6",
+          // backgroundColor: "#f6f6f6",
           padding: 20,
         }}
       >
