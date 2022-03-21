@@ -84,14 +84,15 @@ function CustomDrawerContent(props) {
               >
                 Dunni Olowu
               </Text>
-              <View>
+
+              <TouchableOpacity>
                 <Image
                   source={icons.down}
-                  style={{ height: 10, width: 10 }}
+                  style={{ height: 18, width: 18 }}
                   resizeMode="contain"
                   resizeMethod="scale"
                 />
-              </View>
+              </TouchableOpacity>
             </View>
           </ImageBackground>
         </View>
@@ -184,7 +185,8 @@ export default function DrawerScreen({ navigation }) {
         component={Tabs}
         options={{
           headerShown: false,
-          title: "Home",
+          // title: "Home",
+          drawerLabel: "Home",
           drawerIcon: ({ props }) => {
             return (
               <View>
