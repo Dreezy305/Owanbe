@@ -33,16 +33,10 @@ import {
 const Stack = createNativeStackNavigator();
 
 export default function App() {
-  const [isLoading, setIsLoading] = React.useState(true);
-  const [userToken, setUserToken] = React.useState(null);
   const [authState, dispatch] = useReducer(loginReducer, initialState);
 
-  console.log(authState);
-
   useEffect(() => {
-    setTimeout(() => {
-      dispatch({ type: REGISTER_USER, token: "fghijk" });
-    }, 1000);
+    const authAsync = () => {};
   }, []);
 
   const [loaded] = useFonts(FONTS);

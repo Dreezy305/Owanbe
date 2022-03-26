@@ -2,17 +2,18 @@
 export const LOGIN_USER = "LOGIN_USER";
 export const LOGOUT_USER = "LOGOUT_USER";
 export const REGISTER_USER = "REGISTER_USER";
-export const CHECK_TOKEN = "CHECK_TOKEN";
+export const RESTORE_TOKEN = "RESTORE_TOKEN";
 
 const initialState = {
   isLoading: true,
   userName: null,
   userToken: null,
+  isSignout: false,
 };
 
 const loginReducer = (prevState, action) => {
   switch (action.type) {
-    case CHECK_TOKEN:
+    case RESTORE_TOKEN:
       return {
         ...prevState,
         userToken: action.token,
@@ -22,15 +23,16 @@ const loginReducer = (prevState, action) => {
     case LOGIN_USER:
       return {
         ...prevState,
-        userName: action.id,
+        isSignout: false,
         userToken: action.token,
+        userName: action.userName,
         isLoading: false,
       };
 
     case LOGOUT_USER:
       return {
         ...prevState,
-        userName: null,
+        isSignout: true,
         userToken: null,
         isLoading: false,
       };
@@ -38,7 +40,7 @@ const loginReducer = (prevState, action) => {
     case REGISTER_USER:
       return {
         ...prevState,
-        userName: action.id,
+        userName: action.userName,
         userToken: action.token,
         isLoading: false,
       };
