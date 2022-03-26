@@ -30,7 +30,7 @@ function CustomDrawerContent(props) {
   return (
     <View style={{ flex: 1, marginTop: 0 }}>
       <DrawerContentScrollView {...props}>
-        <View style={{ height: "40%" }}>
+        <View style={{ height: "50%" }}>
           <ImageBackground
             source={images.DrawerBg}
             resizeMode="cover"

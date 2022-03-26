@@ -1,6 +1,5 @@
 import "react-native-gesture-handler";
 import React, { useEffect, useState, useMemo, useReducer } from "react";
-import { View, ActivityIndicator } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 // import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -40,28 +39,6 @@ export default function App() {
 
   console.log(authState);
 
-  const authContext = useMemo(
-    () => ({
-      signIn: (userName, password) => {
-        let userToken;
-        userName = null;
-        if (userName == "John Doe" && password == "password") {
-          userToken = "abcde";
-          dispatch({ type: LOGIN_USER, id: userName, token: userToken });
-        }
-      },
-      signOut: () => {
-        dispatch({ type: LOGOUT_USER });
-      },
-      signUp: () => {
-        setIsLoading(false);
-        setUserToken("abc");
-        console.log("signup");
-      },
-    }),
-    []
-  );
-
   useEffect(() => {
     setTimeout(() => {
       dispatch({ type: REGISTER_USER, token: "fghijk" });
@@ -75,7 +52,7 @@ export default function App() {
   }
 
   return (
-    <AuthContext.Provider value={authContext}>
+    <AuthContext.Provider>
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen
