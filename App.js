@@ -2,7 +2,7 @@ import "react-native-gesture-handler";
 import React, { useEffect, useState, useMemo, useReducer } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-// import AsyncStorage from "@react-native-async-storage/async-storage";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import { FONTS } from "./constants/color_theme_styles";
 import { useFonts } from "expo-font";
 import Owanbe from "./screens/owanbe";
@@ -23,12 +23,6 @@ import TopTab from "./navigations/TopTab";
 import DrawerScreen from "./navigations/Drawers";
 import { AuthContext } from "./contexts/AuthContext";
 import { loginReducer, initialState } from "./contexts/AuthReducer";
-import {
-  LOGIN_USER,
-  LOGOUT_USER,
-  REGISTER_USER,
-  CHECK_TOKEN,
-} from "./contexts/AuthReducer";
 
 const Stack = createNativeStackNavigator();
 
@@ -36,8 +30,32 @@ export default function App() {
   const [authState, dispatch] = useReducer(loginReducer, initialState);
 
   useEffect(() => {
-    const authAsync = () => {};
+    const bootstrapAsync = async () => {
+      let userToken;
+
+      try {
+        userToken = await AsyncStorage.getItemAsync("userToken");
+      } catch (e) {
+        return e;
+      }
+      dispatch({ type: "RESTORE_TOKEN", token: userToken });
+    };
+
+    bootstrapAsync();
   }, []);
+
+  const authContext = React.useMemo(
+    () => ({
+      signIn: async (data) => {
+        dispatch({ type: "SIGN_IN", token: "dummy-auth-token" });
+      },
+      signOut: () => dispatch({ type: "SIGN_OUT" }),
+      signUp: async (data) => {
+        dispatch({ type: "SIGN_IN", token: "dummy-auth-token" });
+      },
+    }),
+    []
+  );
 
   const [loaded] = useFonts(FONTS);
 
@@ -46,7 +64,7 @@ export default function App() {
   }
 
   return (
-    <AuthContext.Provider>
+    <AuthContext.Provider value={authContext}>
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen
