@@ -4,7 +4,7 @@
     "slug": "Owanbe",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/Owanbe-Logo.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -21,7 +21,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/Owanbe-Logo.png",
         "backgroundColor": "#FFFFFF"
       },
       "package": "com.dreezy.Owanbe"
